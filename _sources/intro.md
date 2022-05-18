@@ -1,16 +1,18 @@
-# ECE 382 Embedded Computer Systems
+# ECE 387 Introduction to Robotic Systems
 
-## 👨‍🏫 Instructors
-- [![baek](https://img.shields.io/badge/Dr.%20Stan%20Baek-2E38-red)](https://stanbaek.github.io)
-- ![stone](https://img.shields.io/badge/LtCol%20Sam%20Stone-2E36C-blue)
-- ![york](https://img.shields.io/badge/Dr.%20George%20York-2E44-green)
+## 👨‍🏫 Instructor Information
+[![name](https://img.shields.io/badge/Instructor-Dr.%20Stan%20Baek-blue)](https://stanbaek.github.io)
+![office](https://img.shields.io/badge/Office-Fairchild%202E38-red)
+[![web](https://img.shields.io/badge/Web-stanbaek.github.io-orange)](https://stanbaek.github.io)
 
 ## 📝 Course information
-- **Course Goal**: Dvelop skills to design, implement, test, and debug microcontroller-based systems by developing operational assembly and C language programs that incorporate the built-in microcontroller functions, and by successfully interfacing the microcontroller to the external world.
-
-- **Course Text**:  Embedded Systems: Introduction to Robotics, Johnathan W. Valvano, First Edition, 2019. ISBN: 978-1074544300.
-- **Syllabus**: Poseted found [here](syllabus.md).
+- **Course Goal**: Provide students with fundamental knowledge and skills to design and control robotic 🤖 systems.
+- **Prerequisites**: ECE 382, ECE 346, Math344/346 or instructor approval
+- **Course Text**:  There is no required textbook.  Reading materials/labs are posted here.
+- **Course Website**: All files are conveniently distributed via the **Teams** site.  
+- **Syllabus**: Official syllabus can be found in the **Teams** site.
 - **Course Schedule**: Posted [here](schedule.md) and subject to change.
+
 
 ## 📡 Communication and Control (C2)
 - All communication and announcement will be provided through a course and section Team.
