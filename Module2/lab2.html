@@ -54,7 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Here’s my sample title" href="../mymarkdownfile.html" />
     <link rel="prev" title="Markdown Files" href="../Module1/markdown.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -95,7 +94,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   ECE 382 Embedded Computer Systems
+   ECE 387 Introduction to Robotic Systems
   </a>
  </li>
 </ul>
@@ -157,16 +156,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Lab 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../mymarkdownfile.html">
-   Here’s my sample title
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
   </a>
  </li>
 </ul>
@@ -257,28 +246,23 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lab-objectives">
-   Lab Objectives
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#agenda">
-   Agenda
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup">
-   Setup
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#purpose">
-   Purpose
+  <a class="reference internal nav-link" href="#overview">
+   Overview
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#deliverables">
    Deliverables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -307,28 +291,23 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lab-objectives">
-   Lab Objectives
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#agenda">
-   Agenda
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup">
-   Setup
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#purpose">
-   Purpose
+  <a class="reference internal nav-link" href="#overview">
+   Overview
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#deliverables">
    Deliverables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -347,17 +326,28 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="lab-2">
 <h1>Lab 2<a class="headerlink" href="#lab-2" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="lab-objectives">
-<h2>Lab Objectives<a class="headerlink" href="#lab-objectives" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>You will learn about registers, RAM, flash ROM, and the stack.</p></li>
-<li><p>You will learn debugging techniques like single stepping, breakpoints, and watch windows.</p></li>
+<li><p>Students will learn about registers, RAM, flash ROM, and the stack.</p></li>
+<li><p>Students will learn debugging techniques like single stepping, breakpoints, and watch windows.</p></li>
 </ul>
 </div>
-<div class="section" id="agenda">
-<h2>Agenda<a class="headerlink" href="#agenda" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In this lab students will write a program in assembly that determines whether integer numbers are prime or not.</p>
+</div>
+<div class="section" id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">¶</a></h2>
+<p><strong>Deliverable 1:</strong></p>
 <ul class="simple">
-<li><p>[NO] Write a Cryptography program that uses exclusive-or for encryption and decryption.</p></li>
+<li><p>[25 Points] Push your code to your repository. You must add comments to your code. <strong>It is your responsibility to check your files have been successfully pushed to your Bitbucket repository.</strong></p></li>
+<li><p>[25 Points] Provide a screen shot of the following and submit via Gradescope.  Use <strong>Snip &amp; Sketch</strong> (Win+Shift+S) in Windows 10 or Shift+CMD+4 in Mac to take a screenshot.  Do NOT take a picture of computer screen with your phone because it will introduce sampling aliasing (more details in ECE215/ECE315).</p></li>
+</ul>
+<ul class="simple">
+<li><p>[10 Points] The addresses of each of the variables stored in RAM and ROM (use the Memory Browser and the pointers you created. You can search the Memory Browser by variable name or memory address).</p></li>
+<li><p>[15 Points] The contents of <code class="docutils literal notranslate"><span class="pre">Res</span></code> after execution of the code (use the Memory Browser and change the format to “8-Bit Hex - TI Style”). If you click on Resume (F8) followed by Suspend (Alt+F8), it will stop at <code class="docutils literal notranslate"><span class="pre">Exit</span> <span class="pre">B</span> <span class="pre">Exit</span></code>. Then, you can browse the memory.</p></li>
+<li><p>[-30 Points] Take a picture of your screen with a mobile device or digital camera and upload it to Gradescope. Yes, I am serious…</p></li>
 </ul>
 </div>
 <div class="section" id="setup">
@@ -367,12 +357,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Open Code Composer Studio (CCS) and select your workspace.</p></li>
 <li><p>Ensure your Project Explorer is open on the left of the CCS screen.</p></li>
 <li><p>Select View &gt; Project Explorer.</p></li>
-<li><p>Open the Lab02_Assembly project by double clicking it.</p></li>
+<li><p>Open the Lab02_PrimeNumbers project by double clicking it.</p></li>
 </ul>
 </div>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
-<p>In this lab you will write a program that determines whether a collection of integers is prime or not. An equivalent C program is given by</p>
+<div class="section" id="complete-lab02-isprime-asm">
+<h2>Complete Lab02_IsPrime.asm<a class="headerlink" href="#complete-lab02-isprime-asm" title="Permalink to this headline">¶</a></h2>
+<p>An equivalent C program is given by</p>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// 1 is not a prime number.</span>
 <span class="p">}</span><span class="w"></span>
@@ -386,24 +376,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// n is a prime number</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="deliverables">
-<h2>Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>[25 Points] Push your code to your repository. You must add comments to your code. <strong>It is your responsibility to check your files have been successfully pushed to your Bitbucket repository.</strong></p></li>
-<li><p>[25 Points] Provide a screen shot of the following and submit via Gradescope.  Use <strong>Snip &amp; Sketch</strong> (Win+Shift+S) in Windows 10 or Shift+CMD+4 in Mac to take a screenshot.  Do NOT take a picture of computer screen with your phone because it will introduce sampling aliasing (more details in ECE215/ECE315).</p>
-<ul>
-<li><p>[10 Points] The addresses of each of the variables stored in RAM and ROM (use the Memory Browser and the pointers you created. You can search the Memory Browser by variable name or memory address).</p></li>
-<li><p>[15 Points] The contents of <code class="docutils literal notranslate"><span class="pre">Res</span></code> after execution of the code (use the Memory Browser and change the format to “8-Bit Hex - TI Style”). If you click on Resume (F8) followed by Suspend (Alt+F8), it will stop at <code class="docutils literal notranslate"><span class="pre">Exit</span> <span class="pre">B</span> <span class="pre">Exit</span></code>. Then, you can browse the memory.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>[-30 Points] Take a picture of your screen with a mobile device or digital camera and upload it to Gradescope. Yes, I am serious…</p></li>
-</ul>
-</div>
-<div class="section" id="complete-lab02-isprime-asm">
-<h2>Complete Lab02_IsPrime.asm<a class="headerlink" href="#complete-lab02-isprime-asm" title="Permalink to this headline">¶</a></h2>
 <p><strong>Variables in RAM:</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Res</span></code> - allocate 16 bytes of memory to store the results. If the first number is prime, you need to set the first byte of Res to 1. Otherwise, set it to 0.</p></li>
@@ -456,13 +428,6 @@ Comment out the main function (line 58) in Homework02_main.asm and uncomment the
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Markdown Files</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../mymarkdownfile.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Here’s my sample title</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

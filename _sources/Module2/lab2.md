@@ -1,24 +1,33 @@
 # Lab 2
 
-### Lab Objectives
-- You will learn about registers, RAM, flash ROM, and the stack.
-- You will learn debugging techniques like single stepping, breakpoints, and watch windows.
+### Objectives
+- Students will learn about registers, RAM, flash ROM, and the stack.
+- Students will learn debugging techniques like single stepping, breakpoints, and watch windows.
 
+### Overview
+In this lab students will write a program in assembly that determines whether integer numbers are prime or not.
 
-### Agenda
-- [NO] Write a Cryptography program that uses exclusive-or for encryption and decryption.
+### Deliverables
+**Deliverable 1:** 
+* [25 Points] Push your code to your repository. You must add comments to your code. **It is your responsibility to check your files have been successfully pushed to your Bitbucket repository.**
+* [25 Points] Provide a screen shot of the following and submit via Gradescope.  Use **Snip \& Sketch** (Win+Shift+S) in Windows 10 or Shift+CMD+4 in Mac to take a screenshot.  Do NOT take a picture of computer screen with your phone because it will introduce sampling aliasing (more details in ECE215/ECE315). 
 
+- [10 Points] The addresses of each of the variables stored in RAM and ROM (use the Memory Browser and the pointers you created. You can search the Memory Browser by variable name or memory address).
+- [15 Points] The contents of `Res` after execution of the code (use the Memory Browser and change the format to "8-Bit Hex - TI Style"). If you click on Resume (F8) followed by Suspend (Alt+F8), it will stop at `Exit B Exit`. Then, you can browse the memory.
+- [-30 Points] Take a picture of your screen with a mobile device or digital camera and upload it to Gradescope. Yes, I am serious...
 
-
-## Setup
+### Setup
 - Connect the LaunchPad to your computer via the provided USB cable.
 - Open Code Composer Studio (CCS) and select your workspace.
 - Ensure your Project Explorer is open on the left of the CCS screen. 
 - Select View > Project Explorer.
-- Open the Lab02\_Assembly project by double clicking it.
+- Open the Lab02\_PrimeNumbers project by double clicking it.
 
-## Purpose
-In this lab you will write a program that determines whether a collection of integers is prime or not. An equivalent C program is given by
+
+
+## Complete Lab02\_IsPrime.asm 
+
+ An equivalent C program is given by
 ```C 
 if (n == 1) {
     return 0;   // 1 is not a prime number.
@@ -32,19 +41,6 @@ for (int i = 2; i <= m; ++i) {
  }
 return 1; // n is a prime number
 ```
-
-
-## Deliverables
-* [25 Points] Push your code to your repository. You must add comments to your code. **It is your responsibility to check your files have been successfully pushed to your Bitbucket repository.**
-* [25 Points] Provide a screen shot of the following and submit via Gradescope.  Use **Snip \& Sketch** (Win+Shift+S) in Windows 10 or Shift+CMD+4 in Mac to take a screenshot.  Do NOT take a picture of computer screen with your phone because it will introduce sampling aliasing (more details in ECE215/ECE315). 
-
-    - [10 Points] The addresses of each of the variables stored in RAM and ROM (use the Memory Browser and the pointers you created. You can search the Memory Browser by variable name or memory address).
-    - [15 Points] The contents of `Res` after execution of the code (use the Memory Browser and change the format to "8-Bit Hex - TI Style"). If you click on Resume (F8) followed by Suspend (Alt+F8), it will stop at `Exit B Exit`. Then, you can browse the memory.
-- [-30 Points] Take a picture of your screen with a mobile device or digital camera and upload it to Gradescope. Yes, I am serious...
-
-
-
-## Complete Lab02\_IsPrime.asm 
 
 **Variables in RAM:**
 - `Res` - allocate 16 bytes of memory to store the results. If the first number is prime, you need to set the first byte of Res to 1. Otherwise, set it to 0.
