@@ -18,5 +18,3 @@ parts:
   - caption: Module 2
     chapters:
     - file: Module2/lab2
-    - file: mymarkdownfile
-    - file: Module2/notebooks.ipynb
