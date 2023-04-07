@@ -18,4 +18,3 @@ parts:
   - caption: Module 2
     chapters:
     - file: Module9/computer_vision
-    
