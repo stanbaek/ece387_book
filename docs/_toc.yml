@@ -10,7 +10,7 @@ parts:
     - file: schedule.md
     - file: resources.md
     - file: python.md
-    - file: robots.md
+    - file: robots1.md
   - caption: Module 1
     chapters:
     - file: Module1/markdown-notebooks
