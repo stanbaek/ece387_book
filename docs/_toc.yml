@@ -17,4 +17,5 @@ parts:
     - file: Module1/markdown
   - caption: Module 2
     chapters:
-    - file: Module2/lab2
+    - file: Module9/computer_vision
+    
