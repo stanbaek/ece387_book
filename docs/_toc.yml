@@ -10,12 +10,10 @@ parts:
     - file: schedule.md
     - file: resources.md
     - file: python.md
-    - file: robots2.md
   - caption: Module 1
     chapters:
     - file: Module1/markdown-notebooks
-    - file: Module1/markdown
   - caption: Module 2
     chapters:
-    - file: Module9/computer_vision
+    - file: Module09_ComputerVision/computer_vision
     
