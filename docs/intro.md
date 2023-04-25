@@ -12,5 +12,7 @@ Unless  specifically directed otherwise, the collaboration policy for this cours
 - For graded homework assignments and labs, you may collaborate with any other cadet currently enrolled in ECE 487.  You may also reference the posted answers and solutions.
 
 
+<!--
 ```{tableofcontents}
 ```
+-->

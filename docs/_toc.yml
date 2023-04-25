@@ -13,6 +13,6 @@ parts:
   - caption: Module 1
     chapters:
     - file: Module1/markdown-notebooks
-  - caption: Module 2
+  - caption: Module 9
     chapters:
-    - file: Module9/computer_vision
+    - file: Module9_CV/computer_vision

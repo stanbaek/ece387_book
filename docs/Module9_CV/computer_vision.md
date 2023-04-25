@@ -1,4 +1,4 @@
-# Module 9: Computer Vision
+# Computer Vision
 
 
 ## Part 1: Image Basics
