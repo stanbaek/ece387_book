@@ -13,6 +13,12 @@ parts:
   - caption: Module 1
     chapters:
     - file: Module1/markdown-notebooks
+  - caption: Module 8
+    chapters:
+    - file: Module8_LIDAR/Module8_LIDAR.md
+    - file: Module8_LIDAR/Lab3_LIDAR.md
   - caption: Module 9
     chapters:
     - file: Module9_CV/computer_vision
+    - file: Module9_CV/Lab4_ComputerVision.md
+    
