@@ -1,6 +1,6 @@
-# Module 6: Inertial Measurement Unit
----
-### A note on this document
+# Inertial Measurement Unit
+
+## A note on this document
 Now that you have a better understanding of the Linux operating system and Python programming language the Jupyter Notebooks will be used primarily to guide you through the In-Class Exercises and Laboratories. You will execute the majority of your commands and code within the Linux terminal.
 
 ## Purpose

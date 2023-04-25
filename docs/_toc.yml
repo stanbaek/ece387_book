@@ -12,10 +12,20 @@ parts:
     - file: python.md
   - caption: Module 1
     chapters:
-    - file: Module1/markdown-notebooks
+    - file: Module1_ROS/ROS.md
+    - file: Module1_ROS/ICE1_ROS.md
+    - file: Module1_ROS/ICE1_Talker.md    
+    - file: Module1_ROS/ICE1_Listener.md    
+  - caption: Module 6
+    chapters:
+    - file: Module6_IMU/IMU.md
+    - file: Module6_IMU/Lab2_IMU.md
+  - caption: Module 7
+    chapters:
+    - file: Module7_LaunchFile/LaunchFile.md
   - caption: Module 8
     chapters:
-    - file: Module8_LIDAR/Module8_LIDAR.md
+    - file: Module8_LIDAR/LIDAR.md
     - file: Module8_LIDAR/Lab3_LIDAR.md
   - caption: Module 9
     chapters:
