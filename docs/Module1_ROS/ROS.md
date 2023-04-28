@@ -1,6 +1,6 @@
 # Robotics Operating System (ROS)
 
-### A note on this document
+## A note on this document
 This document is known as a Jupyter Notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or code, and for blocks containing code, press `Shift + Enter` to run the code. Earlier blocks of code need to be run for the later blocks of code to work.
 
 ## Purpose
@@ -96,7 +96,7 @@ Let's go ahead and take a look at what nodes and topics currently running in our
 The "!" character in front of the following commands allows us to run bash commands from the Jupyter NB and would **NOT** be used in the command line.
 
 
-```python
+```Python
 !rosnode list
 ```
 
@@ -105,7 +105,7 @@ There are five nodes running, the first two enable the Gazebo simulation, the th
 Not too exciting yet, so lets see what topics are active.
 
 
-```python
+```Python
 !rostopic list
 ```
 
@@ -114,7 +114,7 @@ There are a lot of topics that are utilized to simulate our robot. Our real-worl
 Another useful tool for visualizing nodes and topics is called *rqt_graph*:
 
 
-```python
+```Python
 !rqt_graph
 ```
 
@@ -132,8 +132,7 @@ To drive the robot use the 'x' key to decrease linear x speed to about .25 m/s a
 
 Let's take a look at our rqt_graph to see if anything has changed.
 
-
-```python
+```Python
 !rqt_graph
 ```
 

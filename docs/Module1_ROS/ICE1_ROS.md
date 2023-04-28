@@ -9,7 +9,7 @@ List all running nodes:
 
 
 ```python
-!rosnode list
+rosnode list
 ```
 
 You should see the listener and talker nodes. The */rosout* node is created when running `roscore` and facilitates communication in the network. You can ignore this node in your lab reports.
