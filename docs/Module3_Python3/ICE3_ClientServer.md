@@ -1,23 +1,23 @@
-# Module 3: Python3 for Robotics
-## In-Class Exercise 3 - Client
+# ICE3 - Client and Server
 
-### A note on this document
+## A note on this document
 This document is known as a Jupyter Notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or code, and for blocks containing code, press `Shift + Enter` to run the code. Earlier blocks of code need to be run for the later blocks of code to work.
 
-### Purpose
+
+## Purpose
 This Jupyter Notebook will allow you to practice some of the techniques you have learned over the last few modules. You will develop an advanced chat client and server (similar to ICE1) enabling a client to send a message and a server to respond accordingly.
 
-### Initialize ROS:
+## Initialize ROS:
 The first step when utilizing  ROS is to initialize *roscore*. There are two methods to accomplish this: first, by explicitly running *roscore* and second, by running a launch file (which will initialize *roscore* if it is not already running). During the first portion of this course we will explicitly run *roscore* and then take advantage of launch files later in the course.
 
 Copy the following code and run it in a new terminal (use the shortcut `ctrl+alt+t` to open a new terminal window or select an open terminal and hit `ctrl+shift+t` to open a new terminal tab):
 
 `roscore`
 
-### Implementing the chat client
+## Implementing the chat client
 > 📝️ **Note:** This Jupyter Notebook will require you to enter Python3 code within code sections. You can type any Python3 code and expand the block if necessary. After typing the code, execute the code block before moving forward.
 
-#### Import modules
+### Import modules
 
 > ⚠️ **Important:** Importing classes may take some time. You will know the code block is still executing as the bracket on the left of the cell will change to a `*` character. Do not move to the next step until the `*` is gone.
 
@@ -113,8 +113,86 @@ def main():
 main()
 ```
 
-#### Create the server
-At this point the client is waiting for user input. Don't start typing yet, though! We need to implement and run our server. Open the [ICE3_Server](ICE3_Server.ipynb). notebook and follow the instructions.
+### Implementing the chat server
+
+
+```python
+# import required modules for ROS and the String message from std_msgs
+
+
+```
+
+#### Server Class
+1. Create a server class with a dictionary used to map messages to responses (one for each message from the client).
+2. Initialize the class with the following:
+    1. an instance variable to store the String message
+    2. a subscriber to the client topic which receives String messages and calls a callback called received.
+    3. a publisher to the server topic which sends String messages 
+    4. nicely handle shutdown
+3. Create the callback received class method that is called every time a message is received from the client.
+5. Handle shutdown.
+
+
+```python
+class Server:
+    # class dictionary storing server responses
+    MESSAGE = 
+    
+    def __init__(self):
+        # 2.A
+
+        # 2.B
+        
+        # 2.C
+        
+        # 2.D nicely handle shutdown
+        self.ctrl_c = False
+        rospy.on_shutdown(self.shutdownhook)
+
+    def callback_received(self, msg):
+        # print the message from the client
+        
+        # print the response that will be sent to the client
+        
+        # publish the response
+    
+    # handle shutdown
+    def shutdownhook(self):
+        print("Shutting down the server")
+        self.ctrl_c = True
+```
+
+#### Main
+The main function calls initializes our node, creates an instance of the server class, then runs forever.
+
+
+```python
+def main():
+    # initialize node
+    
+    # create an instance of the server class
+    
+    # run forever
+    rospy.spin()
+```
+
+#### Run the program
+
+
+```python
+main()
+```
+
+At this point, the server is waiting for the client to send a message. Browse back to your client and type a message! You should see that message show up above.
+
+
+
+
+
+
+
+
+
 
 ### ROS commands
 Open the [ICE3_ROS](ICE3_ROS.ipynb) notebook and follow the instructions.

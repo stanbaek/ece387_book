@@ -8,8 +8,8 @@ With the talker and listener nodes running execute the below commands.
 List all running nodes:
 
 
-```python
-rosnode list
+```
+$ rosnode list
 ```
 
 You should see the listener and talker nodes. The */rosout* node is created when running `roscore` and facilitates communication in the network. You can ignore this node in your lab reports.
@@ -17,8 +17,8 @@ You should see the listener and talker nodes. The */rosout* node is created when
 Get more information about the */listener* node:
 
 
-```python
-!rosnode info /listener
+```
+$ rosnode info /listener
 ```
 
 You can see what topics the node is publishing and subscribing to. It publishes to the ROS log file (for debugging) and subscribes to the **/chat** topic.
@@ -26,8 +26,8 @@ You can see what topics the node is publishing and subscribing to. It publishes 
 List the active topics:
 
 
-```python
-!rostopic list
+```
+$ rostopic list
 ```
 
 The first topic is the one we created. The last two are created by `roscore` and can be ignored.
@@ -37,8 +37,8 @@ Show information about the **/chat** topic such as what type of messages are sen
 
 
 
-```python
-!rostopic info /chat
+```
+$ rostopic info /chat
 ```
 
 As expected, the *talker* node is publishing to the **/chat** topic while the *listener* node subscribes.
@@ -46,8 +46,8 @@ As expected, the *talker* node is publishing to the **/chat** topic while the *l
 Display running nodes and communication between them:
 
 
-```python
-!rqt_graph
+```
+$ rqt_graph
 ```
 
 Close the rqt_graph.

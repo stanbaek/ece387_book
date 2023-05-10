@@ -1,4 +1,5 @@
-# Module 3: Python3 for Robotics
+# ICE3: Python3 for Robotics
+
 ## In-Class Exercise 3 - ROS
 Below you will run ROS commands. The "!" character in the front allows us to run bash commands from Jupyter and would **NOT** be used in the command line.
 

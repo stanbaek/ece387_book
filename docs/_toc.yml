@@ -26,8 +26,7 @@ parts:
     - file: Module3_Python3/Python3.md
     - file: Module3_Python3/ROS.md    
     - file: Module3_Python3/RPSComputer.md    
-    - file: Module3_Python3/ICE3_Server.md
-    - file: Module3_Python3/ICE3_Client.md    
+    - file: Module3_Python3/ICE3_ClientServer.md    
     - file: Module3_Python3/ICE3_ROS.md        
     
   - caption: Module 4
