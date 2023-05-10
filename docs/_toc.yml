@@ -13,9 +13,7 @@ parts:
   - caption: Module 1
     chapters:
     - file: Module1_ROS/ROS.md
-    - file: Module1_ROS/ICE1_ROS.md
-    - file: Module1_ROS/ICE1_Talker.md    
-    - file: Module1_ROS/ICE1_Listener.md    
+    - file: Module1_ROS/ICE1_ListenerTalker.md    
     
   - caption: Module 2
     chapters:
