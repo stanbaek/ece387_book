@@ -428,27 +428,27 @@ document.write(`
 <p>Below you will see the ROS commands you will use throughout this course to investigate your ROS system and write your lab reports. The “!” character in the front allows us to run bash commands from Jupyter and would <strong>NOT</strong> be used in the command line.</p>
 <p>With the talker and listener nodes running execute the below commands.</p>
 <p>List all running nodes:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rosnode</span> <span class="nb">list</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rosnode list
 </pre></div>
 </div>
 <p>You should see the listener and talker nodes. The <em>/rosout</em> node is created when running <code class="docutils literal notranslate"><span class="pre">roscore</span></code> and facilitates communication in the network. You can ignore this node in your lab reports.</p>
 <p>Get more information about the <em>/listener</em> node:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rosnode info /listener
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rosnode info /listener
 </pre></div>
 </div>
 <p>You can see what topics the node is publishing and subscribing to. It publishes to the ROS log file (for debugging) and subscribes to the <strong>/chat</strong> topic.</p>
 <p>List the active topics:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rostopic list
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rostopic list
 </pre></div>
 </div>
 <p>The first topic is the one we created. The last two are created by <code class="docutils literal notranslate"><span class="pre">roscore</span></code> and can be ignored.</p>
 <p>Show information about the <strong>/chat</strong> topic such as what type of messages are sent over the topic and publishing and subscribing nodes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rostopic info /chat
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rostopic info /chat
 </pre></div>
 </div>
 <p>As expected, the <em>talker</em> node is publishing to the <strong>/chat</strong> topic while the <em>listener</em> node subscribes.</p>
 <p>Display running nodes and communication between them:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rqt_graph
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rqt_graph
 </pre></div>
 </div>
 <p>Close the rqt_graph.</p>
