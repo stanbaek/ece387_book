@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>ICE1: ROS &#8212; Introduction to Robotic Systems</title>
+    <title>ICE1: Talker and Listener &#8212; Introduction to Robotic Systems</title>
   
   
   
@@ -63,12 +63,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Module1_ROS/ICE1_Talker';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module1_ROS/ICE1_ListenerTalker';</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ICE1: ROS" href="ICE1_Listener.html" />
-    <link rel="prev" title="ICE1: ROS" href="ICE1_ROS.html" />
+    <link rel="next" title="Module 2: Linux for Robotics" href="../Module2_Linux/Linux.html" />
+    <link rel="prev" title="Robotics Operating System (ROS)" href="ROS.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,9 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 1</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ROS.html">Robotics Operating System (ROS)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE1_ROS.html">ICE1: ROS</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE1: ROS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE1_Listener.html">ICE1: ROS</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE1: Talker and Listener</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 2</span></p>
 <ul class="nav bd-sidenav">
@@ -283,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/stanbaek/ece387/issues/new?title=Issue%20on%20page%20%2FModule1_ROS/ICE1_Talker.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/stanbaek/ece387/issues/new?title=Issue%20on%20page%20%2FModule1_ROS/ICE1_ListenerTalker.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -313,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Module1_ROS/ICE1_Talker.md" target="_blank"
+      <li><a href="../_sources/Module1_ROS/ICE1_ListenerTalker.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -395,7 +393,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ICE1: ROS</h1>
+    <h1>ICE1: Talker and Listener</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,21 +403,33 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class-exercise-1-talker">In-Class Exercise 1 - Talker</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-this-document">A note on this document</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-ros">Initialize ROS:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-chat-publisher">Implementing the chat publisher</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import modules</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#talker-function">Talker Function</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#main">Main</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-talker">Run the talker</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-listener">Create the listener</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-this-document">A note on this document</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-chat-subscriber">Implementing the chat subscriber</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import modules</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listener">Listener</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#callback-function">Callback function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main">Main</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-listener">Run the listener</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#talker">Talker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">A note on this document</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-ros">Initialize ROS:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-chat-publisher">Implementing the chat publisher</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Import modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#talker-function">Talker Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Main</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-talker">Run the talker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-listener">Create the listener</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ros-commands">ROS commands</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros">ROS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoint">Checkpoint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup">Cleanup</a></li>
 </ul>
             </nav>
         </div>
@@ -431,12 +441,78 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ice1-ros">
-<h1>ICE1: ROS<a class="headerlink" href="#ice1-ros" title="Permalink to this heading">#</a></h1>
-<section id="in-class-exercise-1-talker">
-<h2>In-Class Exercise 1 - Talker<a class="headerlink" href="#in-class-exercise-1-talker" title="Permalink to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="ice1-talker-and-listener">
+<h1>ICE1: Talker and Listener<a class="headerlink" href="#ice1-talker-and-listener" title="Permalink to this heading">#</a></h1>
 <section id="a-note-on-this-document">
-<h3>A note on this document<a class="headerlink" href="#a-note-on-this-document" title="Permalink to this heading">#</a></h3>
+<h2>A note on this document<a class="headerlink" href="#a-note-on-this-document" title="Permalink to this heading">#</a></h2>
+<p>This document is known as a Jupyter Notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy-to-read format. Blocks can contain text or code, and for blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
+</section>
+<section id="implementing-the-chat-subscriber">
+<h2>Implementing the chat subscriber<a class="headerlink" href="#implementing-the-chat-subscriber" title="Permalink to this heading">#</a></h2>
+<section id="import-modules">
+<h3>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this heading">#</a></h3>
+<p><strong>Important</strong>: Importing classes may take some time. You will know the code block is still executing as the bracket on the left of the cell will change to a <code class="docutils literal notranslate"><span class="pre">*</span></code> character. Do not move to the next step until the <code class="docutils literal notranslate"><span class="pre">*</span></code> is gone.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import required modules</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
+<span class="kn">from</span> <span class="nn">std_msgs.msg</span> <span class="kn">import</span> <span class="n">String</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="listener">
+<h2>Listener<a class="headerlink" href="#listener" title="Permalink to this heading">#</a></h2>
+<p>This function will create the subscriber (“listener”) used to receive chat messages from the publisher (“talker”).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">listener</span><span class="p">():</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">Subscriber</span><span class="p">(</span><span class="s1">&#39;chat&#39;</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">callback_chat</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above function creates the subscriber to the <strong>/chat</strong> topic. Every time a <em>String</em> message is sent over the topic the <code class="docutils literal notranslate"><span class="pre">callback_chat()</span></code> function is called. This is an interrupt that spins a new thread to call that function.</p>
+<section id="callback-function">
+<h3>Callback function<a class="headerlink" href="#callback-function" title="Permalink to this heading">#</a></h3>
+<p>The callback function will log and display what the chat listener sent.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">callback_chat</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">rospy</span><span class="o">.</span><span class="n">get_caller_id</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; I heard </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The callback function receives the <em>String</em> message as an input (you can name this parameter anything, but it is helpful if it is a meaningful variable name). To access the actual message, we need to utilize the data attribute of the <em>String</em> message. If you browse to the documentation for the <a class="reference external" href="http://docs.ros.org/en/noetic/api/std_msgs/html/msg/String.html">String Mesage</a>, you will note that the message attribute is called <em>data</em> and it is of type <em>string</em>. This is why we use the command <code class="docutils literal notranslate"><span class="pre">message.data</span></code>.</p>
+</section>
+<section id="main">
+<h3>Main<a class="headerlink" href="#main" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s1">&#39;listener&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">listener</span><span class="p">()</span>
+        <span class="n">rospy</span><span class="o">.</span><span class="n">spin</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ROSInterruptException</span><span class="p">:</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<p>The above is similar to the talker, but adds the <code class="docutils literal notranslate"><span class="pre">rospy.spin()</span></code> function call to create an infinite loop to allow the subscriber to operate in the background.</p>
+<p>In an actual Python script we will replace</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>with</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>This allows our python files to be imported into other python files that might also have a main() function.</p>
+</section>
+<section id="run-the-listener">
+<h3>Run the listener<a class="headerlink" href="#run-the-listener" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[INFO] [1666756858.595079, 308.564000]: /listener I heard hello
+</pre></div>
+</div>
+<p>At this point, the subscriber is waiting for the publisher to send a message. Browse back to your talker and type a message! You should see that message show up above after hitting <code class="docutils literal notranslate"><span class="pre">enter</span></code> in the talker Notebook.</p>
+</section>
+</section>
+<section id="talker">
+<h2>Talker<a class="headerlink" href="#talker" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>A note on this document<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>This document is known as a Jupyter Notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or code, and for blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
 </section>
 <section id="purpose">
@@ -454,8 +530,9 @@ document.write(`
 <blockquote>
 <div><p>📝️ <strong>Note:</strong> The following is Python code that will be implemented within the Jupyter Notebook. Again, the Notebook is just a way to allow for code and text to coexist to help guide you through the ICE. You could take all of the code in this Notebook and put it within a Python file and it would work the same as it does here. The focus of this ICE is the ROS implementation. It is assumed you have a working knowledge of Python at this time so this Notebook will not go into a lot of background regarding the Python code. Module 3 will provide a Python refresher.</p>
 </div></blockquote>
-<section id="import-modules">
-<h4>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="id2">
+<h3>Import modules<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>⚠️ <strong>Important:</strong> Importing classes may take some time. You will know the code block is still executing as the bracket on the left of the cell will change to a <code class="docutils literal notranslate"><span class="pre">*</span></code> character. Do not move to the next step until the <code class="docutils literal notranslate"><span class="pre">*</span></code> is gone.</p>
 </div></blockquote>
@@ -467,7 +544,7 @@ document.write(`
 <p>Here, we have two modules, rospy and a message. The rospy module provides all ROS implementation to create nodes and publish messages on topics. The next line imports the String message from the std_msgs package which we will use to send our chat messages. The Standard ROS Messages include a number of common message types. You can find more information about these messages on the <a class="reference external" href="http://wiki.ros.org/std_msgs">ROS wiki</a>.</p>
 </section>
 <section id="talker-function">
-<h4>Talker Function<a class="headerlink" href="#talker-function" title="Permalink to this heading">#</a></h4>
+<h3>Talker Function<a class="headerlink" href="#talker-function" title="Permalink to this heading">#</a></h3>
 <p>One method to communicate in ROS is using a publisher/subscriber model. One node publishes messages over a topic and any other nodes can subscribe to this topic to receive the messages.</p>
 <p>This function will create the publisher (“talker”) used to send chat messages to the subscriber (“listener”). It will read user input and publish the message.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">talker</span><span class="p">():</span>
@@ -486,8 +563,8 @@ document.write(`
 <div><p>📝️ <strong>Note:</strong> Waiting for user input will cause the loop to not run at 10 Hz as line 5 will block until the user hits enter.</p>
 </div></blockquote>
 </section>
-<section id="main">
-<h4>Main<a class="headerlink" href="#main" title="Permalink to this heading">#</a></h4>
+<section id="id3">
+<h3>Main<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>The main function calls our talker function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s1">&#39;talker&#39;</span><span class="p">)</span>
@@ -509,20 +586,67 @@ document.write(`
 <p>This allows our python files to be imported into other python files that might also have a main() function.</p>
 </section>
 <section id="run-the-talker">
-<h4>Run the talker<a class="headerlink" href="#run-the-talker" title="Permalink to this heading">#</a></h4>
+<h3>Run the talker<a class="headerlink" href="#run-the-talker" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
 <section id="create-the-listener">
-<h4>Create the listener<a class="headerlink" href="#create-the-listener" title="Permalink to this heading">#</a></h4>
-<p>At this point the talker is waiting for user input. Don’t start typing yet, though! We need to implement and run our listener. Open the <a class="reference internal" href="ICE1_Listener.html"><span class="doc std std-doc">ICE1_Listener</span></a> notebook and follow the instructions.</p>
-</section>
+<h3>Create the listener<a class="headerlink" href="#create-the-listener" title="Permalink to this heading">#</a></h3>
+<p>At this point the talker is waiting for user input. Don’t start typing yet, though! We need to implement and run our listener.</p>
 </section>
 <section id="ros-commands">
 <h3>ROS commands<a class="headerlink" href="#ros-commands" title="Permalink to this heading">#</a></h3>
-<p>Note that the Jupyter code block for the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function call on both the talker and listener has an <code class="docutils literal notranslate"><span class="pre">*</span></code> on the left side. That is due to the infinite loops in the talker and main functions. This means that those functions are blocking and no other Jupyter code blocks will run in these two notebooks. We have to open a new notebook to run the ROS commands we would use to investigate the state of our ROS system. This would be equivalent to opening a new terminal on the Linux computer. Open the <a class="reference internal" href="ICE1_ROS.html"><span class="doc std std-doc">ICE1_ROS</span></a> notebook and follow the instructions.</p>
+<p>Note that the Jupyter code block for the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function call on both the talker and listener has an <code class="docutils literal notranslate"><span class="pre">*</span></code> on the left side. That is due to the infinite loops in the talker and main functions. This means that those functions are blocking and no other Jupyter code blocks will run in these two notebooks. We have to open a new notebook to run the ROS commands we would use to investigate the state of our ROS system. This would be equivalent to opening a new terminal on the Linux computer. Open the <span class="xref myst">ICE1_ROS</span> notebook and follow the instructions.</p>
 </section>
+</section>
+<section id="ros">
+<h2>ROS<a class="headerlink" href="#ros" title="Permalink to this heading">#</a></h2>
+<p>Below you will see the ROS commands you will use throughout this course to investigate your ROS system and write your lab reports. The “!” character in the front allows us to run bash commands from Jupyter and would <strong>NOT</strong> be used in the command line.</p>
+<p>With the talker and listener nodes running execute the below commands.</p>
+<p>List all running nodes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rosnode list
+</pre></div>
+</div>
+<p>You should see the listener and talker nodes. The <em>/rosout</em> node is created when running <code class="docutils literal notranslate"><span class="pre">roscore</span></code> and facilitates communication in the network. You can ignore this node in your lab reports.</p>
+<p>Get more information about the <em>/listener</em> node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rosnode info /listener
+</pre></div>
+</div>
+<p>You can see what topics the node is publishing and subscribing to. It publishes to the ROS log file (for debugging) and subscribes to the <strong>/chat</strong> topic.</p>
+<p>List the active topics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rostopic list
+</pre></div>
+</div>
+<p>The first topic is the one we created. The last two are created by <code class="docutils literal notranslate"><span class="pre">roscore</span></code> and can be ignored.</p>
+<p>Show information about the <strong>/chat</strong> topic such as what type of messages are sent over the topic and publishing and subscribing nodes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rostopic info /chat
+</pre></div>
+</div>
+<p>As expected, the <em>talker</em> node is publishing to the <strong>/chat</strong> topic while the <em>listener</em> node subscribes.</p>
+<p>Display running nodes and communication between them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rqt_graph
+</pre></div>
+</div>
+<p>Close the rqt_graph.</p>
+<p>Display information about the message that is sent over the <strong>/chat</strong> topic.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rostopic type /chat | rosmsg show
+</pre></div>
+</div>
+<p>The output of the command is the same as the information we saw from the ROS documentation. Again, to access the message we have to use the <code class="docutils literal notranslate"><span class="pre">data</span></code> attribute.</p>
+<p>Display messages sent over the <strong>/chat</strong> topic:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rostopic echo /chat
+</pre></div>
+</div>
+<p>In the ICE1_Talker notebook send a message to the listener. You should see that message show up both here and at the listener. This echo tool is useful to ensure your nodes are sending the messages as expected.</p>
+</section>
+<section id="checkpoint">
+<h2>Checkpoint<a class="headerlink" href="#checkpoint" title="Permalink to this heading">#</a></h2>
+<p>Once complete, get checked off by an instructor showing the output of each of the above.</p>
+</section>
+<section id="cleanup">
+<h2>Cleanup<a class="headerlink" href="#cleanup" title="Permalink to this heading">#</a></h2>
+<p>In each of the notebooks reset the Jupyter kernel and clear output (at the top menu bar select “Kernel” and “Restart &amp; Clear Output”). Close each notebook. Shutdown the notebook server by typing <code class="docutils literal notranslate"><span class="pre">ctrl+c</span></code> within the terminal you ran <code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span></code> in. Select ‘y’.</p>
 </section>
 </section>
 
@@ -558,20 +682,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ICE1_ROS.html"
+       href="ROS.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ICE1: ROS</p>
+        <p class="prev-next-title">Robotics Operating System (ROS)</p>
       </div>
     </a>
     <a class="right-next"
-       href="ICE1_Listener.html"
+       href="../Module2_Linux/Linux.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ICE1: ROS</p>
+        <p class="prev-next-title">Module 2: Linux for Robotics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -593,21 +717,33 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class-exercise-1-talker">In-Class Exercise 1 - Talker</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-this-document">A note on this document</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-ros">Initialize ROS:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-chat-publisher">Implementing the chat publisher</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import modules</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#talker-function">Talker Function</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#main">Main</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-talker">Run the talker</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-listener">Create the listener</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-this-document">A note on this document</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-chat-subscriber">Implementing the chat subscriber</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import modules</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listener">Listener</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#callback-function">Callback function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main">Main</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-listener">Run the listener</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#talker">Talker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">A note on this document</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-ros">Initialize ROS:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-chat-publisher">Implementing the chat publisher</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Import modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#talker-function">Talker Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Main</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-talker">Run the talker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-listener">Create the listener</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ros-commands">ROS commands</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros">ROS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoint">Checkpoint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup">Cleanup</a></li>
 </ul>
   </nav></div>
 
