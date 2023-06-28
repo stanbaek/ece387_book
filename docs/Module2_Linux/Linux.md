@@ -289,7 +289,7 @@ Later in this course you will drive your TurtleBot around unplugged from a monit
 
 1. Change directories to your new folder.
 
-1. Print the working directory. You should get '/home/pi/robot_ws/src/ece387_robot_sp23-USERNAME/robot/'
+1. Print the working directory. You should get "/home/pi/robot_ws/src/ece387_robot_sp23-USERNAME/robot/"
 
 1. You can type `exit` to close an SSH connection (but don't close the connection yet!).
 
@@ -336,7 +336,7 @@ List all running nodes:
 List the active topics:
 
 
-```python
+```
 !
 ```
 
