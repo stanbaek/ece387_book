@@ -181,7 +181,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ROS.html">ICE3: ROS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/RPSComputer.html">Module 3: Python3 for Robotics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ICE3_ClientServer.html">ICE3 - Client and Server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ICE3_ROS.html">ICE3: Python3 for Robotics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 4</span></p>
 <ul class="nav bd-sidenav">
@@ -211,9 +210,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Module9_CV/computer_vision.html">Computer Vision</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module9_CV/Lab4_ComputerVision.html">Lab 4: Computer Vision</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Module10_FinalProject/FinalProject.html">Module 10: Final Project</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Module00.0_IntroductionGIT/IntroGit.html">Module 0: Setting Up GIT Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module00.1_RobotSetup/RobotSetup.html">Robot Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Module00.2_MasterSetup/MasterSetup.html">Master Setup</a></li>
 </ul>
 
     </div>
@@ -407,7 +412,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-this-document">A note on this document</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-commands">Linux Commands</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-a-remote-machine">Working with a remote machine</a></li>
@@ -428,10 +432,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="module-2-linux-for-robotics">
 <h1>Module 2: Linux for Robotics<a class="headerlink" href="#module-2-linux-for-robotics" title="Permalink to this heading">#</a></h1>
-<section id="a-note-on-this-document">
-<h2>A note on this document<a class="headerlink" href="#a-note-on-this-document" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or code, and for blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
-</section>
+</div>
 <section id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this heading">#</a></h2>
 <p>This Jupyter Notebook accompanies the introduction to Linux notetaker used in class. We will apply the knowledge you learned by interacting with the Ubuntu Operating System (OS) on the Master.</p>
@@ -542,17 +546,19 @@ document.write(`
 <p>We are done with this script so let’s remove it (you will need to either use the complete path to the file you want to remove, or be in the directory of the file you want to remove). The <code class="docutils literal notranslate"><span class="pre">rm</span></code> command can remove folders or files. If you want to learn more about a command there are two helpful tools: <strong>Help</strong>: <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">--help</span></code>; <strong>Manual</strong>: <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">rm</span></code>.</p>
 <p>Type the following to remove our bash script:</p>
 <p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">bash_script.sh</span></code>.</p>
-<blockquote>
-<div><p>📝️ <strong>Note:</strong> To delete a whole folder add the <code class="docutils literal notranslate"><span class="pre">-r</span></code> tag to remove directories and thier contents recursively (e.g., <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">my_folder</span></code>, but don’t remove your folder just yet).</p>
-</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To delete a whole folder add the <code class="docutils literal notranslate"><span class="pre">-r</span></code> tag to remove directories and thier contents recursively (e.g., <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">my_folder</span></code>, but don’t remove your folder just yet).</p>
+</div>
 <p>We can copy (<code class="docutils literal notranslate"><span class="pre">cp</span></code>, just like ctrl+c in a GUI) and move (<code class="docutils literal notranslate"><span class="pre">mv</span></code>, just like ctrl+x in a GUI) files and folders as well. Let’s copy the <code class="docutils literal notranslate"><span class="pre">move_turtlebot.sh</span></code> to the <code class="docutils literal notranslate"><span class="pre">my_scripts</span></code> folder you created earlier:</p>
 <p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">move_turtlebot.sh</span> <span class="pre">~/master_ws/src/ece387_master_sp23-USERNAME/master/module02/my_scripts</span></code></p>
 <blockquote>
 <div><p>⌨️ <strong>Syntax:</strong>  <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">&lt;source&gt;</span> <span class="pre">&lt;destination&gt;</span></code></p>
 </div></blockquote>
-<blockquote>
-<div><p>📝️ <strong>Note:</strong> For the above to work, you must already be in the same folder as the <code class="docutils literal notranslate"><span class="pre">move_turtlebot.sh</span></code> file. Otherwise you have to use the absolute file path, such as <code class="docutils literal notranslate"><span class="pre">~/my_folder/move_turtlebot.sh</span></code>.</p>
-</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the above to work, you must already be in the same folder as the <code class="docutils literal notranslate"><span class="pre">move_turtlebot.sh</span></code> file. Otherwise you have to use the absolute file path, such as <code class="docutils literal notranslate"><span class="pre">~/my_folder/move_turtlebot.sh</span></code>.</p>
+</div>
 <p>You can now delete your <code class="docutils literal notranslate"><span class="pre">my_folder</span></code> folder.</p>
 <p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">my_folder</span></code></p>
@@ -628,9 +634,10 @@ document.write(`
 <p>There is a lot going on in this script, but hopefully after the previous lesson some of it makes sense. To summarize, the script creates a node, <code class="docutils literal notranslate"><span class="pre">move_turtlebot</span></code>, that publishes <strong>Twist</strong> messages to the <strong>/cmd_vel</strong> topic to drive the robot in a square: drive forward, turn 90 degrees, drive forward, repeat. This script will run until killed using <code class="docutils literal notranslate"><span class="pre">ctrl+c</span></code>.</p>
 <p>The script is already executable, so you can run it using ROS!</p>
 <p><code class="docutils literal notranslate"><span class="pre">rosrun</span> <span class="pre">module02</span> <span class="pre">move_turtlebot_square.py</span></code></p>
-<blockquote>
-<div><p>📝️ <strong>Note:</strong> It won’t be a perfect square as the robot doesn’t turn perfectly, but it will be close!</p>
-</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note:** It won’t be a perfect square as the robot doesn’t turn perfectly, but it will be close!</p>
+</div>
 <p>The robot is now driving in a square until the script is killed. If you select the terminal and hit <code class="docutils literal notranslate"><span class="pre">ctrl+c</span></code>, it will kill the script.</p>
 <p>Run the script again and this time hit <code class="docutils literal notranslate"><span class="pre">ctrl+z</span></code>. You can see that the robot is still running, but the commands are not updating. This is because <code class="docutils literal notranslate"><span class="pre">ctrl+z</span></code> suspends the current process, but does not kill it. We can observe all running processes on Linux by typing <code class="docutils literal notranslate"><span class="pre">ps</span> <span class="pre">-faux</span></code>. As you can see, there are a lot! The <code class="docutils literal notranslate"><span class="pre">grep</span></code> command allows us to filter these processes. Try the following:</p>
 <p><code class="docutils literal notranslate"><span class="pre">ps</span> <span class="pre">-faux</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">move_turtlebot_square.py</span></code></p>
@@ -701,37 +708,38 @@ document.write(`
 <p>Below you will run ROS commands. The “!” character in the front allows us to run bash commands from Jupter and would <strong>NOT</strong> be used in the command line.</p>
 <p>Accomplish the following on the master by adding the commands necessary below:</p>
 <p>List all running nodes:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>List the active topics:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Display running nodes and communication between them:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Exit the rqt_graph.</p>
 <p>Show information about a the <strong>/cmd_vel</strong> topic such as what type of messages are sent over the topic and publishing and subscribing nodes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Display information about the message that is sent over the <strong>/cmd_vel</strong> topic.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Display messages sent over the <strong>/cmd_vel</strong> topic:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </section>
 <section id="checkpoint">
 <h2>Checkpoint<a class="headerlink" href="#checkpoint" title="Permalink to this heading">#</a></h2>
 <p>Once complete, get checked off by an instructor showing the output of each of the above.</p>
-<blockquote>
-<div><p>📝️ <strong>Note:</strong> You will use all of the above ROS commands for each lab to write your lab reports. You could create a bash script to run these commands automatically ;)</p>
-</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will use all of the above ROS commands for each lab to write your lab reports. You could create a bash script to run these commands automatically ;)</p>
+</div>
 <p>Additionally, place screen captures showing each of the commands running or the windows they bring up into a folder within ../module02/Pictures on your master repo.  Then push the repo to get credit for this work.</p>
 </section>
 <section id="summary">
@@ -811,7 +819,6 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-this-document">A note on this document</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-commands">Linux Commands</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-a-remote-machine">Working with a remote machine</a></li>

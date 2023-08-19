@@ -181,7 +181,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE3: ROS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="RPSComputer.html">Module 3: Python3 for Robotics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE3_ClientServer.html">ICE3 - Client and Server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE3_ROS.html">ICE3: Python3 for Robotics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 4</span></p>
 <ul class="nav bd-sidenav">
@@ -211,9 +210,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Module9_CV/computer_vision.html">Computer Vision</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module9_CV/Lab4_ComputerVision.html">Lab 4: Computer Vision</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Module10_FinalProject/FinalProject.html">Module 10: Final Project</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Module00.0_IntroductionGIT/IntroGit.html">Module 0: Setting Up GIT Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module00.1_RobotSetup/RobotSetup.html">Robot Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Module00.2_MasterSetup/MasterSetup.html">Master Setup</a></li>
 </ul>
 
     </div>
@@ -409,6 +414,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros">ROS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup">Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoint">Checkpoint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Cleanup</a></li>
 </ul>
             </nav>
         </div>
@@ -427,27 +435,27 @@ document.write(`
 <p>Below you will see some ROS commands. The “!” character in the front allows us to run bash commands from Jupyter and would <strong>NOT</strong> be used in the command line.</p>
 <p>With the user and computer nodes running execute the below commands.</p>
 <p>List the active topics:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rostopic list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic<span class="w"> </span>list
 </pre></div>
 </div>
 <p>Display running nodes and communication between them:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rqt_graph
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rqt_graph
 </pre></div>
 </div>
 <p>Exit the rqt_graph and then list all running nodes:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rosnode list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosnode<span class="w"> </span>list
 </pre></div>
 </div>
 <p>Show information about a the <strong>/computer_choice</strong> topic such as what type of messages are sent over the topic and publishing and subscribing nodes:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rostopic info /computer_choice
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic<span class="w"> </span>info<span class="w"> </span>/computer_choice
 </pre></div>
 </div>
 <p>Display information about the message that is sent over the <strong>/computer</strong> topic:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rostopic type /computer_choice | rosmsg show
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic<span class="w"> </span><span class="nb">type</span><span class="w"> </span>/computer_choice<span class="w"> </span><span class="p">|</span><span class="w"> </span>rosmsg<span class="w"> </span>show
 </pre></div>
 </div>
 <p>Display messages sent over the <strong>/user_choice</strong> topic:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rostopic echo /user_choice
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/user_choice
 </pre></div>
 </div>
 <p>In the Module3_Python3 notebook, reset the Jupter kernel and clear output: At the top menu bar select “Kernel” and “Restart &amp; Clear Output” (you do not need to restart the computer player). Make sure to rerun the code blocks to import modules, build the class, and create the main. When you select ‘Rock’, ‘Paper’, or ‘Scissors’ you should see the message echoed above.</p>
@@ -456,6 +464,45 @@ document.write(`
 <h2>Cleanup<a class="headerlink" href="#cleanup" title="Permalink to this heading">#</a></h2>
 <p>In each of the notebooks reset the Jupter kernel and clear output. Close each notebook. Shutdown the notebook server by typing <code class="docutils literal notranslate"><span class="pre">ctrl+c</span></code> within the terminal you ran <code class="docutils literal notranslate"><span class="pre">Jupter-notebook</span></code> in. Select ‘y’. Kill all processes in your terminals (ctrl+c) and ensure roscore is terminated before moving on to the ICE.</p>
 <p>You should now have a better understanding of how to utilize ROS and Python. To learn more about the Python style guide and standards, visit <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#class-names">PEP 8 – Style Guid for Python Code</a>.</p>
+</section>
+<section id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h2>
+<p>Below you will run ROS commands. The “!” character in the front allows us to run bash commands from Jupyter and would <strong>NOT</strong> be used in the command line.</p>
+<p>With the client and server nodes running execute the below commands.</p>
+<p>List all running nodes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>List the active topics:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<p>Display running nodes and communication between them:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<p>Exit the rqt_graph.</p>
+<p>Show information about a the <strong>/client</strong> topic such as what type of messages are sent over the topic and publishing and subscribing nodes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<p>Display information about the message that is sent over the <strong>/client</strong> topic.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Display messages sent over the <strong>/client</strong> topic:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>In the ICE3_Client notebook when you send a message you should see the message echoed above.</p>
+</section>
+<section id="checkpoint">
+<h2>Checkpoint<a class="headerlink" href="#checkpoint" title="Permalink to this heading">#</a></h2>
+<p>Once complete, take the necessary screen shots of all the items above functioning. Upload those screenshots to your repo in a Module03 folder within the master folder of your repo.</p>
+</section>
+<section id="id1">
+<h2>Cleanup<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>In each of the notebooks reset the Jupter kernel and clear output. Close each notebook. Shutdown the notebook server by typing <code class="docutils literal notranslate"><span class="pre">ctrl+c</span></code> within the terminal you ran <code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span></code> in. Select ‘y’.</p>
 </section>
 </section>
 
@@ -528,6 +575,9 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros">ROS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup">Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoint">Checkpoint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Cleanup</a></li>
 </ul>
   </nav></div>
 

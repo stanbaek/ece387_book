@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Robot Setup" href="../Module00.1_RobotSetup/RobotSetup.html" />
+    <link rel="next" title="Module 10: Final Project" href="../Module10_FinalProject/FinalProject.html" />
     <link rel="prev" title="Computer Vision" href="computer_vision.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,7 +183,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ROS.html">ICE3: ROS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/RPSComputer.html">Module 3: Python3 for Robotics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ICE3_ClientServer.html">ICE3 - Client and Server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ICE3_ROS.html">ICE3: Python3 for Robotics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 4</span></p>
 <ul class="nav bd-sidenav">
@@ -213,9 +212,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="computer_vision.html">Computer Vision</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 4: Computer Vision</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Module10_FinalProject/FinalProject.html">Module 10: Final Project</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Module00.0_IntroductionGIT/IntroGit.html">Module 0: Setting Up GIT Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module00.1_RobotSetup/RobotSetup.html">Robot Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Module00.2_MasterSetup/MasterSetup.html">Master Setup</a></li>
 </ul>
 
     </div>
@@ -529,7 +534,7 @@ catkin_create_pkg<span class="w"> </span>lab4<span class="w"> </span>rospy<span 
 </pre></div>
 </div>
 <p>Store images of the stop sign by pressing <code class="docutils literal notranslate"><span class="pre">enter</span></code> when prompted. You decide how many and at what orientations to properly train your detector. When complete, hit <code class="docutils literal notranslate"><span class="pre">ctrl+c</span></code> to exit.</p>
-<p>Utilize the steps from Module 9: <span class="xref myst">Building a detector using HOG features</span> to label your images and train your object detector using the new images, saving the <code class="docutils literal notranslate"><span class="pre">stop_detector.svm</span></code> file within the <strong>training_images</strong> folder.</p>
+<p>Utilize the steps from Module 9: <a class="reference internal" href="computer_vision.html#cv-hog"><span class="std std-ref">Building a detector using HOG features</span></a> to label your images and train your object detector using the new images, saving the <code class="docutils literal notranslate"><span class="pre">stop_detector.svm</span></code> file within the <strong>training_images</strong> folder.</p>
 </section>
 <section id="test-your-stop-detector">
 <h2>Test your stop detector<a class="headerlink" href="#test-your-stop-detector" title="Permalink to this heading">#</a></h2>
@@ -576,7 +581,7 @@ catkin_create_pkg<span class="w"> </span>lab4<span class="w"> </span>rospy<span 
 </pre></div>
 </div>
 <p>Edit the <code class="docutils literal notranslate"><span class="pre">stop_detector.py</span></code> node so it utilizes the <code class="docutils literal notranslate"><span class="pre">camera_callback()</span></code> function we used above to get images from the camera.</p>
-<p>After getting the <code class="docutils literal notranslate"><span class="pre">cv_image</span></code> within the <code class="docutils literal notranslate"><span class="pre">camera_callback()</span></code>, apply the detector in a similar method as Module 9: <span class="xref myst">Testing a detector</span> creating boxes around all detected stop signs. Using a <code class="docutils literal notranslate"><span class="pre">waitKey(1)</span></code> will allow for the image to refresh automatically without user input and display the video.</p>
+<p>After getting the <code class="docutils literal notranslate"><span class="pre">cv_image</span></code> within the <code class="docutils literal notranslate"><span class="pre">camera_callback()</span></code>, apply the detector in a similar method as Module 9: <a class="reference internal" href="computer_vision.html#cv-hog"><span class="std std-ref">Testing a detector</span></a> creating boxes around all detected stop signs. Using a <code class="docutils literal notranslate"><span class="pre">waitKey(1)</span></code> will allow for the image to refresh automatically without user input and display the video.</p>
 </section>
 <section id="checkpoint-1">
 <h2>Checkpoint 1<a class="headerlink" href="#checkpoint-1" title="Permalink to this heading">#</a></h2>
@@ -705,11 +710,11 @@ scp<span class="w"> </span>stop_detector.py<span class="w"> </span>pi@robotX:/ho
       </div>
     </a>
     <a class="right-next"
-       href="../Module00.1_RobotSetup/RobotSetup.html"
+       href="../Module10_FinalProject/FinalProject.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Robot Setup</p>
+        <p class="prev-next-title">Module 10: Final Project</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

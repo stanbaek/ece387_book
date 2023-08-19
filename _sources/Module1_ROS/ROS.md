@@ -96,8 +96,8 @@ Let's go ahead and take a look at what nodes and topics currently running in our
 The "!" character in front of the following commands allows us to run bash commands from the Jupyter NB and would **NOT** be used in the command line.
 
 
-```Python
-!rosnode list
+```python
+rosnode list
 ```
 
 There are five nodes running, the first two enable the Gazebo simulation, the third allows for the visualization of the simulated robot, the fourth is created every time *roscore* is ran and helps with communication in our network, and the last enables rviz.
@@ -105,8 +105,8 @@ There are five nodes running, the first two enable the Gazebo simulation, the th
 Not too exciting yet, so lets see what topics are active.
 
 
-```Python
-!rostopic list
+```python
+rostopic list
 ```
 
 There are a lot of topics that are utilized to simulate our robot. Our real-world robot will eventually have most of these, such as **/cmd_vel**, **/imu**, and **/scan**. These are topics that allow us to communicate with some of the simulated hardware, such as the orientation sensor (/imu), LIDAR (/scan), and driving the robot (/cmd_vel). The rest of the topics enable visualization and movement within the simulation and can be ignored for now.
@@ -114,8 +114,8 @@ There are a lot of topics that are utilized to simulate our robot. Our real-worl
 Another useful tool for visualizing nodes and topics is called *rqt_graph*:
 
 
-```Python
-!rqt_graph
+```python
+rqt_graph
 ```
 
 All that is going on right now is Gazebo is publishing the position and scan data which rviz uses to visualize the robot. **Close your rqt_graph** and let's add another node to make things a bit more interesting. 
@@ -132,8 +132,8 @@ To drive the robot use the 'x' key to decrease linear x speed to about .25 m/s a
 
 Let's take a look at our rqt_graph to see if anything has changed.
 
-```Python
-!rqt_graph
+```python
+rqt_graph
 ```
 
 You should now see the teleop_twist_keyboard node which sends messages over **/cmd_vel** topic to Gazebo. **Close the rqt_graph window**. Let's run through a number of commands that will provide you more information about your ROS network. You will use these throughout the course to determine what is going on in your ROS network.
@@ -144,14 +144,14 @@ The `rosnode` command allows us to interact with nodes. Typing any ROS command f
 
 
 ```python
-!rosnode --help
+rosnode --help
 ```
 
 Let's get some information about our new node, teleop_twist_keyboard:
 
 
 ```python
-!rosnode info /teleop_twist_keyboard
+rosnode info /teleop_twist_keyboard
 ```
 
 The output of the command lists the topics the node is publishing and subscribing to (here is where we can see it publishes on **/cmd_vel**).
@@ -160,21 +160,21 @@ The `rostopic` command interacts with topics.
 
 
 ```python
-!rostopic --help
+rostopic --help
 ```
 
 Some of the common rostopic commands we will use in this course are `echo`, `hz`, `info`,  `type`, and `list`
 
 
 ```python
-!rostopic list
+rostopic list
 ```
 
 Let's get some information about the **/cmd_vel** topic.
 
 
 ```python
-!rostopic info /cmd_vel
+rostopic info /cmd_vel
 ```
 
 From the output we can see what nodes are publishing and subscribing to the **/cmd_vel** topic.
@@ -183,30 +183,34 @@ Echoing the topic will allow us to see what messages are sent over the topic. Af
 
 
 ```python
-!rostopic echo /cmd_vel
+rostopic echo /cmd_vel
 ```
 
-> 📝️ **Note:** When moving forward and backward ('i' and ',' keys) only a linear x value is sent, when turning left or right ('j' and 'l' keys) only an angular z value is sent, and when arcing ('u', 'o', 'm', and '.' keys) both a linear x and angular z value are sent.
+```{note}
+When moving forward and backward ('i' and ',' keys) only a linear x value is sent, when turning left or right ('j' and 'l' keys) only an angular z value is sent, and when arcing ('u', 'o', 'm', and '.' keys) both a linear x and angular z value are sent.
+```
 
-> 📝️ **Note:** The previous command still has an `*` character to the left. This means this command is waiting for inputs and will block all future commands. To kill the command and restart the kernel in the Jupyter Notebook at the top menu bar select "Kernel" and "Restart & Clear Output". This will allow future commands to run.
+```{note}
+The previous command still has an `*` character to the left. This means this command is waiting for inputs and will block all future commands. To kill the command and restart the kernel in the Jupyter Notebook at the top menu bar select "Kernel" and "Restart & Clear Output". This will allow future commands to run.
+```
 
 To learn more about the messages sent over the **/cmd_vel** topic we can use the `type` command and the `rosmsg` tool.
 
 
 ```python
-!rostopic type /cmd_vel
+rostopic type /cmd_vel
 ```
 
 
 ```python
-!rosmsg show geometry_msgs/Twist
+rosmsg show geometry_msgs/Twist
 ```
 
 Or in one combined command:
 
 
 ```python
-!rostopic type /cmd_vel | rosmsg show
+rostopic type /cmd_vel | rosmsg show
 ```
 
 ## Cleanup

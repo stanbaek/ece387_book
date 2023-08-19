@@ -1,7 +1,8 @@
 # Module 2: Linux for Robotics
 
-### A note on this document
+```{note}
 This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or code, and for blocks containing code, press `Shift + Enter` to run the code. Earlier blocks of code need to be run for the later blocks of code to work.
+```
 
 ## Purpose
 This Jupyter Notebook accompanies the introduction to Linux notetaker used in class. We will apply the knowledge you learned by interacting with the Ubuntu Operating System (OS) on the Master.
@@ -146,7 +147,9 @@ Type the following to remove our bash script:
 
 `rm bash_script.sh`. 
 
-> 📝️ **Note:** To delete a whole folder add the `-r` tag to remove directories and thier contents recursively (e.g., `rm -r my_folder`, but don't remove your folder just yet).
+```{note} 
+To delete a whole folder add the `-r` tag to remove directories and thier contents recursively (e.g., `rm -r my_folder`, but don't remove your folder just yet).
+```
 
 We can copy (`cp`, just like ctrl+c in a GUI) and move (`mv`, just like ctrl+x in a GUI) files and folders as well. Let's copy the `move_turtlebot.sh` to the `my_scripts` folder you created earlier:
 
@@ -154,7 +157,9 @@ We can copy (`cp`, just like ctrl+c in a GUI) and move (`mv`, just like ctrl+x i
 
 > ⌨️ **Syntax:**  `cp <source> <destination>`
 
-> 📝️ **Note:** For the above to work, you must already be in the same folder as the `move_turtlebot.sh` file. Otherwise you have to use the absolute file path, such as `~/my_folder/move_turtlebot.sh`.
+```{note} 
+For the above to work, you must already be in the same folder as the `move_turtlebot.sh` file. Otherwise you have to use the absolute file path, such as `~/my_folder/move_turtlebot.sh`.
+```
 
 You can now delete your `my_folder` folder.
 
@@ -240,7 +245,8 @@ The script is already executable, so you can run it using ROS!
 
 `rosrun module02 move_turtlebot_square.py`
 
-> 📝️ **Note:** It won't be a perfect square as the robot doesn't turn perfectly, but it will be close!
+```{note} Note:** It won't be a perfect square as the robot doesn't turn perfectly, but it will be close!
+```
 
 The robot is now driving in a square until the script is killed. If you select the terminal and hit `ctrl+c`, it will kill the script.
 
@@ -330,21 +336,21 @@ List all running nodes:
 
 
 ```python
-!
+
 ```
 
 List the active topics:
 
 
 ```
-!
+
 ```
 
 Display running nodes and communication between them:
 
 
 ```python
-!
+
 ```
 
 Exit the rqt_graph.
@@ -353,27 +359,28 @@ Show information about a the **/cmd_vel** topic such as what type of messages ar
 
 
 ```python
-!
+
 ```
 
 Display information about the message that is sent over the **/cmd_vel** topic.
 
 
 ```python
-!
+
 ```
 
 Display messages sent over the **/cmd_vel** topic:
 
 
 ```python
-!
+
 ```
 
 ## Checkpoint
 Once complete, get checked off by an instructor showing the output of each of the above.
 
-> 📝️ **Note:** You will use all of the above ROS commands for each lab to write your lab reports. You could create a bash script to run these commands automatically ;)
+```{note} You will use all of the above ROS commands for each lab to write your lab reports. You could create a bash script to run these commands automatically ;)
+```
 
 Additionally, place screen captures showing each of the commands running or the windows they bring up into a folder within ../module02/Pictures on your master repo.  Then push the repo to get credit for this work.
 

@@ -67,7 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Lab 4: Computer Vision" href="../Module9_CV/Lab4_ComputerVision.html" />
+    <link rel="next" title="Master Setup" href="../Module00.2_MasterSetup/MasterSetup.html" />
+    <link rel="prev" title="Module 0: Setting Up GIT Repositories" href="../Module00.0_IntroductionGIT/IntroGit.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,7 +181,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ROS.html">ICE3: ROS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/RPSComputer.html">Module 3: Python3 for Robotics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ICE3_ClientServer.html">ICE3 - Client and Server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ICE3_ROS.html">ICE3: Python3 for Robotics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 4</span></p>
 <ul class="nav bd-sidenav">
@@ -210,9 +210,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Module9_CV/computer_vision.html">Computer Vision</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module9_CV/Lab4_ComputerVision.html">Lab 4: Computer Vision</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Module10_FinalProject/FinalProject.html">Module 10: Final Project</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Module00.0_IntroductionGIT/IntroGit.html">Module 0: Setting Up GIT Repositories</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Robot Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Module00.2_MasterSetup/MasterSetup.html">Master Setup</a></li>
 </ul>
 
     </div>
@@ -481,7 +487,7 @@ document.write(`
 </section>
 <section id="camera">
 <h3>Camera<a class="headerlink" href="#camera" title="Permalink to this heading">#</a></h3>
-<p>After installing the Raspberry pi level of the TurtleBot3 you need to install the USB Camera Mount prior to finishing the robot build. The mount used in this course can be found in the <span class="xref myst">curriculum material</span> and is installed on two of the front standoffs on the TurtleBot3.</p>
+<p>After installing the Raspberry pi level of the TurtleBot3 you need to install the USB Camera Mount prior to finishing the robot build. The mount used in this course can be found in the <a class="reference download internal" download="" href="../_downloads/3a3cd348ff4a2bc81ddea473f4ae906f/burger_usbcam_mount.stl"><span class="xref download myst">curriculum material</span></a> and is installed on two of the front standoffs on the TurtleBot3.</p>
 <a class="reference internal image-reference" href="../_images/camera_mount.jpg"><img alt="../_images/camera_mount.jpg" class="align-center" src="../_images/camera_mount.jpg" style="width: 380px;" /></a>
 </section>
 </section>
@@ -548,7 +554,6 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 </div>
 <p>Now at the terminal prompt you should see <code class="docutils literal notranslate"><span class="pre">pi&#64;ubuntu:</span></code> and if you type <code class="docutils literal notranslate"><span class="pre">pwd</span></code> you should see <code class="docutils literal notranslate"><span class="pre">/home/pi</span></code> (with <code class="docutils literal notranslate"><span class="pre">pi</span></code> replaced with the username you chose).</p>
 <!-- #endregion -->
-<!-- #region -->
 </section>
 <section id="change-hostname">
 <h4>Change hostname<a class="headerlink" href="#change-hostname" title="Permalink to this heading">#</a></h4>
@@ -559,8 +564,6 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 </div>
 <p>Replace <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> with the hostname of choice, such as robot0. Save and exit.</p>
 <p>The new hostname will not take effect until reboot. Don’t reboot yet, though! We have a couple more things to accomplish before reboot.</p>
-<!-- #endregion -->
-<!-- #region -->
 </section>
 <section id="set-up-wi-fi">
 <h4>Set up Wi-Fi<a class="headerlink" href="#set-up-wi-fi" title="Permalink to this heading">#</a></h4>
@@ -572,15 +575,48 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 </pre></div>
 </div>
 <p>Edit the file so it looks like the below (use spaces and not tabs) replacing <strong>wlan0</strong> with your wireless network interface and using your SSID and password:
-<img alt="logo" src="../_images/wifi2.png" /></p>
-<p>Save and exit.</p>
+<img alt="logo" src="../_images/wifi2.png" />
+Save and exit.</p>
+<p>Apply your changes using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>netplan<span class="w"> </span>apply
+</pre></div>
+</div>
+<p>Alternatively, you can reboot your system and the changes will be automatically applied once the system boots.</p>
 <p><strong>Optional:</strong> It may be beneficial to setup a static IP address. To do this you need to determine your subnet and gateway.</p>
-<p>Determine subnet and gateway addresses:
-<img alt="logo" src="../_images/subnet.png" /></p>
-<p>Set static IP within subnet range:
-<img alt="logo" src="../_images/staticIP.png" /></p>
-<!-- #endregion -->
-<!-- #region -->
+<p>Determine subnet and gateway addresses:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ubuntu@ubuntu:~$ ip route
+default via 192.168.0.1 dev wlan0 proto static 
+192.168.0.0/24 dev wlan0 proto kernel scope link src 192.168.0.201
+</pre></div>
+</div>
+<p>Set static IP within subnet range:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file is generated from information provided by the datasource.  Changes</span>
+<span class="c1"># to it will not persist across an instance reboot.  To disable cloud-init&#39;s  </span>
+<span class="c1"># network configuration capabilities, write a file</span>
+<span class="c1"># /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:    </span>
+<span class="c1"># network: {config: disabled}</span>
+<span class="n">network</span><span class="p">:</span>
+    <span class="n">ethernets</span><span class="p">:</span>
+        <span class="n">eth0</span><span class="p">:</span>
+            <span class="n">dhcp4</span><span class="p">:</span> <span class="n">true</span>
+            <span class="n">optional</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">version</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">wifis</span><span class="p">:</span>
+        <span class="n">wlan0</span><span class="p">:</span>
+             <span class="n">dhcp4</span><span class="p">:</span> <span class="n">no</span>
+             <span class="n">access</span><span class="o">-</span><span class="n">points</span><span class="p">:</span>
+                 <span class="s2">&quot;YOUR-SSID&quot;</span><span class="p">:</span>
+                     <span class="n">password</span><span class="p">:</span> <span class="s2">&quot;YOUR-PASSWORD&quot;</span>
+             <span class="n">addresses</span><span class="p">:</span>
+                 <span class="o">-</span> <span class="mf">192.168.0.201</span><span class="o">/</span><span class="mi">24</span>
+             <span class="n">routes</span><span class="p">:</span>
+                 <span class="o">-</span> <span class="n">to</span><span class="p">:</span> <span class="n">default</span>
+                   <span class="n">via</span><span class="p">:</span> <span class="mf">192.168.0.1</span>
+             <span class="n">nameservers</span><span class="p">:</span>
+                 <span class="n">addresses</span><span class="p">:</span> <span class="p">[</span><span class="mf">192.168.0.1</span><span class="p">,</span> <span class="mf">8.8.8.8</span><span class="p">,</span> <span class="mf">1.1.1.1</span><span class="p">]</span>
+             <span class="n">optional</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
 </section>
 <section id="disable-automatic-updates">
 <h4>Disable Automatic Updates<a class="headerlink" href="#disable-automatic-updates" title="Permalink to this heading">#</a></h4>
@@ -601,8 +637,6 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 <span class="n">APT</span><span class="p">::</span><span class="n">Periodic</span><span class="p">::</span><span class="n">Download</span><span class="o">-</span><span class="n">Upgradeable</span><span class="o">-</span><span class="n">Packages</span> <span class="s2">&quot;0&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<!-- #endregion -->
-<!-- #region -->
 </section>
 <section id="enable-ssh-and-generate-new-keys">
 <h4>Enable SSH and generate new keys<a class="headerlink" href="#enable-ssh-and-generate-new-keys" title="Permalink to this heading">#</a></h4>
@@ -610,8 +644,6 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ssh
 </pre></div>
 </div>
-<!-- #endregion -->
-<!-- #region -->
 </section>
 <section id="add-swap-space-optional">
 <h4>Add Swap Space (optional)<a class="headerlink" href="#add-swap-space-optional" title="Permalink to this heading">#</a></h4>
@@ -644,8 +676,6 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </pre></div>
 </div>
 <p>Now it is time to reboot by typing <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">reboot</span></code>!</p>
-<!-- #endregion -->
-<!-- #region -->
 </section>
 <section id="verify-changes">
 <h4>Verify changes<a class="headerlink" href="#verify-changes" title="Permalink to this heading">#</a></h4>
@@ -661,8 +691,6 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </div>
 <p>Lastly, ensure your swap space is still active by typing the following and observing the output:</p>
 <p><img alt="logo" src="../_images/swap6.png" /></p>
-<!-- #endregion -->
-<!-- #region -->
 </section>
 <section id="update-and-upgrade">
 <h4>Update and Upgrade<a class="headerlink" href="#update-and-upgrade" title="Permalink to this heading">#</a></h4>
@@ -670,8 +698,6 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>-y<span class="w"> </span>upgrade
 </pre></div>
 </div>
-<!-- #endregion -->
-<!-- #region -->
 </section>
 <section id="install-ubuntu-desktop-optional">
 <h4>Install Ubuntu Desktop (optional)<a class="headerlink" href="#install-ubuntu-desktop-optional" title="Permalink to this heading">#</a></h4>
@@ -679,7 +705,6 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>ubuntu-desktop
 </pre></div>
 </div>
-<!-- #endregion -->
 </section>
 <section id="network-settings">
 <h4>Network Settings<a class="headerlink" href="#network-settings" title="Permalink to this heading">#</a></h4>
@@ -910,13 +935,22 @@ Updated by Stan Baek, 2023</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Module9_CV/Lab4_ComputerVision.html"
+       href="../Module00.0_IntroductionGIT/IntroGit.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lab 4: Computer Vision</p>
+        <p class="prev-next-title">Module 0: Setting Up GIT Repositories</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../Module00.2_MasterSetup/MasterSetup.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Master Setup</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
