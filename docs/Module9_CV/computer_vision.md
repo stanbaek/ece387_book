@@ -334,6 +334,7 @@ Comparing each individual pixel of this training image with another test image w
 
 Now that we have an understanding of the HOG features, lets use tools embedded within OpenCV and Dlib to build our first detector for a stop sign.  But first we need to download a pre-created repository of test and training data.  Remember, we won't use our training data to test the effectiveness of the algorithm.  Of course the algorithm will work effectively on the training data.  Our hope is that we can create a large enough sampling of test data that we can have a highly effective detector that is robust against new images.
 
+(CV:HOG)=
 ### Building a detector using HOG features
 Download the example demo into the `my_scripts` folder you created earlier in the semester. It should be located under `~/master_ws/src/ece387_curriculum/`.
 

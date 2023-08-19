@@ -178,10 +178,40 @@ Alternatively, you can reboot your system and the changes will be automatically 
 **Optional:** It may be beneficial to setup a static IP address. To do this you need to determine your subnet and gateway.
 
 Determine subnet and gateway addresses:
-![logo](Figures/subnet.png)
+```
+ubuntu@ubuntu:~$ ip route
+default via 192.168.0.1 dev wlan0 proto static 
+192.168.0.0/24 dev wlan0 proto kernel scope link src 192.168.0.201
+```
 
 Set static IP within subnet range:
-![logo](Figures/staticIP.png)
+```
+# This file is generated from information provided by the datasource.  Changes
+# to it will not persist across an instance reboot.  To disable cloud-init's  
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:    
+# network: {config: disabled}
+network:
+    ethernets:
+        eth0:
+            dhcp4: true
+            optional: true
+    version: 2
+    wifis:
+        wlan0:
+             dhcp4: no
+             access-points:
+                 "YOUR-SSID":
+                     password: "YOUR-PASSWORD"
+             addresses:
+                 - 192.168.0.201/24
+             routes:
+                 - to: default
+                   via: 192.168.0.1
+             nameservers:
+                 addresses: [192.168.0.1, 8.8.8.8, 1.1.1.1]
+             optional: true
+```
 
 #### Disable Automatic Updates
 Ubuntu will attempt to apply system updates in the background. This has caused issues in the past with ROS dependencies and keys. Disabling automatic updates allows you to control when Ubuntu installs updates. While this is not a good habit for general computer security, it is fine for this application of an embedded robotics system. Ensure you periodically update and upgrade your system.

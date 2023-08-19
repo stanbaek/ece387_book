@@ -422,7 +422,7 @@ if __name__ == "__main__":
 This allows our python files to be imported into other python files that might also have a main() function.
 
 ### Create the computer player
-We must build and run the computer player before we can continue. Open the [Module3_RPSComputer](Module3_RPSComputer.ipynb) notebook and follow the instructions.
+We must build and run the computer player before we can continue. Open the [RPSComputer](RPSComputer.ipynb) notebook and follow the instructions.
 
 ### Run the program
 
@@ -433,4 +433,4 @@ main()
 
 ### ROS refresher
 
-Open the [Module3_ROS](Module3_ROS.ipynb) notebook and follow the instructions.
+Open the [ROS](ROS.md) notebook and follow the instructions.

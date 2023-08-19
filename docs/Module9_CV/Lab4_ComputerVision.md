@@ -96,7 +96,7 @@ rosrun lab4 image_capture.py -o /home/dfec/master_ws/src/ece387_master_spring202
 
 Store images of the stop sign by pressing `enter` when prompted. You decide how many and at what orientations to properly train your detector. When complete, hit `ctrl+c` to exit.
 
-Utilize the steps from Module 9: [Building a detector using HOG features](ICE9_ComputerVision.ipynb#Building-a-detector-using-HOG-features) to label your images and train your object detector using the new images, saving the `stop_detector.svm` file within the **training_images** folder.
+Utilize the steps from Module 9: [Building a detector using HOG features](CV:HOG) to label your images and train your object detector using the new images, saving the `stop_detector.svm` file within the **training_images** folder.
 
 ## Test your stop detector
 Create a node in the **lab4** package on the **Master** called `stop_detector.py` and copy the below into it:
@@ -145,7 +145,7 @@ if __name__ == '__main__':
 
 Edit the `stop_detector.py` node so it utilizes the `camera_callback()` function we used above to get images from the camera.
 
-After getting the `cv_image` within the `camera_callback()`, apply the detector in a similar method as Module 9: [Testing a detector](ICE9_ComputerVision.ipynb#Testing-a-detector) creating boxes around all detected stop signs. Using a `waitKey(1)` will allow for the image to refresh automatically without user input and display the video.
+After getting the `cv_image` within the `camera_callback()`, apply the detector in a similar method as Module 9: [Testing a detector](CV:HOG) creating boxes around all detected stop signs. Using a `waitKey(1)` will allow for the image to refresh automatically without user input and display the video.
 
 ## Checkpoint 1
 Demonstrate the stop detector on the **Master** detecting a stop sign from the **Robot's** camera.

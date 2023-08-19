@@ -166,7 +166,7 @@ At this point the talker is waiting for user input. Don't start typing yet, thou
 
 ### ROS commands
 
-Note that the Jupyter code block for the `main()` function call on both the talker and listener has an `*` on the left side. That is due to the infinite loops in the talker and main functions. This means that those functions are blocking and no other Jupyter code blocks will run in these two notebooks. We have to open a new notebook to run the ROS commands we would use to investigate the state of our ROS system. This would be equivalent to opening a new terminal on the Linux computer. Open the [ICE1_ROS](ICE1_ROS.ipynb) notebook and follow the instructions.
+Note that the Jupyter code block for the `main()` function call on both the talker and listener has an `*` on the left side. That is due to the infinite loops in the talker and main functions. This means that those functions are blocking and no other Jupyter code blocks will run in these two notebooks. We have to open a new notebook to run the ROS commands we would use to investigate the state of our ROS system. This would be equivalent to opening a new terminal on the Linux computer. Open the [ROS](ROS.md) notebook and follow the instructions.
 
 
 

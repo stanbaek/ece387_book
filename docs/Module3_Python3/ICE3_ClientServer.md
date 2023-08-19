@@ -195,4 +195,4 @@ At this point, the server is waiting for the client to send a message. Browse ba
 
 
 ### ROS commands
-Open the [ICE3_ROS](ICE3_ROS.ipynb) notebook and follow the instructions.
+Open the [ROS](ROS.md) notebook and follow the instructions.
