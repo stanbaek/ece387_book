@@ -58,4 +58,8 @@ parts:
   - caption: Module 10
     chapters:
     - file: Module10_FinalProject/FinalProject.md
+
+  - caption: Appendix
+    chapters:
+    - file: Module00.1_RobotSetup/RobotSetup.md    
   

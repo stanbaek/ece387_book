@@ -15,3 +15,7 @@ ECE387 Course Web
 ### Recommended extensions for vscode
 - Python, Python Extension Pack
 - Jupyter, MyST-Markdown
+
+### Convert jupyter notebook to markdown
+- jupytext https://jupytext.readthedocs.io/en/latest/using-cli.html
+- install: pip install jupytext
