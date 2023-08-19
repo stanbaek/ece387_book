@@ -136,7 +136,7 @@ sudo rm -r /home/temp
 Now at the terminal prompt you should see `pi@ubuntu:` and if you type `pwd` you should see `/home/pi` (with `pi` replaced with the username you chose). 
 <!-- #endregion -->
 
-<!-- #region -->
+
 #### Change hostname
 If you have multiple robots on your network it is good to give each a unique hostname. We number each robot from 0-n and each robot has a corresponding hostname (e.g., robot0).
 
@@ -148,9 +148,7 @@ sudo nano /etc/hostname
 Replace `ubuntu` with the hostname of choice, such as robot0. Save and exit.
 
 The new hostname will not take effect until reboot. Don't reboot yet, though! We have a couple more things to accomplish before reboot.
-<!-- #endregion -->
 
-<!-- #region -->
 #### Set up Wi-Fi
 Until a desktop GUI is installed we have to work with the command line to set up the Wi-Fi. This is the most reliable method I have found and we will delete these changes once a GUI is installed.
 
@@ -166,8 +164,16 @@ sudo nano /etc/netplan/50-cloud-init.yaml
 
 Edit the file so it looks like the below (use spaces and not tabs) replacing **wlan0** with your wireless network interface and using your SSID and password:
 ![logo](Figures/wifi2.png)
-
 Save and exit.
+
+Apply your changes using the following command:
+```bash
+sudo netplan apply
+```
+
+Alternatively, you can reboot your system and the changes will be automatically applied once the system boots.
+
+
 
 **Optional:** It may be beneficial to setup a static IP address. To do this you need to determine your subnet and gateway.
 
@@ -176,9 +182,7 @@ Determine subnet and gateway addresses:
 
 Set static IP within subnet range:
 ![logo](Figures/staticIP.png)
-<!-- #endregion -->
 
-<!-- #region -->
 #### Disable Automatic Updates
 Ubuntu will attempt to apply system updates in the background. This has caused issues in the past with ROS dependencies and keys. Disabling automatic updates allows you to control when Ubuntu installs updates. While this is not a good habit for general computer security, it is fine for this application of an embedded robotics system. Ensure you periodically update and upgrade your system.
 
@@ -200,17 +204,13 @@ APT::Periodic::Unattended-Upgrade "0";
 APT::Periodic::AutocleanInterval "0";
 APT::Periodic::Download-Upgradeable-Packages "0";
 ```
-<!-- #endregion -->
 
-<!-- #region -->
 #### Enable SSH and generate new keys
 ```bash
 sudo ssh-keygen -A
 sudo systemctl start ssh
 ```
-<!-- #endregion -->
 
-<!-- #region -->
 #### Add Swap Space (optional)
 The Raspberry Pi 4 B used in our course has 8 GB of RAM. Swap Space might not be necessary, but with a larger SD card it is beneficial.
 
@@ -255,9 +255,7 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```
 
 Now it is time to reboot by typing `sudo reboot`!
-<!-- #endregion -->
 
-<!-- #region -->
 #### Verify changes
 After reboot and you log in your new hostname should be listed at the terminal (e.g., `pi@robot0`). Additionally, you should be connected to Wi-Fi and have an IP Address. You can confirm by typing the following and observing the IP address in the output:
 
@@ -276,25 +274,21 @@ ssh username@HOSTNAME
 Lastly, ensure your swap space is still active by typing the following and observing the output:
 
 ![logo](Figures/swap6.png)
-<!-- #endregion -->
 
-<!-- #region -->
 #### Update and Upgrade
 Since we turned off automatic updates, you should periodically update and upgrade. You can use this single command to accomplish both while accepting all upgrades:
 
 ```bash
 sudo apt update && sudo apt -y upgrade
 ```
-<!-- #endregion -->
 
-<!-- #region -->
 #### Install Ubuntu Desktop (optional)
 A desktop GUI is not necessary for a remote machine like the USAFABot and will take up about 1.4 GB of RAM to run. I include directions for installing the Ubuntu GNOME 3 desktop environment for completeness and flexibility. The following will install the environment while confirming the installation:
 
 ```bash
 sudo apt -y install ubuntu-desktop
 ```
-<!-- #endregion -->
+
 
 #### Network Settings
 If you do install the Ubuntu Desktop and want to use the GUI to setup the Wi-Fi network then you need to remove the settings included in the `/etc/netplan/50-cloud-init.yaml` file. It should look like the original file when complete:
