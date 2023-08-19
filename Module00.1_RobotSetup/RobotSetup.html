@@ -67,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Lab 4: Computer Vision" href="../Module9_CV/Lab4_ComputerVision.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -209,6 +210,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Module9_CV/computer_vision.html">Computer Vision</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module9_CV/Lab4_ComputerVision.html">Lab 4: Computer Vision</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Robot Setup</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -249,37 +254,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/stanbaek/ece387/blob/main/docs/Module00.1_RobotSetup/RobotSetup.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -340,7 +314,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Module00.1_RobotSetup/RobotSetup.ipynb" target="_blank"
+      <li><a href="../_sources/Module00.1_RobotSetup/RobotSetup.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -482,7 +456,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="robot-setup">
 <h1>Robot Setup<a class="headerlink" href="#robot-setup" title="Permalink to this heading">#</a></h1>
-<p>This guide will walk through the steps to install Ubuntu Server 20.04 LTS, ROS Noetic, and all dependencies on a Raspberry Pi 4 B. This Pi is then embedded within the Robotis TurtleBot3 Burger along with a USB Camera. The robotics system, TurtleBot3, is utilized in the United States Air Force Academy’s Electrical and Computer Engineering department to teach undergraduate students robotics. You can follow the below steps or a Raspberry Pi image can be provided by emailing <span class="xref myst">Steven Beyer</span>. This guide is adapted from the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/#overview">TurtleBot3 e-Manual</a>.</p>
+<p>This guide will walk through the steps to install Ubuntu Server 22.04 LTS, ROS2 Humble, and all dependencies on a Raspberry Pi 4B. This Pi is then embedded within the Robotis TurtleBot3 Burger along with a USB camera. The robotics system, TurtleBot3, is utilized in the United States Air Force Academy’s Electrical and Computer Engineering department to teach undergraduate students robotics.</p>
+<p>This guide is adapted from the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/#overview">TurtleBot3 e-Manual</a>.</p>
 <hr class="docutils" />
 <section id="hardware">
 <h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading">#</a></h2>
@@ -492,7 +467,7 @@ document.write(`
 <li><p><a class="reference external" href="https://www.adesso.com/product/cybertrack-h4-1080p-hd-usb-webcam-with-built-in-microphone/">USB Camera</a> (Any USB Cam will work, this is the one we use)</p></li>
 <li><p>128 GB High Speed MicroSD card</p></li>
 <li><p>Monitor, mouse, and keyboard</p></li>
-<li><p>If using an older version of the TurtleBot3 with a Jetson Nano or Raspberry Pi 3 B+ you will need ot purchase a <a class="reference external" href="https://www.canakit.com/raspberry-pi-4-8gb.html">Raspberry Pi 4 Model B</a> (preferably with 8 GB of RAM))</p></li>
+<li><p>If using an older version of the TurtleBot3 with a Jetson Nano or Raspberry Pi 3B+ you will need ot purchase a <a class="reference external" href="https://www.canakit.com/raspberry-pi-4-8gb.html">Raspberry Pi 4 Model B</a> (preferably with 8 GB of RAM))</p></li>
 </ul>
 <section id="hardware-assembly">
 <h3>Hardware Assembly<a class="headerlink" href="#hardware-assembly" title="Permalink to this heading">#</a></h3>
@@ -502,31 +477,32 @@ document.write(`
 <h3>Raspberry Pi<a class="headerlink" href="#raspberry-pi" title="Permalink to this heading">#</a></h3>
 <p>A Raspberry Pi 4 B with 8 GB of RAM is used throughout this curriculum. Ensure heat sinks are propertly installed on the Pi such as these from <a class="reference external" href="https://www.canakit.com/raspberry-pi-4-heat-sinks.html">CanaKit</a>.</p>
 <p>Also, a small fan can be installed to help with cooling. We used this 3D printed bracket to mount the fan.</p>
-<p><img alt="logo" src="../_images/fan.jpg" /></p>
+<a class="reference internal image-reference" href="../_images/fan.jpg"><img alt="../_images/fan.jpg" class="align-center" src="../_images/fan.jpg" style="width: 520px;" /></a>
 </section>
 <section id="camera">
 <h3>Camera<a class="headerlink" href="#camera" title="Permalink to this heading">#</a></h3>
-<p>After installing the Raspberry pi level of the TurtleBot3 you need to install the USB Camera Mount prior to finishing the robot build. The mount used in this course can be found in the <span class="xref myst">curriculum material</span> and is installed on two of the front standoffs on the TurtleBot3.
-<img alt="logo" src="../_images/camera_mount.jpg" /></p>
+<p>After installing the Raspberry pi level of the TurtleBot3 you need to install the USB Camera Mount prior to finishing the robot build. The mount used in this course can be found in the <span class="xref myst">curriculum material</span> and is installed on two of the front standoffs on the TurtleBot3.</p>
+<a class="reference internal image-reference" href="../_images/camera_mount.jpg"><img alt="../_images/camera_mount.jpg" class="align-center" src="../_images/camera_mount.jpg" style="width: 380px;" /></a>
 </section>
 </section>
 <section id="software">
 <h2>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
 <section id="download-ubuntu-and-flash-microsd-card">
 <h3>Download Ubuntu and flash MicroSD card<a class="headerlink" href="#download-ubuntu-and-flash-microsd-card" title="Permalink to this heading">#</a></h3>
-<p>There are multiple ways to download and install Ubuntu 20 to a MicroSD card, but the Raspberry Pi Imager is one of the easiest. Instructions for installing the imager on your operating system can be found on the <a class="reference external" href="https://www.raspberrypi.com/software/">Raspberry Pi OS software page</a>.</p>
-<p>Once installed, start the imager and select the “CHOOSE OS” button.
-<img alt="logo" src="../_images/installer1.png" /></p>
-<p>Scroll down the menu and select “Other general purpose OS”.
-<img alt="logo" src="../_images/installer2.png" /></p>
-<p>Next, select “Ubuntu”.
-<img alt="logo" src="../_images/installer3.png" /></p>
-<p>Lastly, scroll and select the latest 64-bit version of “Ubuntu Server 20.04 LTS”.
-<img alt="logo" src="../_images/installer4.png" /></p>
+<p>There are multiple ways to download and install Ubuntu 22.04 to a MicroSD card, but the Raspberry Pi Imager is one of the easiest. Instructions for installing the imager on your operating system can be found on the <a class="reference external" href="https://www.raspberrypi.com/software/">Raspberry Pi OS software page</a>.</p>
+<p>Once installed, start the imager and select the “CHOOSE OS” button.</p>
+<a class="reference internal image-reference" href="../_images/installer1.png"><img alt="../_images/installer1.png" class="align-center" src="../_images/installer1.png" style="width: 480px;" /></a>
+<p>Scroll down the menu and select “Other general purpose OS”.</p>
+<a class="reference internal image-reference" href="../_images/installer2.png"><img alt="../_images/installer2.png" class="align-center" src="../_images/installer2.png" style="width: 480px;" /></a>
+<p>Next, select “Ubuntu”.</p>
+<a class="reference internal image-reference" href="../_images/installer3.png"><img alt="../_images/installer3.png" class="align-center" src="../_images/installer3.png" style="width: 480px;" /></a>
+<p>Lastly, scroll and select the latest 64-bit version of “Ubuntu Server 20.04 LTS”.</p>
+<a class="reference internal image-reference" href="../_images/installer4.png"><img alt="../_images/installer4.png" class="align-center" src="../_images/installer4.png" style="width: 480px;" /></a>
 <p>Now that you have the correct image selected, you need to choose the correct storage device that corresponds to the MicroSD card. Select “CHOOSE STORAGE”.</p>
-<blockquote>
-<div><p>⚠️ <strong>Warning:</strong> This process will overwrite the drive, so ensure you select the correct device! You can select “CHOOSE STORAGE” before inserting the MicroSD card, then insert it, and the card will be the new drive that pops up.</p>
-</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This process will overwrite the drive, so ensure you select the correct device! You can select “CHOOSE STORAGE” before inserting the MicroSD card, then insert it, and the card will be the new drive that pops up.</p>
+</div>
 <p>Once you are sure the correct drive is selected, click “WRITE”.</p>
 <p>Once complete you should have an Ubuntu SD card! Ensure your Raspberry Pi is powered off, connected to a monitor, keyboard, and mouse, and insert the SD card.</p>
 </section>
@@ -555,22 +531,24 @@ document.write(`
 </div>
 <p>Login to <em>temp</em> user account.</p>
 <p>Change the <em>ubuntu</em> username to the new username:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-l<span class="w"> </span>newUsername<span class="w"> </span>ubuntu
-sudo<span class="w"> </span>usermod<span class="w"> </span>-d<span class="w"> </span>/home/newHomeDir<span class="w"> </span>-m<span class="w"> </span>newUsername
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo usermod -l newUsername ubuntu</span>
+<span class="go">sudo usermod -d /home/newHomeDir -m newUsername</span>
 </pre></div>
 </div>
 <p>For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-l<span class="w"> </span>pi<span class="w"> </span>ubuntu
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-l<span class="w"> </span>pi<span class="w"> </span>ubuntu
 sudo<span class="w"> </span>suermod<span class="w"> </span>-d<span class="w"> </span>/home/pi<span class="w"> </span>-m<span class="w"> </span>pi
 </pre></div>
 </div>
 <p>Log out of <em>temp</em> user and log in with new username and password (the password is still the same as the password you set for the <em>ubuntu</em> user).</p>
 <p>Delete the <em>temp</em> user:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>deluser<span class="w"> </span>temp
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>deluser<span class="w"> </span>temp
 sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/home/temp
 </pre></div>
 </div>
 <p>Now at the terminal prompt you should see <code class="docutils literal notranslate"><span class="pre">pi&#64;ubuntu:</span></code> and if you type <code class="docutils literal notranslate"><span class="pre">pwd</span></code> you should see <code class="docutils literal notranslate"><span class="pre">/home/pi</span></code> (with <code class="docutils literal notranslate"><span class="pre">pi</span></code> replaced with the username you chose).</p>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 <section id="change-hostname">
 <h4>Change hostname<a class="headerlink" href="#change-hostname" title="Permalink to this heading">#</a></h4>
@@ -581,6 +559,8 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 </div>
 <p>Replace <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> with the hostname of choice, such as robot0. Save and exit.</p>
 <p>The new hostname will not take effect until reboot. Don’t reboot yet, though! We have a couple more things to accomplish before reboot.</p>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 <section id="set-up-wi-fi">
 <h4>Set up Wi-Fi<a class="headerlink" href="#set-up-wi-fi" title="Permalink to this heading">#</a></h4>
@@ -599,6 +579,8 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 <img alt="logo" src="../_images/subnet.png" /></p>
 <p>Set static IP within subnet range:
 <img alt="logo" src="../_images/staticIP.png" /></p>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 <section id="disable-automatic-updates">
 <h4>Disable Automatic Updates<a class="headerlink" href="#disable-automatic-updates" title="Permalink to this heading">#</a></h4>
@@ -619,6 +601,8 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 <span class="n">APT</span><span class="p">::</span><span class="n">Periodic</span><span class="p">::</span><span class="n">Download</span><span class="o">-</span><span class="n">Upgradeable</span><span class="o">-</span><span class="n">Packages</span> <span class="s2">&quot;0&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 <section id="enable-ssh-and-generate-new-keys">
 <h4>Enable SSH and generate new keys<a class="headerlink" href="#enable-ssh-and-generate-new-keys" title="Permalink to this heading">#</a></h4>
@@ -626,6 +610,8 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ssh
 </pre></div>
 </div>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 <section id="add-swap-space-optional">
 <h4>Add Swap Space (optional)<a class="headerlink" href="#add-swap-space-optional" title="Permalink to this heading">#</a></h4>
@@ -658,6 +644,8 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </pre></div>
 </div>
 <p>Now it is time to reboot by typing <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">reboot</span></code>!</p>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 <section id="verify-changes">
 <h4>Verify changes<a class="headerlink" href="#verify-changes" title="Permalink to this heading">#</a></h4>
@@ -673,6 +661,8 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </div>
 <p>Lastly, ensure your swap space is still active by typing the following and observing the output:</p>
 <p><img alt="logo" src="../_images/swap6.png" /></p>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 <section id="update-and-upgrade">
 <h4>Update and Upgrade<a class="headerlink" href="#update-and-upgrade" title="Permalink to this heading">#</a></h4>
@@ -680,6 +670,8 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>-y<span class="w"> </span>upgrade
 </pre></div>
 </div>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 <section id="install-ubuntu-desktop-optional">
 <h4>Install Ubuntu Desktop (optional)<a class="headerlink" href="#install-ubuntu-desktop-optional" title="Permalink to this heading">#</a></h4>
@@ -687,12 +679,14 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>ubuntu-desktop
 </pre></div>
 </div>
+<!-- #endregion -->
 </section>
 <section id="network-settings">
 <h4>Network Settings<a class="headerlink" href="#network-settings" title="Permalink to this heading">#</a></h4>
 <p>If you do install the Ubuntu Desktop and want to use the GUI to setup the Wi-Fi network then you need to remove the settings included in the <code class="docutils literal notranslate"><span class="pre">/etc/netplan/50-cloud-init.yaml</span></code> file. It should look like the original file when complete:</p>
 <p><img alt="logo" src="../_images/wifi4.png" /></p>
 <p>You can now use the GUI interface in the top right of the screen to set up a Wi-Fi connection.</p>
+<!-- #region -->
 </section>
 <section id="setup-github-ssh-keys">
 <h4>Setup GitHub SSH Keys<a class="headerlink" href="#setup-github-ssh-keys" title="Permalink to this heading">#</a></h4>
@@ -724,6 +718,8 @@ ssh-add<span class="w"> </span>~/.ssh/id_ed25519
 <p>In the “Title” field, add a descriptive label for the new key, such as “robot0”.</p>
 <p>Paste your key into the “Key” field (contents of the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file).</p>
 <p>Click <strong>Add SSH key</strong>.</p>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 <section id="update-alternatives">
 <h4>Update Alternatives<a class="headerlink" href="#update-alternatives" title="Permalink to this heading">#</a></h4>
@@ -731,6 +727,8 @@ ssh-add<span class="w"> </span>~/.ssh/id_ed25519
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python3<span class="w"> </span><span class="m">10</span>
 </pre></div>
 </div>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 </section>
 <section id="ros-noetic">
@@ -787,6 +785,8 @@ catkin_make
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </pre></div>
 </div>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 <section id="dependencies">
 <h4>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">#</a></h4>
@@ -838,6 +838,8 @@ pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </
 <blockquote>
 <div><p>📝️ <strong>Note:</strong> the “dlib” package will take quite a while to install.</p>
 </div></blockquote>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 </section>
 </section>
@@ -869,6 +871,9 @@ tar<span class="w"> </span>-xvf<span class="w"> </span>opencr_update.tar.bz2<spa
 <p>A successful firmware upload for TurtleBot3 Burger will look like:
 <img alt="lobo" src="../_images/firmware.png" /></p>
 <p>If not successful, attempt the debug methods in the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup">OpenCR Setup</a> guide.</p>
+<!-- #endregion -->
+<p>Created by Steve Beyer, 2022
+Updated by Stan Baek, 2023</p>
 </section>
 </section>
 </section>
@@ -904,6 +909,15 @@ tar<span class="w"> </span>-xvf<span class="w"> </span>opencr_update.tar.bz2<spa
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../Module9_CV/Lab4_ComputerVision.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 4: Computer Vision</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
