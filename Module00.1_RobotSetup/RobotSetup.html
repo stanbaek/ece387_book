@@ -412,27 +412,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware">Hardware</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turtlebot3">TurtleBot3</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-assembly">Hardware Assembly</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raspberry-pi">Raspberry Pi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera">Camera</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-installation">Ubuntu Installation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-ubuntu-and-flash-microsd-card">Download Ubuntu and flash MicroSD card</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-setup">Ubuntu Setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#login-and-changing-password">Login and changing password</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-username-optional">Changing username (optional)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#change-hostname">Change hostname</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-wi-fi">Set up Wi-Fi</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-automatic-updates">Disable Automatic Updates</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-ssh-and-generate-new-keys">Enable SSH and generate new keys</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-ubuntu">Configuring Ubuntu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#login-and-changing-password">Login and changing password</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-username-optional">Changing username (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-hostname">Change hostname</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-wi-fi">Set up Wi-Fi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-automatic-updates">Disable Automatic Updates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-ssh-and-generate-new-keys">Enable SSH and generate new keys</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-swap-space-optional">Add Swap Space (optional)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-changes">Verify changes</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-and-upgrade">Update and Upgrade</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-desktop-optional">Install Ubuntu Desktop (optional)</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-desktop-optional">Install Ubuntu Desktop (optional)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-github-ssh-keys">Setup GitHub SSH Keys</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-alternatives">Update Alternatives</a></li>
 </ul>
@@ -443,7 +445,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turtlebot3">TurtleBot3</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">TurtleBot3</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ece387-curriculum">ECE387 Curriculum</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-opencr-firmware">Updating OpenCR firmware</a></li>
 </ul>
@@ -464,8 +466,8 @@ document.write(`
 <p>This guide will walk through the steps to install Ubuntu Server 22.04 LTS, ROS2 Humble, and all dependencies on a Raspberry Pi 4B. This Pi is then embedded within the Robotis TurtleBot3 Burger along with a USB camera. The robotics system, TurtleBot3, is utilized in the United States Air Force Academy’s Electrical and Computer Engineering department to teach undergraduate students robotics.</p>
 <p>This guide is adapted from the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/#overview">TurtleBot3 e-Manual</a>.</p>
 <hr class="docutils" />
-<section id="hardware">
-<h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading">#</a></h2>
+<section id="turtlebot3">
+<h2>TurtleBot3<a class="headerlink" href="#turtlebot3" title="Permalink to this heading">#</a></h2>
 <p>Below is a list of recommended hardware and links. Other off-the-shelf components can replace the ones below.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.robotis.us/turtlebot-3/">TurtleBot3</a></p></li>
@@ -490,8 +492,8 @@ document.write(`
 <a class="reference internal image-reference" href="../_images/camera_mount.jpg"><img alt="../_images/camera_mount.jpg" class="align-center" src="../_images/camera_mount.jpg" style="width: 380px;" /></a>
 </section>
 </section>
-<section id="software">
-<h2>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
+<section id="ubuntu-installation">
+<h2>Ubuntu Installation<a class="headerlink" href="#ubuntu-installation" title="Permalink to this heading">#</a></h2>
 <section id="download-ubuntu-and-flash-microsd-card">
 <h3>Download Ubuntu and flash MicroSD card<a class="headerlink" href="#download-ubuntu-and-flash-microsd-card" title="Permalink to this heading">#</a></h3>
 <p>There are multiple ways to download and install Ubuntu 22.04 to a MicroSD card, but the Raspberry Pi Imager is one of the easiest. Instructions for installing the imager on your operating system can be found on the <a class="reference external" href="https://www.raspberrypi.com/software/">Raspberry Pi OS software page</a>.</p>
@@ -517,15 +519,16 @@ Lastly, scroll and select the latest 64-bit version of "Ubuntu Server 22.04 LTS"
 <p>Once you are sure the correct drive is selected, click “WRITE”.</p>
 <p>Once complete you should have an Ubuntu SD card! Ensure your Raspberry Pi is powered off, connected to a monitor, keyboard, and mouse, and insert the SD card.</p>
 </section>
-<section id="ubuntu-setup">
-<h3>Ubuntu Setup<a class="headerlink" href="#ubuntu-setup" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="configuring-ubuntu">
+<h2>Configuring Ubuntu<a class="headerlink" href="#configuring-ubuntu" title="Permalink to this heading">#</a></h2>
 <section id="login-and-changing-password">
-<h4>Login and changing password<a class="headerlink" href="#login-and-changing-password" title="Permalink to this heading">#</a></h4>
+<h3>Login and changing password<a class="headerlink" href="#login-and-changing-password" title="Permalink to this heading">#</a></h3>
 <p>Once Ubuntu boots up you will be prompted to enter the login and password. It may take a few minutes on first boot to configure the default username and password, so if login fails, try again after a few minutes. The default username is <strong>ubuntu</strong> and password is <strong>ubuntu</strong>.</p>
 <p>On first login, you will be prompted to change the password. Enter the current password, <strong>ubuntu</strong>, and then enter a new password twice.</p>
 </section>
 <section id="changing-username-optional">
-<h4>Changing username (optional)<a class="headerlink" href="#changing-username-optional" title="Permalink to this heading">#</a></h4>
+<h3>Changing username (optional)<a class="headerlink" href="#changing-username-optional" title="Permalink to this heading">#</a></h3>
 <p>I like to change the username to “pi” so I remember that this machine is a Raspberry Pi. This is optional and you can change the username to anything you like.</p>
 <p>First, add a <em>temp</em> user:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>adduser<span class="w"> </span>temp
@@ -560,7 +563,7 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 <p>Now at the terminal prompt you should see <code class="docutils literal notranslate"><span class="pre">pi&#64;ubuntu:</span></code> and if you type <code class="docutils literal notranslate"><span class="pre">pwd</span></code> you should see <code class="docutils literal notranslate"><span class="pre">/home/pi</span></code> (with <code class="docutils literal notranslate"><span class="pre">pi</span></code> replaced with the username you chose).</p>
 </section>
 <section id="change-hostname">
-<h4>Change hostname<a class="headerlink" href="#change-hostname" title="Permalink to this heading">#</a></h4>
+<h3>Change hostname<a class="headerlink" href="#change-hostname" title="Permalink to this heading">#</a></h3>
 <p>If you have multiple robots on your network it is good to give each a unique hostname. We number each robot from 0-n and each robot has a corresponding hostname (e.g., robot0).</p>
 <p>Change the hostname with the command line editor of your choice.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>robot0
@@ -570,7 +573,7 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 <p>The new hostname will not take effect until reboot. Don’t reboot yet, though! We have a couple more things to accomplish before reboot.</p>
 </section>
 <section id="set-up-wi-fi">
-<h4>Set up Wi-Fi<a class="headerlink" href="#set-up-wi-fi" title="Permalink to this heading">#</a></h4>
+<h3>Set up Wi-Fi<a class="headerlink" href="#set-up-wi-fi" title="Permalink to this heading">#</a></h3>
 <p>Until a desktop GUI is installed we have to work with the command line to set up the Wi-Fi. This is the most reliable method I have found and we will delete these changes once a GUI is installed.</p>
 <p>First, determine the name of your Wi-Fi network adapter by typing <code class="docutils literal notranslate"><span class="pre">ip</span> <span class="pre">link</span></code> (for the Raspberry Pi version of Ubuntu Server 20.04 LTS it is typically <strong><code class="docutils literal notranslate"><span class="pre">wlan0</span></code></strong>).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@ubuntu:~$<span class="w"> </span>ip<span class="w"> </span>link
@@ -617,7 +620,7 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 <p>Determine subnet and gateway addresses:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ubuntu@ubuntu:~$ ip route
 default via 192.168.0.1 dev wlan0 proto static 
-192.168.0.0/24 dev wlan0 proto kernel scope link src 192.168.0.201
+192.168.0.1/24 dev wlan0 proto kernel scope link src 192.168.0.201
 </pre></div>
 </div>
 <p>Set static IP within subnet range:</p>
@@ -636,21 +639,21 @@ default via 192.168.0.1 dev wlan0 proto static
         <span class="n">wlan0</span><span class="p">:</span>
              <span class="n">dhcp4</span><span class="p">:</span> <span class="n">no</span>
              <span class="n">access</span><span class="o">-</span><span class="n">points</span><span class="p">:</span>
-                 <span class="s2">&quot;YOUR-SSID&quot;</span><span class="p">:</span>
+                 <span class="s2">&quot;robotics_5GHz&quot;</span><span class="p">:</span>
                      <span class="n">password</span><span class="p">:</span> <span class="s2">&quot;YOUR-PASSWORD&quot;</span>
              <span class="n">addresses</span><span class="p">:</span>
-                 <span class="o">-</span> <span class="mf">192.168.0.201</span><span class="o">/</span><span class="mi">24</span>
+                 <span class="o">-</span> <span class="mf">192.168.4.208</span><span class="o">/</span><span class="mi">24</span>
              <span class="n">routes</span><span class="p">:</span>
                  <span class="o">-</span> <span class="n">to</span><span class="p">:</span> <span class="n">default</span>
-                   <span class="n">via</span><span class="p">:</span> <span class="mf">192.168.0.1</span>
+                   <span class="n">via</span><span class="p">:</span> <span class="mf">192.168.4.1</span>
              <span class="n">nameservers</span><span class="p">:</span>
-                 <span class="n">addresses</span><span class="p">:</span> <span class="p">[</span><span class="mf">192.168.0.1</span><span class="p">,</span> <span class="mf">8.8.8.8</span><span class="p">,</span> <span class="mf">1.1.1.1</span><span class="p">]</span>
+                 <span class="n">addresses</span><span class="p">:</span> <span class="p">[</span><span class="mf">192.168.4.1</span><span class="p">,</span> <span class="mf">8.8.8.8</span><span class="p">,</span> <span class="mf">1.1.1.1</span><span class="p">]</span>
              <span class="n">optional</span><span class="p">:</span> <span class="n">true</span>
 </pre></div>
 </div>
 </section>
 <section id="disable-automatic-updates">
-<h4>Disable Automatic Updates<a class="headerlink" href="#disable-automatic-updates" title="Permalink to this heading">#</a></h4>
+<h3>Disable Automatic Updates<a class="headerlink" href="#disable-automatic-updates" title="Permalink to this heading">#</a></h3>
 <p>Ubuntu will attempt to apply system updates in the background. This has caused issues in the past with ROS dependencies and keys. Disabling automatic updates allows you to control when Ubuntu installs updates. While this is not a good habit for general computer security, it is fine for this application of an embedded robotics system. Ensure you periodically update and upgrade your system.</p>
 <p>Open the auto updater configuration file using sudoedit:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudoedit<span class="w"> </span>/etc/apt/apt.conf.d/20auto-upgrades
@@ -670,12 +673,11 @@ default via 192.168.0.1 dev wlan0 proto static
 </div>
 </section>
 <section id="enable-ssh-and-generate-new-keys">
-<h4>Enable SSH and generate new keys<a class="headerlink" href="#enable-ssh-and-generate-new-keys" title="Permalink to this heading">#</a></h4>
+<h3>Enable SSH and generate new keys<a class="headerlink" href="#enable-ssh-and-generate-new-keys" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ssh-keygen<span class="w"> </span>-A
 sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ssh
 </pre></div>
 </div>
-</section>
 <section id="add-swap-space-optional">
 <h4>Add Swap Space (optional)<a class="headerlink" href="#add-swap-space-optional" title="Permalink to this heading">#</a></h4>
 <p>The Raspberry Pi 4 B used in our course has 8 GB of RAM. Swap Space might not be necessary, but with a larger SD card it is beneficial.</p>
@@ -757,8 +759,9 @@ Swap:<span class="w">          </span><span class="m">2</span>.0Gi<span class="w
 </pre></div>
 </div>
 </section>
+</section>
 <section id="install-ubuntu-desktop-optional">
-<h4>Install Ubuntu Desktop (optional)<a class="headerlink" href="#install-ubuntu-desktop-optional" title="Permalink to this heading">#</a></h4>
+<h3>Install Ubuntu Desktop (optional)<a class="headerlink" href="#install-ubuntu-desktop-optional" title="Permalink to this heading">#</a></h3>
 <p>A desktop GUI is <strong>not</strong> necessary for a remote machine like TurtleBot3 and will take up about 1.4 GB of RAM to run. If GUI is neccessary, the following will install the environment while confirming the installation:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>ubuntu-desktop
 </pre></div>
@@ -782,7 +785,6 @@ Swap:<span class="w">          </span><span class="m">2</span>.0Gi<span class="w
 </pre></div>
 </div>
 <p>You can now use the GUI interface in the top right of the screen to set up a Wi-Fi connection.</p>
-</section>
 </section>
 <section id="setup-github-ssh-keys">
 <h3>Setup GitHub SSH Keys<a class="headerlink" href="#setup-github-ssh-keys" title="Permalink to this heading">#</a></h3>
@@ -857,7 +859,7 @@ sudo<span class="w"> </span>curl<span class="w"> </span>-sSL<span class="w"> </s
 </pre></div>
 </div>
 <p>Then add the repository to your sources list.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ro</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu </span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$UBUNTU_CODENAME</span><span class="k">)</span><span class="s2"> main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/ros2.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
 </pre></div>
 </div>
 <p>Install ROS 2 Humble:</p>
@@ -892,8 +894,8 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </div>
 </section>
 </section>
-<section id="turtlebot3">
-<h2>TurtleBot3<a class="headerlink" href="#turtlebot3" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h2>TurtleBot3<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>ToDo: need to update this section for ROS2</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libudev-dev<span class="w"> </span>ros-noetic-turtlebot3-msgs
 <span class="nb">cd</span><span class="w"> </span>~/robot_ws/src
@@ -1032,27 +1034,29 @@ Updated by Stan Baek, 2023</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware">Hardware</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turtlebot3">TurtleBot3</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-assembly">Hardware Assembly</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raspberry-pi">Raspberry Pi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera">Camera</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-installation">Ubuntu Installation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-ubuntu-and-flash-microsd-card">Download Ubuntu and flash MicroSD card</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-setup">Ubuntu Setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#login-and-changing-password">Login and changing password</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-username-optional">Changing username (optional)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#change-hostname">Change hostname</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-wi-fi">Set up Wi-Fi</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-automatic-updates">Disable Automatic Updates</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-ssh-and-generate-new-keys">Enable SSH and generate new keys</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-ubuntu">Configuring Ubuntu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#login-and-changing-password">Login and changing password</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-username-optional">Changing username (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-hostname">Change hostname</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-wi-fi">Set up Wi-Fi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-automatic-updates">Disable Automatic Updates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-ssh-and-generate-new-keys">Enable SSH and generate new keys</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-swap-space-optional">Add Swap Space (optional)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-changes">Verify changes</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-and-upgrade">Update and Upgrade</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-desktop-optional">Install Ubuntu Desktop (optional)</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-desktop-optional">Install Ubuntu Desktop (optional)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-github-ssh-keys">Setup GitHub SSH Keys</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-alternatives">Update Alternatives</a></li>
 </ul>
@@ -1063,7 +1067,7 @@ Updated by Stan Baek, 2023</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turtlebot3">TurtleBot3</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">TurtleBot3</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ece387-curriculum">ECE387 Curriculum</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-opencr-firmware">Updating OpenCR firmware</a></li>
 </ul>
