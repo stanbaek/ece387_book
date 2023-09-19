@@ -212,7 +212,6 @@ sudo netplan apply
 Alternatively, you can reboot your system and the changes will be automatically applied once the system boots.
 
 
-
 **Optional:** It may be beneficial to setup a static IP address. To do this you need to determine your subnet and gateway.
 
 Determine subnet and gateway addresses:
@@ -272,6 +271,28 @@ APT::Periodic::Unattended-Upgrade "0";
 APT::Periodic::AutocleanInterval "0";
 APT::Periodic::Download-Upgradeable-Packages "0";
 ```
+
+
+Set the systemd to prevent boot-up delay even if there is no network at startup. Run the command below to set mask the systemd process using the following command.
+```
+$ systemctl mask systemd-networkd-wait-online.service
+```
+
+Disable Suspend and Hibernation
+```
+$ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
+Reboot the Raspberry Pi.
+```
+$ reboot
+```
+
+
+
+
+
+
+
 
 ### Enable SSH and generate new keys
 ```bash
