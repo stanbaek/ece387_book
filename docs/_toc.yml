@@ -61,7 +61,7 @@ parts:
 
   - caption: Appendix
     chapters:
-    - file: Module00.0_IntroductionGIT/IntroGit.md    
-    - file: Module00.1_RobotSetup/RobotSetup.md    
-    - file: Module00.2_MasterSetup/MasterSetup.md  
+    - file: Appendix/RobotSetup.md    
+    - file: Appendix/MasterSetup.md  
+    - file: Appendix/GitSetup.md    
   
