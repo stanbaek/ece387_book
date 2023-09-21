@@ -1,10 +1,11 @@
 # Robot Setup
 
-
-
 This guide will walk through the steps to install Ubuntu Server 22.04 LTS, ROS2 Humble, and all dependencies on a Raspberry Pi 4B. This Pi is then embedded within the Robotis TurtleBot3 Burger along with a USB camera. The robotics system, TurtleBot3, is utilized in the United States Air Force Academy's Electrical and Computer Engineering department to teach undergraduate students robotics.  
 
 This guide is adapted from the [TurtleBot3 e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/#overview).
+
+- Created by Steve Beyer, 2022
+- Updated by Stan Baek, 2023
 
 ---
 
@@ -29,10 +30,9 @@ A Raspberry Pi 4 B with 8 GB of RAM is used throughout this curriculum. Ensure h
 Also, a small fan can be installed to help with cooling. We used this 3D printed bracket to mount the fan.
 
 ```{image} ./Figures/fan.jpg
-:width: 520
+:width: 380
 :align: center
 ```
-
 
 ### Camera
 After installing the Raspberry pi level of the TurtleBot3 you need to install the USB Camera Mount prior to finishing the robot build. The mount used in this course can be found in the [curriculum material](../stl/burger_usbcam_mount.stl) and is installed on two of the front standoffs on the TurtleBot3.
@@ -50,7 +50,7 @@ There are multiple ways to download and install Ubuntu 22.04 to a MicroSD card, 
 Once installed, start the imager and select the "CHOOSE OS" button.
 
 ```{image} ./Figures/installer1.png
-:width: 540
+:width: 480
 :align: center
 ```
 <br>
@@ -59,7 +59,7 @@ Scroll down the menu and select "Other general purpose OS".
 <br>
 
 ```{image} ./Figures/installer2.png
-:width: 540
+:width: 480
 :align: center
 ```
 
@@ -68,7 +68,7 @@ Scroll down the menu and select "Other general purpose OS".
 Next, select "Ubuntu".
 
 ```{image} ./Figures/installer3.png
-:width: 540
+:width: 480
 :align: center
 ```
 <br>
@@ -77,7 +77,7 @@ Lastly, scroll and select the latest 64-bit version of "Ubuntu Server 22.04 LTS"
 <br>
 
 ```{image} ./Figures/installer4.png
-:width: 540
+:width: 480
 :align: center
 ```
 <br>
@@ -272,7 +272,6 @@ APT::Periodic::AutocleanInterval "0";
 APT::Periodic::Download-Upgradeable-Packages "0";
 ```
 
-
 Set the systemd to prevent boot-up delay even if there is no network at startup. Run the command below to set mask the systemd process using the following command.
 ```
 $ systemctl mask systemd-networkd-wait-online.service
@@ -282,17 +281,11 @@ Disable Suspend and Hibernation
 ```
 $ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
+
 Reboot the Raspberry Pi.
 ```
 $ reboot
 ```
-
-
-
-
-
-
-
 
 ### Enable SSH and generate new keys
 ```bash
@@ -397,7 +390,7 @@ Mem:           7.6Gi       224Mi       6.5Gi       3.0Mi       903Mi       7.3Gi
 Swap:          2.0Gi          0B       2.0Gi
 ```
 
-#### Update and Upgrade
+### Update and Upgrade
 Since we turned off automatic updates, you should periodically update and upgrade. You can use this single command to accomplish both while accepting all upgrades:
 
 ```bash
@@ -502,12 +495,13 @@ Paste your key into the `Key` field (contents of the `.pub` file).
 Click **Add SSH key**.
 
 
-#### Update Alternatives
+### Update Alternatives
 Python3 is installed in Ubuntu 22.04 by default. Some ROS packages utilize the "python" command instead of "python3" so we need to create a new executable, "/usr/bin/python" that will call the Python3 (basically use the command "python" to call Python3):
 
 ```bash
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 ```
+
 
 ## ROS2 Humble
 At this point, the Ubuntu environment is setup. Now we will setup the ROS requirements for the TurtleBot3. All of these instructions are adapted from the [ROS2 Documentation](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html) and [The Robotics Back-End](https://roboticsbackend.com/install-ros2-on-raspberry-pi/)
@@ -566,6 +560,10 @@ ROS2 uses colcon as a build tool (and ament as the build system). When you only 
 sudo apt install python3-colcon-common-extensions
 ```
 
+### Configuring ROS2 Environment
+
+Ref: https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html
+
 
 Setup ROS environment variables and setup scripts within the `~/.bashrc` file. If you don’t want to have to source the setup file every time you open a new shell, then add the command to your shell startup script:
 
@@ -593,17 +591,125 @@ ROS_PYTHON_VERSION=3
 ROS_DISTRO=humble
 ```
 
-## TurtleBot3 
+ROS 2 nodes on the same domain can freely discover and send messages to each other, while ROS 2 nodes on different domains cannot. All ROS 2 nodes use domain ID 0 by default. To avoid interference between different groups of computers running ROS 2 on the same network, a different domain ID should be set for each group.  
 
-ToDo: need to update this section for ROS2
+We can simply choose a domain ID between 0 and 101, inclusive, but for ECE387, we choose X for RobotX and MasterX. Once you have determined a unique integer for your group of ROS 2 nodes, you can set the environment variable with the following command:
+
+```
+echo "export ROS_DOMAIN_ID=<your_domain_id>" >> ~/.bashrc
+```
+
+### Install and Build ROS2 Packages
+
+```
+sudo apt install python3-argcomplete python3-colcon-common-extensions libboost-system-dev build-essential
+sudo apt install ros-humble-hls-lfcd-lds-driver
+sudo apt install ros-humble-turtlebot3-msgs
+sudo apt install ros-humble-dynamixel-sdk
+sudo apt install libudev-dev
+mkdir -p ~/turtlebot3_ws/src && cd ~/turtlebot3_ws/src
+git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
+git clone -b ros2-devel https://github.com/ROBOTIS-GIT/ld08_driver.git
+cd ~/turtlebot3_ws/src/turtlebot3
+rm -r turtlebot3_cartographer turtlebot3_navigation2
+cd ~/turtlebot3_ws/
+colcon build --symlink-install --parallel-workers 1
+source ~/turtlebot3_ws/install/setup.bash
+source ~/.bashrc
+```
+
+
+USB Port Setting for OpenCR
+```
+sudo cp `ros2 pkg prefix turtlebot3_bringup`/share/turtlebot3_bringup/script/99-turtlebot3-cdc.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+```
+
+LDS Configuration: The TurtleBot3 LDS has been updated to LDS-02 since 2022.
+For the Turtlebots we have purchased after 2022, use LDS-02 for the LDS_MODEL.
+
+```{image} ./Figures/lds_small.png
+:width: 420
+:align: center
+```
+
+<br>
+
+```
+echo 'export LDS_MODEL=LDS-02' >> ~/.bashrc
+echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
+```
+
+### [Updating OpenCR firmware](https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup)
+
+The last step is updating the firmware for the OpenCR controller board.
+
+Install required packages on the Raspberry Pi
 
 ```bash
-sudo apt install libudev-dev ros-noetic-turtlebot3-msgs
-cd ~/robot_ws/src
-git clone -b develop https://github.com/ROBOTIS-GIT/ld08_driver.git
-git clone https://github.com/ROBOTIS-GIT/turtlebot3.git
-git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+sudo dpkg --add-architecture armhf
+sudo apt update
+sudo apt install libc6:armhf
 ```
+
+Reboot the Raspberry Pi
+```bash
+sudo reboot
+```
+
+Setup the OpenCR model name:
+```bash
+export OPENCR_PORT=/dev/ttyACM0
+export OPENCR_MODEL=burger
+rm -rf ./opencr_update.tar.bz2
+```
+
+Download the firmware and loader, then extract the file:
+```bash
+wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/latest/opencr_update.tar.bz2
+```
+
+Upload firmware to the OpenCR:
+```bash
+cd ~/opencr_update
+./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
+```
+
+A successful firmware upload for TurtleBot3 Burger will look like:
+
+```bash
+pi@robot99: ~/Downloads/opencr_update
+$ ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
+aarch64
+arm
+OpenCR Update Start..
+opencr_ld_shell ver 1.0.0
+opencr_ld_main
+[  ] file name          : burger.opencr
+[  ] file size          : 136 KB
+[  ] fw_name            : burger
+[  ] fw_ver             : V230127R1
+[OK] Open port          : /dev/ttyACM0
+[  ]
+[  ] Board Name         : OpenCR R1.0
+[  ] Board Ver          : 0x17020800
+[  ] Board Rev          : 0x00000000
+[OK] flash_erase        : 0.95s
+[OK] flash_write        : 1.31s
+[OK] CRC Check          : D92222 D92222 , 0.004000 sec
+[OK] Download
+[OK] jump_to_fw
+```
+
+
+
+
+
+
+If not successful, attempt the debug methods in the [OpenCR Setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup) guide.
+<!-- #endregion -->
+
 
 ### [ECE387 Curriculum](https://github.com/AF-ROBOTICS/ece387_curriculum)
 ```bash
@@ -637,42 +743,3 @@ pip3 install -r requirements.txt
 > 📝️ **Note:** the "dlib" package will take quite a while to install.
 <!-- #endregion -->
 
-<!-- #region -->
-### [Updating OpenCR firmware](https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup)
-The last step is updating the firmware for the OpenCR controller board.
-
-Install required packages on the Raspberry Pi
-```bash
-sudo dpkg --add-architecture armhf
-sudo apt-get update
-sudo apt-get install libc6:armhf
-```
-
-Setup the OpenCR model name:
-```bash
-export OPENCR_PORT=/dev/ttyACM0
-export OPENCR_MODEL=burger_noetic
-rm -rf ./opencr_update.tar.bz2
-```
-
-Download the firmware and loader, then extract the file:
-```bash
-wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS1/latest/opencr_update.tar.bz2 
-tar -xvf opencr_update.tar.bz2 
-```
-
-Upload firmware to the OpenCR:
-```bash
-cd ./opencr_update
-./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
-```
-
-A successful firmware upload for TurtleBot3 Burger will look like:
-![lobo](Figures/firmware.png)
-
-If not successful, attempt the debug methods in the [OpenCR Setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup) guide.
-<!-- #endregion -->
-
-
-Created by Steve Beyer, 2022
-Updated by Stan Baek, 2023

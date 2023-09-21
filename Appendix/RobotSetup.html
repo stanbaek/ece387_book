@@ -431,23 +431,20 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-ssh-and-generate-new-keys">Enable SSH and generate new keys</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-swap-space-optional">Add Swap Space (optional)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-changes">Verify changes</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-and-upgrade">Update and Upgrade</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-and-upgrade">Update and Upgrade</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-desktop-optional">Install Ubuntu Desktop (optional)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-github-ssh-keys">Setup GitHub SSH Keys</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-alternatives">Update Alternatives</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-github-ssh-keys">Setup GitHub SSH Keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-alternatives">Update Alternatives</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros2-humble">ROS2 Humble</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">TurtleBot3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ece387-curriculum">ECE387 Curriculum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-ros2-environment">Configuring ROS2 Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-and-build-ros2-packages">Install and Build ROS2 Packages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-opencr-firmware">Updating OpenCR firmware</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ece387-curriculum">ECE387 Curriculum</a></li>
 </ul>
 </li>
 </ul>
@@ -465,6 +462,10 @@ document.write(`
 <h1>Robot Setup<a class="headerlink" href="#robot-setup" title="Permalink to this heading">#</a></h1>
 <p>This guide will walk through the steps to install Ubuntu Server 22.04 LTS, ROS2 Humble, and all dependencies on a Raspberry Pi 4B. This Pi is then embedded within the Robotis TurtleBot3 Burger along with a USB camera. The robotics system, TurtleBot3, is utilized in the United States Air Force Academy’s Electrical and Computer Engineering department to teach undergraduate students robotics.</p>
 <p>This guide is adapted from the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/#overview">TurtleBot3 e-Manual</a>.</p>
+<ul class="simple">
+<li><p>Created by Steve Beyer, 2022</p></li>
+<li><p>Updated by Stan Baek, 2023</p></li>
+</ul>
 <hr class="docutils" />
 <section id="turtlebot3">
 <h2>TurtleBot3<a class="headerlink" href="#turtlebot3" title="Permalink to this heading">#</a></h2>
@@ -484,7 +485,7 @@ document.write(`
 <h3>Raspberry Pi<a class="headerlink" href="#raspberry-pi" title="Permalink to this heading">#</a></h3>
 <p>A Raspberry Pi 4 B with 8 GB of RAM is used throughout this curriculum. Ensure heat sinks are propertly installed on the Pi such as these from <a class="reference external" href="https://www.canakit.com/raspberry-pi-4-heat-sinks.html">CanaKit</a>.</p>
 <p>Also, a small fan can be installed to help with cooling. We used this 3D printed bracket to mount the fan.</p>
-<a class="reference internal image-reference" href="../_images/fan.jpg"><img alt="../_images/fan.jpg" class="align-center" src="../_images/fan.jpg" style="width: 520px;" /></a>
+<a class="reference internal image-reference" href="../_images/fan.jpg"><img alt="../_images/fan.jpg" class="align-center" src="../_images/fan.jpg" style="width: 380px;" /></a>
 </section>
 <section id="camera">
 <h3>Camera<a class="headerlink" href="#camera" title="Permalink to this heading">#</a></h3>
@@ -498,18 +499,18 @@ document.write(`
 <h3>Download Ubuntu and flash MicroSD card<a class="headerlink" href="#download-ubuntu-and-flash-microsd-card" title="Permalink to this heading">#</a></h3>
 <p>There are multiple ways to download and install Ubuntu 22.04 to a MicroSD card, but the Raspberry Pi Imager is one of the easiest. Instructions for installing the imager on your operating system can be found on the <a class="reference external" href="https://www.raspberrypi.com/software/">Raspberry Pi OS software page</a>.</p>
 <p>Once installed, start the imager and select the “CHOOSE OS” button.</p>
-<a class="reference internal image-reference" href="../_images/installer1.png"><img alt="../_images/installer1.png" class="align-center" src="../_images/installer1.png" style="width: 540px;" /></a>
+<a class="reference internal image-reference" href="../_images/installer1.png"><img alt="../_images/installer1.png" class="align-center" src="../_images/installer1.png" style="width: 480px;" /></a>
 <br>
 Scroll down the menu and select "Other general purpose OS".
 <br>
-<a class="reference internal image-reference" href="../_images/installer2.png"><img alt="../_images/installer2.png" class="align-center" src="../_images/installer2.png" style="width: 540px;" /></a>
+<a class="reference internal image-reference" href="../_images/installer2.png"><img alt="../_images/installer2.png" class="align-center" src="../_images/installer2.png" style="width: 480px;" /></a>
 <br>
 <p>Next, select “Ubuntu”.</p>
-<a class="reference internal image-reference" href="../_images/installer3.png"><img alt="../_images/installer3.png" class="align-center" src="../_images/installer3.png" style="width: 540px;" /></a>
+<a class="reference internal image-reference" href="../_images/installer3.png"><img alt="../_images/installer3.png" class="align-center" src="../_images/installer3.png" style="width: 480px;" /></a>
 <br>
 Lastly, scroll and select the latest 64-bit version of "Ubuntu Server 22.04 LTS".
 <br>
-<a class="reference internal image-reference" href="../_images/installer4.png"><img alt="../_images/installer4.png" class="align-center" src="../_images/installer4.png" style="width: 540px;" /></a>
+<a class="reference internal image-reference" href="../_images/installer4.png"><img alt="../_images/installer4.png" class="align-center" src="../_images/installer4.png" style="width: 480px;" /></a>
 <br>
 <p>Now that you have the correct image selected, you need to choose the correct storage device that corresponds to the MicroSD card. Select “CHOOSE STORAGE”.</p>
 <div class="admonition warning">
@@ -764,13 +765,13 @@ Swap:<span class="w">          </span><span class="m">2</span>.0Gi<span class="w
 </pre></div>
 </div>
 </section>
+</section>
 <section id="update-and-upgrade">
-<h4>Update and Upgrade<a class="headerlink" href="#update-and-upgrade" title="Permalink to this heading">#</a></h4>
+<h3>Update and Upgrade<a class="headerlink" href="#update-and-upgrade" title="Permalink to this heading">#</a></h3>
 <p>Since we turned off automatic updates, you should periodically update and upgrade. You can use this single command to accomplish both while accepting all upgrades:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>-y<span class="w"> </span>upgrade
 </pre></div>
 </div>
-</section>
 </section>
 <section id="install-ubuntu-desktop-optional">
 <h3>Install Ubuntu Desktop (optional)<a class="headerlink" href="#install-ubuntu-desktop-optional" title="Permalink to this heading">#</a></h3>
@@ -834,13 +835,13 @@ ssh-add<span class="w"> </span>~/.ssh/id_ed25519
 <p>In the <code class="docutils literal notranslate"><span class="pre">Title</span></code> field, add a descriptive label for the new key, such as “robot0”.</p>
 <p>Paste your key into the <code class="docutils literal notranslate"><span class="pre">Key</span></code> field (contents of the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file).</p>
 <p>Click <strong>Add SSH key</strong>.</p>
+</section>
 <section id="update-alternatives">
-<h4>Update Alternatives<a class="headerlink" href="#update-alternatives" title="Permalink to this heading">#</a></h4>
+<h3>Update Alternatives<a class="headerlink" href="#update-alternatives" title="Permalink to this heading">#</a></h3>
 <p>Python3 is installed in Ubuntu 22.04 by default. Some ROS packages utilize the “python” command instead of “python3” so we need to create a new executable, “/usr/bin/python” that will call the Python3 (basically use the command “python” to call Python3):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python3<span class="w"> </span><span class="m">10</span>
 </pre></div>
 </div>
-</section>
 </section>
 </section>
 <section id="ros2-humble">
@@ -886,6 +887,10 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-colcon-common-extensions
 </pre></div>
 </div>
+</section>
+<section id="configuring-ros2-environment">
+<h3>Configuring ROS2 Environment<a class="headerlink" href="#configuring-ros2-environment" title="Permalink to this heading">#</a></h3>
+<p>Ref: <a class="reference external" href="https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html">https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html</a></p>
 <p>Setup ROS environment variables and setup scripts within the <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file. If you don’t want to have to source the setup file every time you open a new shell, then add the command to your shell startup script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/ros/humble/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </pre></div>
@@ -904,18 +909,100 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <span class="nv">ROS_DISTRO</span><span class="o">=</span>humble
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id1">
-<h2>TurtleBot3<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p>ToDo: need to update this section for ROS2</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libudev-dev<span class="w"> </span>ros-noetic-turtlebot3-msgs
-<span class="nb">cd</span><span class="w"> </span>~/robot_ws/src
-git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>develop<span class="w"> </span>https://github.com/ROBOTIS-GIT/ld08_driver.git
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ROBOTIS-GIT/turtlebot3.git
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+<p>ROS 2 nodes on the same domain can freely discover and send messages to each other, while ROS 2 nodes on different domains cannot. All ROS 2 nodes use domain ID 0 by default. To avoid interference between different groups of computers running ROS 2 on the same network, a different domain ID should be set for each group.</p>
+<p>We can simply choose a domain ID between 0 and 101, inclusive, but for ECE387, we choose X for RobotX and MasterX. Once you have determined a unique integer for your group of ROS 2 nodes, you can set the environment variable with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;export ROS_DOMAIN_ID=&lt;your_domain_id&gt;&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
 </pre></div>
 </div>
+</section>
+<section id="install-and-build-ros2-packages">
+<h3>Install and Build ROS2 Packages<a class="headerlink" href="#install-and-build-ros2-packages" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">argcomplete</span> <span class="n">python3</span><span class="o">-</span><span class="n">colcon</span><span class="o">-</span><span class="n">common</span><span class="o">-</span><span class="n">extensions</span> <span class="n">libboost</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">dev</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">humble</span><span class="o">-</span><span class="n">hls</span><span class="o">-</span><span class="n">lfcd</span><span class="o">-</span><span class="n">lds</span><span class="o">-</span><span class="n">driver</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">humble</span><span class="o">-</span><span class="n">turtlebot3</span><span class="o">-</span><span class="n">msgs</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">humble</span><span class="o">-</span><span class="n">dynamixel</span><span class="o">-</span><span class="n">sdk</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">libudev</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">turtlebot3_ws</span><span class="o">/</span><span class="n">src</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="o">~/</span><span class="n">turtlebot3_ws</span><span class="o">/</span><span class="n">src</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">humble</span><span class="o">-</span><span class="n">devel</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ROBOTIS</span><span class="o">-</span><span class="n">GIT</span><span class="o">/</span><span class="n">turtlebot3</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">ros2</span><span class="o">-</span><span class="n">devel</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ROBOTIS</span><span class="o">-</span><span class="n">GIT</span><span class="o">/</span><span class="n">ld08_driver</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">turtlebot3_ws</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">turtlebot3</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="n">turtlebot3_cartographer</span> <span class="n">turtlebot3_navigation2</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">turtlebot3_ws</span><span class="o">/</span>
+<span class="n">colcon</span> <span class="n">build</span> <span class="o">--</span><span class="n">symlink</span><span class="o">-</span><span class="n">install</span> <span class="o">--</span><span class="n">parallel</span><span class="o">-</span><span class="n">workers</span> <span class="mi">1</span>
+<span class="n">source</span> <span class="o">~/</span><span class="n">turtlebot3_ws</span><span class="o">/</span><span class="n">install</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">bash</span>
+<span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<p>USB Port Setting for OpenCR</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo cp `ros2 pkg prefix turtlebot3_bringup`/share/turtlebot3_bringup/script/99-turtlebot3-cdc.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+</pre></div>
+</div>
+<p>LDS Configuration: The TurtleBot3 LDS has been updated to LDS-02 since 2022.
+For the Turtlebots we have purchased after 2022, use LDS-02 for the LDS_MODEL.</p>
+<a class="reference internal image-reference" href="../_images/lds_small.png"><img alt="../_images/lds_small.png" class="align-center" src="../_images/lds_small.png" style="width: 420px;" /></a>
+<br>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s1">&#39;export LDS_MODEL=LDS-02&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">echo</span> <span class="s1">&#39;export TURTLEBOT3_MODEL=burger&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+</section>
+<section id="updating-opencr-firmware">
+<h3><a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup">Updating OpenCR firmware</a><a class="headerlink" href="#updating-opencr-firmware" title="Permalink to this heading">#</a></h3>
+<p>The last step is updating the firmware for the OpenCR controller board.</p>
+<p>Install required packages on the Raspberry Pi</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dpkg<span class="w"> </span>--add-architecture<span class="w"> </span>armhf
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libc6:armhf
+</pre></div>
+</div>
+<p>Reboot the Raspberry Pi</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>reboot
+</pre></div>
+</div>
+<p>Setup the OpenCR model name:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">OPENCR_PORT</span><span class="o">=</span>/dev/ttyACM0
+<span class="nb">export</span><span class="w"> </span><span class="nv">OPENCR_MODEL</span><span class="o">=</span>burger
+rm<span class="w"> </span>-rf<span class="w"> </span>./opencr_update.tar.bz2
+</pre></div>
+</div>
+<p>Download the firmware and loader, then extract the file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/latest/opencr_update.tar.bz2
+</pre></div>
+</div>
+<p>Upload firmware to the OpenCR:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/opencr_update
+./update.sh<span class="w"> </span><span class="nv">$OPENCR_PORT</span><span class="w"> </span><span class="nv">$OPENCR_MODEL</span>.opencr
+</pre></div>
+</div>
+<p>A successful firmware upload for TurtleBot3 Burger will look like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@robot99:<span class="w"> </span>~/Downloads/opencr_update
+$<span class="w"> </span>./update.sh<span class="w"> </span><span class="nv">$OPENCR_PORT</span><span class="w"> </span><span class="nv">$OPENCR_MODEL</span>.opencr
+aarch64
+arm
+OpenCR<span class="w"> </span>Update<span class="w"> </span>Start..
+opencr_ld_shell<span class="w"> </span>ver<span class="w"> </span><span class="m">1</span>.0.0
+opencr_ld_main
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>file<span class="w"> </span>name<span class="w">          </span>:<span class="w"> </span>burger.opencr
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>file<span class="w"> </span>size<span class="w">          </span>:<span class="w"> </span><span class="m">136</span><span class="w"> </span>KB
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>fw_name<span class="w">            </span>:<span class="w"> </span>burger
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>fw_ver<span class="w">             </span>:<span class="w"> </span>V230127R1
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>Open<span class="w"> </span>port<span class="w">          </span>:<span class="w"> </span>/dev/ttyACM0
+<span class="o">[</span><span class="w">  </span><span class="o">]</span>
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>Board<span class="w"> </span>Name<span class="w">         </span>:<span class="w"> </span>OpenCR<span class="w"> </span>R1.0
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>Board<span class="w"> </span>Ver<span class="w">          </span>:<span class="w"> </span>0x17020800
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>Board<span class="w"> </span>Rev<span class="w">          </span>:<span class="w"> </span>0x00000000
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>flash_erase<span class="w">        </span>:<span class="w"> </span><span class="m">0</span>.95s
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>flash_write<span class="w">        </span>:<span class="w"> </span><span class="m">1</span>.31s
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>CRC<span class="w"> </span>Check<span class="w">          </span>:<span class="w"> </span>D92222<span class="w"> </span>D92222<span class="w"> </span>,<span class="w"> </span><span class="m">0</span>.004000<span class="w"> </span>sec
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>Download
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>jump_to_fw
+</pre></div>
+</div>
+<p>If not successful, attempt the debug methods in the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup">OpenCR Setup</a> guide.</p>
+<!-- #endregion -->
+</section>
 <section id="ece387-curriculum">
 <h3><a class="reference external" href="https://github.com/AF-ROBOTICS/ece387_curriculum">ECE387 Curriculum</a><a class="headerlink" href="#ece387-curriculum" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:AF-ROBOTICS/ece387_curriculum.git
@@ -942,39 +1029,6 @@ pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </
 <div><p>📝️ <strong>Note:</strong> the “dlib” package will take quite a while to install.</p>
 </div></blockquote>
 <!-- #endregion -->
-<!-- #region -->
-</section>
-<section id="updating-opencr-firmware">
-<h3><a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup">Updating OpenCR firmware</a><a class="headerlink" href="#updating-opencr-firmware" title="Permalink to this heading">#</a></h3>
-<p>The last step is updating the firmware for the OpenCR controller board.</p>
-<p>Install required packages on the Raspberry Pi</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dpkg<span class="w"> </span>--add-architecture<span class="w"> </span>armhf
-sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libc6:armhf
-</pre></div>
-</div>
-<p>Setup the OpenCR model name:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">OPENCR_PORT</span><span class="o">=</span>/dev/ttyACM0
-<span class="nb">export</span><span class="w"> </span><span class="nv">OPENCR_MODEL</span><span class="o">=</span>burger_noetic
-rm<span class="w"> </span>-rf<span class="w"> </span>./opencr_update.tar.bz2
-</pre></div>
-</div>
-<p>Download the firmware and loader, then extract the file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS1/latest/opencr_update.tar.bz2<span class="w"> </span>
-tar<span class="w"> </span>-xvf<span class="w"> </span>opencr_update.tar.bz2<span class="w"> </span>
-</pre></div>
-</div>
-<p>Upload firmware to the OpenCR:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>./opencr_update
-./update.sh<span class="w"> </span><span class="nv">$OPENCR_PORT</span><span class="w"> </span><span class="nv">$OPENCR_MODEL</span>.opencr
-</pre></div>
-</div>
-<p>A successful firmware upload for TurtleBot3 Burger will look like:
-<img alt="lobo" src="../_images/firmware.png" /></p>
-<p>If not successful, attempt the debug methods in the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup">OpenCR Setup</a> guide.</p>
-<!-- #endregion -->
-<p>Created by Steve Beyer, 2022
-Updated by Stan Baek, 2023</p>
 </section>
 </section>
 </section>
@@ -1065,23 +1119,20 @@ Updated by Stan Baek, 2023</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-ssh-and-generate-new-keys">Enable SSH and generate new keys</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-swap-space-optional">Add Swap Space (optional)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-changes">Verify changes</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-and-upgrade">Update and Upgrade</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-and-upgrade">Update and Upgrade</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-desktop-optional">Install Ubuntu Desktop (optional)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-github-ssh-keys">Setup GitHub SSH Keys</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-alternatives">Update Alternatives</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-github-ssh-keys">Setup GitHub SSH Keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-alternatives">Update Alternatives</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros2-humble">ROS2 Humble</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">TurtleBot3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ece387-curriculum">ECE387 Curriculum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-ros2-environment">Configuring ROS2 Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-and-build-ros2-packages">Install and Build ROS2 Packages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-opencr-firmware">Updating OpenCR firmware</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ece387-curriculum">ECE387 Curriculum</a></li>
 </ul>
 </li>
 </ul>
