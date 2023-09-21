@@ -9,7 +9,7 @@ This guide is adapted from the [TurtleBot3 e-Manual](https://emanual.robotis.com
 ---
 
 
-## TurtleBot3
+## Hardware
 Below is a list of recommended hardware and links. Other off-the-shelf components can replace the ones below. 
 
 - [TurtleBot3](https://www.robotis.us/turtlebot-3/) 
@@ -42,7 +42,7 @@ After installing the Raspberry pi level of the TurtleBot3 you need to install th
 :align: center
 ```
 
-## Ubuntu Installation
+## Software
 
 ### Download Ubuntu and flash MicroSD card
 There are multiple ways to download and install Ubuntu 22.04 to a MicroSD card, but the Raspberry Pi Imager is one of the easiest. Instructions for installing the imager on your operating system can be found on the [Raspberry Pi OS software page](https://www.raspberrypi.com/software/). 
@@ -93,14 +93,14 @@ Once you are sure the correct drive is selected, click "WRITE".
 Once complete you should have an Ubuntu SD card! Ensure your Raspberry Pi is powered off, connected to a monitor, keyboard, and mouse, and insert the SD card.
 
 
-## Configuring Ubuntu
+### Ubuntu Setup
 
-### Login and changing password
+#### Login and changing password
 Once Ubuntu boots up you will be prompted to enter the login and password. It may take a few minutes on first boot to configure the default username and password, so if login fails, try again after a few minutes. The default username is **ubuntu** and password is **ubuntu**.
 
 On first login, you will be prompted to change the password. Enter the current password, **ubuntu**, and then enter a new password twice.
 
-### Changing username (optional)
+#### Changing username (optional)
 I like to change the username to "pi" so I remember that this machine is a Raspberry Pi. This is optional and you can change the username to anything you like.
 
 First, add a *temp* user:
@@ -145,7 +145,7 @@ sudo rm -r /home/temp
 Now at the terminal prompt you should see `pi@ubuntu:` and if you type `pwd` you should see `/home/pi` (with `pi` replaced with the username you chose). 
 
 
-### Change hostname
+#### Change hostname
 If you have multiple robots on your network it is good to give each a unique hostname. We number each robot from 0-n and each robot has a corresponding hostname (e.g., robot0).
 
 Change the hostname with the command line editor of your choice.
@@ -157,7 +157,7 @@ Replace `ubuntu` with the hostname of choice, such as robot0. Save and exit.
 
 The new hostname will not take effect until reboot. Don't reboot yet, though! We have a couple more things to accomplish before reboot.
 
-### Set up Wi-Fi
+#### Set up Wi-Fi
 Until a desktop GUI is installed we have to work with the command line to set up the Wi-Fi. This is the most reliable method I have found and we will delete these changes once a GUI is installed.
 
 First, determine the name of your Wi-Fi network adapter by typing `ip link` (for the Raspberry Pi version of Ubuntu Server 20.04 LTS it is typically **`wlan0`**).
@@ -219,7 +219,7 @@ Determine subnet and gateway addresses:
 ```
 ubuntu@ubuntu:~$ ip route
 default via 192.168.0.1 dev wlan0 proto static 
-192.168.0.1/24 dev wlan0 proto kernel scope link src 192.168.0.201
+192.168.0.0/24 dev wlan0 proto kernel scope link src 192.168.0.201
 ```
 
 Set static IP within subnet range:
@@ -239,19 +239,19 @@ network:
         wlan0:
              dhcp4: no
              access-points:
-                 "robotics_5GHz":
+                 "YOUR-SSID":
                      password: "YOUR-PASSWORD"
              addresses:
-                 - 192.168.4.208/24
+                 - 192.168.0.201/24
              routes:
                  - to: default
-                   via: 192.168.4.1
+                   via: 192.168.0.1
              nameservers:
-                 addresses: [192.168.4.1, 8.8.8.8, 1.1.1.1]
+                 addresses: [192.168.0.1, 8.8.8.8, 1.1.1.1]
              optional: true
 ```
 
-### Disable Automatic Updates
+#### Disable Automatic Updates
 Ubuntu will attempt to apply system updates in the background. This has caused issues in the past with ROS dependencies and keys. Disabling automatic updates allows you to control when Ubuntu installs updates. While this is not a good habit for general computer security, it is fine for this application of an embedded robotics system. Ensure you periodically update and upgrade your system.
 
 Open the auto updater configuration file using sudoedit:
@@ -273,7 +273,7 @@ APT::Periodic::AutocleanInterval "0";
 APT::Periodic::Download-Upgradeable-Packages "0";
 ```
 
-### Enable SSH and generate new keys
+#### Enable SSH and generate new keys
 ```bash
 sudo ssh-keygen -A
 sudo systemctl start ssh
@@ -383,7 +383,7 @@ Since we turned off automatic updates, you should periodically update and upgrad
 sudo apt update && sudo apt -y upgrade
 ```
 
-### Install Ubuntu Desktop (optional)
+#### Install Ubuntu Desktop (optional)
 A desktop GUI is **not** necessary for a remote machine like TurtleBot3 and will take up about 1.4 GB of RAM to run. If GUI is neccessary, the following will install the environment while confirming the installation:
 
 ```bash
@@ -523,8 +523,7 @@ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o
 Then add the repository to your sources list.
 
 ```bash
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ro
 ```
 
 Install ROS 2 Humble:
