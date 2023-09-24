@@ -1,9 +1,7 @@
 # Robotics Operating System (ROS)
 
-
-
 ## Purpose
-This Jupyter Notebook accompanies the introduction to ROS notetaker used in class. We will apply the knowledge you learned by interacting with a simulated TurlteBot3 Burger.
+This lecture accompanies the introduction to ROS notetaker used in class. We will apply the knowledge you learned by interacting with a simulated TurlteBot3 Burger.
 
 ## ROS Introduction.
 Robotics Operating System (https://www.ros.org/about-ros/):
