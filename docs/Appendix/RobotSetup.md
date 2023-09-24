@@ -572,16 +572,23 @@ source ~/.bashrc
 There are a number of ROS packages required to operate the TurtleBot3.
 
 ##### ROS Dependencies
+
 ```bash
 sudo apt-get install ros-noetic-laser-proc ros-noetic-hls-lfcd-lds-driver \
   ros-noetic-rgbd-launch ros-noetic-rosserial-arduino \
   ros-noetic-rosserial-python ros-noetic-rosserial-client \
   ros-noetic-rosserial-msgs ros-noetic-amcl ros-noetic-map-server \
   ros-noetic-move-base ros-noetic-urdf ros-noetic-xacro \
-  ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
-  ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
-
+  ros-noetic-compressed-image-transport ros-noetic-gmapping \
+  ros-noetic-navigation ros-noetic-interactive-markers
 ```
+
+NOTE: We may not need the following packages on the robot.
+```bash
+sudo apt-get install ros-noetic-rqt* ros-noetic-rviz 
+```
+
+
 ##### TurtleBot3 Dependencies
 ```bash
 sudo apt install libudev-dev ros-noetic-turtlebot3-msgs
@@ -638,13 +645,13 @@ Setup the OpenCR model name:
 ```bash
 export OPENCR_PORT=/dev/ttyACM0
 export OPENCR_MODEL=burger_noetic
-rm -rf ./opencr_update.tar.bz2
 ```
 
 Download the firmware and loader, then extract the file:
 ```bash
 wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS1/latest/opencr_update.tar.bz2 
 tar -xvf opencr_update.tar.bz2 
+rm -rf ./opencr_update.tar.bz2
 ```
 
 Upload firmware to the OpenCR:
