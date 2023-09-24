@@ -163,7 +163,6 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">📌 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="schedule.html">📆 Course Schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">💎 Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">🐍 Python Tutorials</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 1</span></p>
@@ -420,10 +419,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-communication-and-control-c2">Primary Communication and Control (C2)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textbooks">Textbooks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration-policy">Collaboration Policy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-requirements">Documentation Requirements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-documentation">Sample Documentation</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ei-policy">EI Policy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cas-policy">CAS Policy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#late-work-policy">Late Work Policy</a></li>
@@ -447,24 +442,23 @@ document.write(`
 <h1>📌 Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this heading">#</a></h1>
 <section id="course-goals">
 <h2>Course Goals<a class="headerlink" href="#course-goals" title="Permalink to this heading">#</a></h2>
-<p>Cadets shall develop the skills to design, implement, test, and debug microcontroller-based systems by developing operational assembly and C language programs that incorporate the built-in microcontroller functions, and by successfully interfacing the microcontroller to the external world.</p>
+<p>Cadets shall design, implement, test, and debug robotics-based systems by developing Python programs incorporating built-in Robotics Operating System (ROS) functions and successfully interfacing the microcomputer with the external world.</p>
 </section>
 <section id="course-objectives">
 <h2>Course Objectives<a class="headerlink" href="#course-objectives" title="Permalink to this heading">#</a></h2>
 <p>Cadets shall be able to:</p>
 <ul class="simple">
-<li><p>Utilize the built-in functional units of a specified microcontroller.</p></li>
-<li><p>Write, assemble, link, and run microcontroller code in assembly language.</p></li>
-<li><p>Write, compile, assemble, link, and run microcontroller code in the C programming language.</p></li>
-<li><p>Interpret and explain orally and in writing the functions of a given assembly language or C program as well as laboratory work.</p></li>
-<li><p>Evaluate, analyze, debug, and modify a given program to improve its execution of a specified task.</p></li>
-<li><p>Demonstrate a working knowledge of the on-board hardware components of a microcontroller and implement an interface between a specified microcontroller and other hardware.</p></li>
-<li><p>Demonstrate the ability to solve well and ill-defined problems.</p></li>
+<li><p>Demonstrate a clear understanding of basic concepts of robotic systems.</p></li>
+<li><p>Utilize the Linux operating system to develop software systems for robotic applications.</p></li>
+<li><p>Write, compile, and run Robotics Operating System (ROS) code in Python.</p></li>
+<li><p>Interface sensors and actuators with a microcomputer.</p></li>
+<li><p>Implement control algorithms to accomplish robotic tasks.</p></li>
+<li><p>Evaluate and analyze in writing the outcomes of laboratory work.</p></li>
 </ul>
 </section>
 <section id="course-prerequisites">
 <h2>Course Prerequisites<a class="headerlink" href="#course-prerequisites" title="Permalink to this heading">#</a></h2>
-<p>CS 110 and ECE 281</p>
+<p>CS206, CS210, CS211, CS212, or department approval.</p>
 </section>
 <section id="course-schedule">
 <h2>Course Schedule<a class="headerlink" href="#course-schedule" title="Permalink to this heading">#</a></h2>
@@ -488,31 +482,26 @@ document.write(`
 <td><p>20%</p></td>
 </tr>
 <tr class="row-odd"><td><p>Labs</p></td>
-<td><p>50%</p></td>
+<td><p>75%</p></td>
 <td><p>Labs</p></td>
-<td><p>30%</p></td>
+<td><p>50%</p></td>
 </tr>
-<tr class="row-even"><td><p>Homework</p></td>
-<td><p>28%</p></td>
-<td><p>Homework</p></td>
-<td><p>23%</p></td>
-</tr>
-<tr class="row-odd"><td><p>Skills   Review</p></td>
-<td><p>2%</p></td>
-<td><p>Skills   Review</p></td>
-<td><p>2%</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p></p></td>
-<td><p>Final   Project</p></td>
-<td><p>25%</p></td>
+<tr class="row-even"><td><p>Quizzes</p></td>
+<td><p>5%</p></td>
+<td><p>Quizzes</p></td>
+<td><p>5%</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
 <td><p></p></td>
+<td><p>Final Project</p></td>
+<td><p>25%</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>Total</p></td>
+<tr class="row-odd"><td><p>Total</p></td>
 <td><p>100%</p></td>
 <td><p>Total</p></td>
 <td><p>100%</p></td>
@@ -544,55 +533,25 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>You must complete all minimum functionalities on labs in order to complete the course.  Even if an assignment is so late that no credit will be received, the assignment must be completed to the satisfaction of the instructor to prevent a grade of “Incomplete.”</p>
+<p><em><strong>You must complete all minimum functionalities on labs in order to complete the course.</strong>  Even if an assignment is so late that no credit will be received, the assignment must be completed to the satisfaction of the instructor to prevent a grade of “Incomplete.”</em></p>
 </section>
 <section id="primary-communication-and-control-c2">
 <h2>Primary Communication and Control (C2)<a class="headerlink" href="#primary-communication-and-control-c2" title="Permalink to this heading">#</a></h2>
-<p>All communication and course material will be provided through a course and section Team. Additionally, videos will be uploaded to a YouTube channel for your convenience. Lastly, Bitbucket will be used for cadets to provide their source code for laboratories.</p>
+<p>All communication and course material will be provided through a course/section Team. A Blockboard course will be used to provide grades. Lastly, GitHub will be used for cadets to provide their source code for laboratories.</p>
 </section>
 <section id="textbooks">
 <h2>Textbooks<a class="headerlink" href="#textbooks" title="Permalink to this heading">#</a></h2>
-<p><strong>Required:</strong>
-Embedded Systems: Introduction to Robotics, Johnathan W. Valvano, First Edition, 2019. ISBN: 978-1074544300.</p>
-<p><strong>Optional:</strong>
-Embedded Systems: Introduction to the MSP432 Microcontroller (Vol 1), Johnathan W. Valvano, First Edition, 2019. ISBN: 978-1512185676.</p>
+<p>There is no printed textbook for ECE 387. Reading materials/labs are posted on this Course Web.</p>
 </section>
 <section id="collaboration-policy">
 <h2>Collaboration Policy<a class="headerlink" href="#collaboration-policy" title="Permalink to this heading">#</a></h2>
 <p>Unless  specifically directed otherwise, the collaboration policy for this course is:</p>
-<p>Authorized resources: Any material from the ECE 382 course site and online sources regarding C programming syntax only. This does not include any solutions or solution stubs for challenges similar to those asked in any assignments.</p>
+<p>Authorized resources: Any material from the ECE 387 course site and online sources regarding C programming syntax only. This does not include any solutions or solution stubs for challenges similar to those asked in any assignments.</p>
 <ul class="simple">
-<li><p>For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone.  We expect all graded work, including cod and written reports, to be in your own work. Copying another person’s work, with or without documentation, will result in NO academic credit. Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.</p></li>
+<li><p>For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone.  We expect all graded work, including code and written reports, to be in your own work. Copying another person’s work, with or without documentation, will result in NO academic credit. Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.</p></li>
 <li><p>All help received on work submitted for grading must be documented in accordance with the course documentation policy.</p></li>
-<li><p>While working on projects, you may collaborate only with your own team and with the ECE 382 instructor.</p></li>
-<li><p>For graded homework assignments and labs, you may collaborate with any other cadet currently enrolled in ECE 382.  You may also reference the posted answers and solutions.</p></li>
 <li><p>GRs are individual efforts. No collaboration is allowed while taking these exams. All electronic devices (phones, smartwatches, computers, tablets, etc.) must be placed out of sight for the duration of the event. If any electronic device is seen during the event, the student will receive a zero for that effort.</p></li>
 </ul>
-</section>
-<section id="documentation-requirements">
-<h2>Documentation Requirements<a class="headerlink" href="#documentation-requirements" title="Permalink to this heading">#</a></h2>
-<p>You must document all help received from any sources other than your instructor or instructor-provided course materials (including your textbook).</p>
-<ul class="simple">
-<li><p>Each documentation statement must be specific enough that it explicitly describes what assistance was provided, how it was used in completing the assignment, and who provided the assistance.</p></li>
-<li><p>If no help was received on this assignment, the documentation statement must state “None.”</p></li>
-<li><p>If you checked answers with anyone, you must document with whom on which problems. You must document whether you made any changes or not.  If you did make changes, you must document the problems you changed and the reasons why.</p></li>
-<li><p>Vague documentation statements will result in a 5% deduction on the assignment.</p></li>
-</ul>
-<section id="sample-documentation">
-<h3>Sample Documentation<a class="headerlink" href="#sample-documentation" title="Permalink to this heading">#</a></h3>
-<p>Consider the following examples when writing your own detailed documentation
-statements:</p>
-<p><strong>Bad Example</strong>: Cadet McFly explained how the flux capacitor worked.</p>
-<p><strong>Good Example</strong>: Cadet McFly explained how the flux capacitor worked conceptually, using diagrams and the assignment materials. He did not look at my code nor did I look at his code during this discussion.</p>
-<p><strong>Bad Example</strong>: Cadet McFly helped fix my get_flux() method.</p>
-<p><strong>Good Example</strong>: Cadet McFly helped fix my get_flux() method by looking at my code and finding that I had current_flux &lt; max_flux instead of current_flux &lt;= max_flux on line 85. Note: A situation such as this may result in less than full credit for the get_flux() method, but due to the documentation statement there is no violation of the honor code.</p>
-<p><strong>Bad Example</strong>: Cadet McFly and I worked together on the get_flux() method.</p>
-<p><strong>Good Example</strong>: Cadet McFly and I worked together on the get_flux() method, each contributing equally to its development. Prior to this help, neither of our own get_flux() methods were working. My get_flux() method is now nearly identical to Cadet McFly’s get_flux() method. Note: In a situation such as this, at most half credit would be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.</p>
-<p><strong>Bad Example</strong>: Cadet McFly showed me how the get_flux() method works.</p>
-<p><strong>Good Example</strong>: Cadet McFly showed me how the get_flux() method works by letting me look at his code. Prior to this help my own get_flux() method was not working.  My get_flux() method is now nearly identical to Cadet McFly’s get_flux() method. Note: In a situation such as this, points would not be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.</p>
-<p><strong>Bad Example</strong>: Cadet McFly showed me how the get_flux() method works.</p>
-<p><strong>Good Example</strong>:: Cadet McFly showed me how the get_flux() method works by looking at my code and talking me through each line as I wrote it.  Prior to this help my own get_flux() method was wrong.  My get_flux() method is now nearly identical to Cadet McFly’s get_flux() method. Note: In a situation such as this, points would not be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.</p>
-</section>
 </section>
 <section id="ei-policy">
 <h2>EI Policy<a class="headerlink" href="#ei-policy" title="Permalink to this heading">#</a></h2>
@@ -600,7 +559,7 @@ statements:</p>
 </section>
 <section id="cas-policy">
 <h2>CAS Policy<a class="headerlink" href="#cas-policy" title="Permalink to this heading">#</a></h2>
-<p>For CAS notification, email your instructor prior to your absence and include the lesson number, the date, and the reason (descriptive reason—don’t just send a CAS code or SCA number) as soon as possible, preferably before the absence occurs.  It is your responsibility to check your SCA to see if instructor permission is required.  If it is, you must make the request prior to your absence.  If you miss class, you are responsible for all material (e.g. assignments, notes, announcements, handouts, etc.) covered in class.  Please check with another cadet in your section to find out what you missed.</p>
+<p>For CAS notification, email your instructor prior to your absence and include the lesson number, the date, and the reason (descriptive reason — don’t just send a CAS code or SCA number) as soon as possible, preferably before the absence occurs.  It is your responsibility to check your SCA to see if instructor permission is required.  If it is, you must make the request prior to your absence.  If you miss class, you are responsible for all material (e.g. assignments, notes, announcements, handouts, etc.) covered in class.  Please check with another cadet in your section to find out what you missed.</p>
 <p>When a cadet is absent on the day that an assignment is due, or on the date of a quiz or GR, the cadet is responsible for meeting the following standards:</p>
 <ul class="simple">
 <li><p>Scheduled Absence: If a cadet will miss any graded event due to a scheduled absence such as an SCA, sport team trip, or scheduled lasik surgery, the cadet is expected to complete all work BEFORE the absence.</p></li>
@@ -610,25 +569,16 @@ statements:</p>
 </section>
 <section id="late-work-policy">
 <h2>Late Work Policy<a class="headerlink" href="#late-work-policy" title="Permalink to this heading">#</a></h2>
-<p>All work is due as shown on Gradescope. If problems arise with graded assignments, see your instructor in advance.</p>
-<ul class="simple">
-<li><p>The cutoff for on-time submission is 0700 on the due date.</p></li>
-<li><p>Late days are counted in 24-hour periods. Submitting between 07:00:01 on the due date and 07:00:00 the next day is one day late, and so on.</p></li>
-<li><p>You are given 5 grace days (self-granted extensions) which you can use to give yourself extra time without penalty. No more than 2 grace days can used for each assignment.</p></li>
-<li><p>Instructor-granted extensions are only considered after all grace days are used and only given in exceptional situations. Computer problems such as hard-drive reimaging are not considered as exceptional situations and you must use grace days.</p></li>
-<li><p>Late work handed in when you have run out of grace is discounted 30% for the first day late and 10% per day late thereafter.</p></li>
-<li><p>Every assignment has a hard deadline; 4 calendar days past the original due date.</p></li>
-<li><p>Late submissions (penalty or not) are not accepted after the hard deadline or after the solution to the assignment is published. No late submissions (penalty or not) will be accepted for the assignments right before GRs.</p></li>
-</ul>
+<p>All work is due as shown on the <a class="reference internal" href="schedule.html"><span class="doc std std-doc">schedule</span></a> or in the assignment. If problems arise with graded assignments, see your instructor in advance.  Assignments turned in later than the due date <strong>without prior permission</strong> from the instructor will be penalized (with instructor discretion) 25% per <strong>calendar</strong> day.</p>
 </section>
 <section id="assignments">
 <h2>Assignments<a class="headerlink" href="#assignments" title="Permalink to this heading">#</a></h2>
-<p>Assignments and due dates are included in Gradescope.</p>
+<p>Assignments and due dates are included on the <a class="reference internal" href="schedule.html"><span class="doc std std-doc">schedule</span></a>.</p>
 </section>
 <section id="exams-and-quizzes">
 <h2>Exams and Quizzes<a class="headerlink" href="#exams-and-quizzes" title="Permalink to this heading">#</a></h2>
-<p>All exams and quizzes are closed textbook and notes.  Quizzes will be given at instructor discretion.  Testable material includes any concepts from the labs, lectures, exercises, homework, and assigned readings.  Not all testable concepts will necessarily be covered in class (e.g., readings).
-For missed GRs, the following policies are outlined in USAFA FOI 537-3:</p>
+<p>All exams and quizzes are closed textbook and notes.  Quizzes will be given at instructor discretion.  Testable material includes any concepts from the labs, lectures, exercises, homework, and assigned readings.  <strong>Not all testable concepts will necessarily be covered in class (e.g., readings).</strong></p>
+<p>For missed GRs, the following policies are outlined in USAFA FOI 537-3:</p>
 <ul class="simple">
 <li><p>Scheduled Absence - If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam.</p></li>
 <li><p>Unscheduled Absence - If you miss the GR for reasons beyond your control (e.g. hospitalization, emergency leave, delayed field trip return, etc.), you must contact DFEC (x3190) within two working days to schedule a makeup.  Exceptions can only be granted by the Department Head.</p></li>
@@ -723,10 +673,6 @@ For missed GRs, the following policies are outlined in USAFA FOI 537-3:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-communication-and-control-c2">Primary Communication and Control (C2)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textbooks">Textbooks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration-policy">Collaboration Policy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-requirements">Documentation Requirements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-documentation">Sample Documentation</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ei-policy">EI Policy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cas-policy">CAS Policy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#late-work-policy">Late Work Policy</a></li>

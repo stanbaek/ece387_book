@@ -1,10 +1,19 @@
 # Robotics Operating System (ROS)
 
-## A note on this document
-This document is known as a Jupyter Notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or code, and for blocks containing code, press `Shift + Enter` to run the code. Earlier blocks of code need to be run for the later blocks of code to work.
-
 ## Purpose
-This Jupyter Notebook accompanies the introduction to ROS notetaker used in class. We will apply the knowledge you learned by interacting with a simulated TurlteBot3 Burger.
+This lecture accompanies the introduction to ROS notetaker used in class. We will apply the knowledge you learned by interacting with a simulated TurlteBot3 Burger.
+
+## ROS Introduction.
+Robotics Operating System (https://www.ros.org/about-ros/):
+
+The Robot Operating System (ROS) is a flexible framework for writing robot software. It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms. ROS is sometimes called a meta operating system because it performs many functions of an operating system, but it requires a computer's operating system such as Linux.
+
+Why? Because creating truly robust, general-purpose robot software is hard. From the robot's perspective, problems that seem trivial to humans often vary wildly between instances of tasks and environments. Dealing with these variations is so hard that no single individual, laboratory, or institution can hope to do it on their own.
+
+As a result, ROS was built from the ground up to encourage collaborative robotics software development. For example, one laboratory might have experts in mapping indoor environments, and could contribute a world-class system for producing maps. Another group might have experts at using maps to navigate, and yet another group might have discovered a computer vision approach that works well for recognizing small objects in clutter. ROS was designed specifically for groups like these to collaborate and build upon each other's work, as is described throughout this site.
+
+Noetic Ninjemys (http://wiki.ros.org/noetic):
+
 
 ## Setting up the terminal for ROS
 1. Open a new Linux terminal by pressing:

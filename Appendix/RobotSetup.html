@@ -163,7 +163,6 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../syllabus.html">📌 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../schedule.html">📆 Course Schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resources.html">💎 Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python.html">🐍 Python Tutorials</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 1</span></p>
@@ -881,7 +880,7 @@ catkin_make
 </pre></div>
 </div>
 <p>Setup ROS environment variables and setup scripts within the <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file. Open the <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file with your favorite command line editor and add the following to the bottom:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/noetic/setup.#<span class="w"> </span>replace<span class="w"> </span>with<span class="w"> </span>editor<span class="w"> </span>of<span class="w"> </span>choice<span class="w"> </span>used<span class="w"> </span>with<span class="w"> </span>rosed<span class="w"> </span>commandbash
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/noetic/setup.bash
 <span class="nb">source</span><span class="w"> </span>~/robot_ws/devel/setup.bash
 <span class="nb">export</span><span class="w"> </span><span class="nv">ROS_PACKAGE_PATH</span><span class="o">=</span>~/robot_ws/src:/opt/ros/noetic/share
 <span class="nb">export</span><span class="w"> </span><span class="nv">ROS_HOSTNAME</span><span class="o">=</span><span class="sb">`</span>hostname<span class="sb">`</span><span class="w"> </span><span class="c1"># note these are backticks, not apostrophes</span>
@@ -906,8 +905,12 @@ catkin_make
 <span class="w">  </span>ros-noetic-rosserial-python<span class="w"> </span>ros-noetic-rosserial-client<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>ros-noetic-rosserial-msgs<span class="w"> </span>ros-noetic-amcl<span class="w"> </span>ros-noetic-map-server<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>ros-noetic-move-base<span class="w"> </span>ros-noetic-urdf<span class="w"> </span>ros-noetic-xacro<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>ros-noetic-compressed-image-transport<span class="w"> </span>ros-noetic-rqt*<span class="w"> </span>ros-noetic-rviz<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>ros-noetic-gmapping<span class="w"> </span>ros-noetic-navigation<span class="w"> </span>ros-noetic-interactive-markers
+<span class="w">  </span>ros-noetic-compressed-image-transport<span class="w"> </span>ros-noetic-gmapping<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-noetic-navigation<span class="w"> </span>ros-noetic-interactive-markers
+</pre></div>
+</div>
+<p>NOTE: We may not need the following packages on the robot.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ros-noetic-rqt*<span class="w"> </span>ros-noetic-rviz<span class="w"> </span>
 </pre></div>
 </div>
 </section>
@@ -963,12 +966,12 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
 <p>Setup the OpenCR model name:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">OPENCR_PORT</span><span class="o">=</span>/dev/ttyACM0
 <span class="nb">export</span><span class="w"> </span><span class="nv">OPENCR_MODEL</span><span class="o">=</span>burger_noetic
-rm<span class="w"> </span>-rf<span class="w"> </span>./opencr_update.tar.bz2
 </pre></div>
 </div>
 <p>Download the firmware and loader, then extract the file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS1/latest/opencr_update.tar.bz2<span class="w"> </span>
 tar<span class="w"> </span>-xvf<span class="w"> </span>opencr_update.tar.bz2<span class="w"> </span>
+rm<span class="w"> </span>-rf<span class="w"> </span>./opencr_update.tar.bz2
 </pre></div>
 </div>
 <p>Upload firmware to the OpenCR:</p>
