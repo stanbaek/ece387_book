@@ -979,8 +979,32 @@ rm<span class="w"> </span>-rf<span class="w"> </span>./opencr_update.tar.bz2
 ./update.sh<span class="w"> </span><span class="nv">$OPENCR_PORT</span><span class="w"> </span><span class="nv">$OPENCR_MODEL</span>.opencr
 </pre></div>
 </div>
-<p>A successful firmware upload for TurtleBot3 Burger will look like:
-<img alt="lobo" src="../_images/firmware.png" /></p>
+<p>A successful firmware upload for TurtleBot3 Burger will look like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@robot8:<span class="w"> </span>~
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>opencr_update/
+pi@robot8:<span class="w"> </span>~/opencr_update
+$<span class="w"> </span>./update.sh<span class="w"> </span><span class="nv">$OPENCR_PORT</span><span class="w"> </span><span class="nv">$OPENCR_MODEL</span>.opencr
+aarch64
+arm
+OpenCR<span class="w"> </span>Update<span class="w"> </span>Start..
+opencr_ld_shell<span class="w"> </span>ver<span class="w"> </span><span class="m">1</span>.0.0
+opencr_ld_main
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>file<span class="w"> </span>name<span class="w">          </span>:<span class="w"> </span>burger_noetic.opencr<span class="w"> </span>
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>file<span class="w"> </span>size<span class="w">          </span>:<span class="w"> </span><span class="m">183</span><span class="w"> </span>KB
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>fw_name<span class="w">            </span>:<span class="w"> </span>burger_noetic
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>fw_ver<span class="w">             </span>:<span class="w"> </span><span class="m">1</span>.2.6
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>Open<span class="w"> </span>port<span class="w">          </span>:<span class="w"> </span>/dev/ttyACM0
+<span class="o">[</span><span class="w">  </span><span class="o">]</span>
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>Board<span class="w"> </span>Name<span class="w">         </span>:<span class="w"> </span>OpenCR<span class="w"> </span>R1.0
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>Board<span class="w"> </span>Ver<span class="w">          </span>:<span class="w"> </span>0x17020800
+<span class="o">[</span><span class="w">  </span><span class="o">]</span><span class="w"> </span>Board<span class="w"> </span>Rev<span class="w">          </span>:<span class="w"> </span>0x00000000
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>flash_erase<span class="w">        </span>:<span class="w"> </span><span class="m">0</span>.99s
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>flash_write<span class="w">        </span>:<span class="w"> </span><span class="m">1</span>.60s<span class="w"> </span>
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>CRC<span class="w"> </span>Check<span class="w">          </span>:<span class="w"> </span>12A5C20<span class="w"> </span>12A5C20<span class="w"> </span>,<span class="w"> </span><span class="m">0</span>.005000<span class="w"> </span>sec
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>Download
+<span class="o">[</span>OK<span class="o">]</span><span class="w"> </span>jump_to_fw
+</pre></div>
+</div>
 <p>If not successful, attempt the debug methods in the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup">OpenCR Setup</a> guide.</p>
 </section>
 </section>
