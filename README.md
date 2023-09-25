@@ -19,3 +19,13 @@ ECE387 Course Web
 ### Convert jupyter notebook to markdown
 - jupytext https://jupytext.readthedocs.io/en/latest/using-cli.html
 - install: pip install jupytext
+
+
+
+### Settings inside settings.json
+```
+{
+    "python.envFile": "${workspaceFolder}/.venv",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+}
+```

@@ -661,7 +661,31 @@ cd ./opencr_update
 ```
 
 A successful firmware upload for TurtleBot3 Burger will look like:
-![lobo](Figures/firmware.png)
+```bash
+pi@robot8: ~
+$ cd opencr_update/
+pi@robot8: ~/opencr_update
+$ ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
+aarch64
+arm
+OpenCR Update Start..
+opencr_ld_shell ver 1.0.0
+opencr_ld_main
+[  ] file name          : burger_noetic.opencr 
+[  ] file size          : 183 KB
+[  ] fw_name            : burger_noetic
+[  ] fw_ver             : 1.2.6
+[OK] Open port          : /dev/ttyACM0
+[  ]
+[  ] Board Name         : OpenCR R1.0
+[  ] Board Ver          : 0x17020800
+[  ] Board Rev          : 0x00000000
+[OK] flash_erase        : 0.99s
+[OK] flash_write        : 1.60s 
+[OK] CRC Check          : 12A5C20 12A5C20 , 0.005000 sec
+[OK] Download
+[OK] jump_to_fw
+```
 
 If not successful, attempt the debug methods in the [OpenCR Setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup) guide.
 
