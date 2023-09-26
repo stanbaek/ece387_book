@@ -1,12 +1,10 @@
-# Driving the Robot
-
-## A note on this document
-Now that you have a better understanding of the Linux operating system and Python programming language the Jupyter Notebooks will be used primarily to guide you through the In-Class Exercises and Laboratories. You will execute the majority of your commands and code within the Linux terminal.
+# ICE4: Driving the Robot
 
 ## Purpose
 This In-Class Exercise will introduce you to utilizing pre-built ROS packages to accomplish a task. It will also provide you experience interacting with someone else's source code (.py files) to learn how that component works. You will use ROS to run two nodes, **turtlebot3_core** and **teleop_twist_keyboard**, to drive the Turtlebot3 with a keyboard. You will continue to practice using ROS tools to observe how these components communicate.
 
 ## Code used to drive the robot
+
 1. On the Master, open a terminal and run **roscore**.
 
 1. Open a new terminal on the Master and create a secure shell into the Turtlebot3 using the SSH command you learned during Module 2. This will allow you to run commands as if you were on the Turtlebot3.
@@ -17,9 +15,11 @@ This In-Class Exercise will introduce you to utilizing pre-built ROS packages to
 
     > ⌨️ **Syntax:**  `rosed <package> <filename>`
 
-    > 📝️ **Note:** You may remember when we set up our *.bashrc* file we set the system variable **EDITOR** to `nano -w`. This enables the `rosed` command to utilize the nano editor.
+    ```{note} 
+    You may remember when we set up our *.bashrc* file we set the system variable **EDITOR** to `nano -w`. This enables the `rosed` command to utilize the nano editor.
+   ```
    
-    We will learn more about launch files in a few modules, but just understand that a launch file is used to launch one or more ROS nodes. This paticular launch file only launches one node, **serial_node.py**. This node will connect to the OpenCR controller on the Turtlebot3 using the port and baud rate parameters. This connection will enable us to send *Twist* messages over the **/cmd_vel** topic to drive the Turtlebot3 using the keyboard.
+    We will learn more about launch files in a few modules, but just understand that a launch file is used to launch one or more ROS nodes. This paticular launch file only launches one node, **serial_node.py**. This node will connect to the OpenCR controller on the Turtlebot3 using the port and baud rate parameters. This connection will enable us to send *Twist* messaghpges over the **/cmd_vel** topic to drive the Turtlebot3 using the keyboard.
 
 1. Close the editor by hitting `ctrl+x`.
 
@@ -66,11 +66,15 @@ This In-Class Exercise will introduce you to utilizing pre-built ROS packages to
     
     `sudo apt install ros-noetic-teleop-twist-keyboard`
     
-    > 💡️ **Tip:** All packages built for Noetic can be downloaded in the above manner (ros-noetic-desired-pkg with underscores in the package name replaced by dashes). Some packages were only built for previous ROS distribution and will have to be built from source (we will demonstrate this at a future time).
+    ```{tip}
+    All packages built for Noetic can be downloaded in the above manner (ros-noetic-desired-pkg with underscores in the package name replaced by dashes). Some packages were only built for previous ROS distribution and will have to be built from source (we will demonstrate this at a future time).
+    ```
     
 1. Run the **teleop_twist_keyboard** node on the Master:
 
-    > 💡️ **Tip:** Don't forget your tab completion! You can start typing a package name or node and then hit tab for it to complete the command for you!
+    ```{tip}
+    Don't forget your tab completion! You can start typing a package name or node and then hit tab for it to complete the command for you!
+    ```
     
     `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
     
@@ -81,6 +85,7 @@ This In-Class Exercise will introduce you to utilizing pre-built ROS packages to
 1. The Turtlebot3 operates best with a linear velocity between 0.2 m/s and 0.5 m/s. It turns best with an angular velocity between 0.5 rad/s and 1.5 rad/s. Drive the Turtlebot3 using these parameters.
 
 ## ROS
+
 In labs throughout this course we will request information about the topics, nodes, and messages within your system. Accomplish the following in a new terminal on your Master (you can ignore all nodes/topics that result from **roscore**).
 
 1. List all running nodes.
@@ -104,4 +109,4 @@ Once complete, push screenshots showing the output of each of the above to your 
 In this exercise you examined and used pre-built packages and source code to drive the Turtlebot3 and understand how the system worked. You then were able to analyze the topics, nodes, and messages within the ROS system to better understand the flow of information and control. The **pro-tips** presented throughout this exercise will make you a better user of Linux and ROS.
 
 ## Cleanup
-In each terminal window, close the node by typing `ctrl+c`. Exit any SSH connections. In each of the notebooks reset the Jupter kernel and clear output. Now it is safe to exit out of this window. Shutdown the notebook server by typing `ctrl+c` within the terminal you ran `jupyter-notebook` in. Select 'y'.
+In each terminal window, close the node by typing `ctrl+c`. Exit any SSH connections. 
