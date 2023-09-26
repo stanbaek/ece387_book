@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Master Setup" href="../Module00.2_MasterSetup/MasterSetup.html" />
+    <link rel="prev" title="Module 0: Setting Up GIT Repositories" href="../Module00.0_IntroductionGIT/IntroGit.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,7 +181,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ROS.html">ICE3: ROS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/RPSComputer.html">Module 3: Python3 for Robotics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ICE3_ClientServer.html">ICE3 - Client and Server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Module3_Python3/ICE3_ROS.html">ICE3: Python3 for Robotics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 4</span></p>
 <ul class="nav bd-sidenav">
@@ -208,6 +209,16 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Module9_CV/computer_vision.html">Computer Vision</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Module9_CV/Lab4_ComputerVision.html">Lab 4: Computer Vision</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Module10_FinalProject/FinalProject.html">Module 10: Final Project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Module00.0_IntroductionGIT/IntroGit.html">Module 0: Setting Up GIT Repositories</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Robot Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Module00.2_MasterSetup/MasterSetup.html">Master Setup</a></li>
 </ul>
 
     </div>
@@ -309,7 +320,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Module00.1_RobotSetup/RobotSetup.ipynb" target="_blank"
+      <li><a href="../_sources/Module00.1_RobotSetup/RobotSetup.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -401,40 +412,41 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware">Hardware</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turtlebot3">TurtleBot3</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-assembly">Hardware Assembly</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raspberry-pi">Raspberry Pi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera">Camera</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-installation">Ubuntu Installation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-ubuntu-and-flash-microsd-card">Download Ubuntu and flash MicroSD card</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-setup">Ubuntu Setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#login-and-changing-password">Login and changing password</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-username-optional">Changing username (optional)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#change-hostname">Change hostname</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-wi-fi">Set up Wi-Fi</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-automatic-updates">Disable Automatic Updates</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-ssh-and-generate-new-keys">Enable SSH and generate new keys</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-ubuntu">Configuring Ubuntu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#login-and-changing-password">Login and changing password</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-username-optional">Changing username (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-hostname">Change hostname</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-wi-fi">Set up Wi-Fi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-automatic-updates">Disable Automatic Updates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-ssh-and-generate-new-keys">Enable SSH and generate new keys</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-swap-space-optional">Add Swap Space (optional)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-changes">Verify changes</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-and-upgrade">Update and Upgrade</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-desktop-optional">Install Ubuntu Desktop (optional)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#network-settings">Network Settings</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-github-ssh-keys">Setup GitHub SSH Keys</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-desktop-optional">Install Ubuntu Desktop (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-github-ssh-keys">Setup GitHub SSH Keys</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-alternatives">Update Alternatives</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ros-noetic">ROS Noetic</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies">Dependencies</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ros-dependencies">ROS Dependencies</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#turtlebot3-dependencies">TurtleBot3 Dependencies</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ece387-curriculum">ECE387 Curriculum</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros2-humble">ROS2 Humble</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">TurtleBot3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ece387-curriculum">ECE387 Curriculum</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-opencr-firmware">Updating OpenCR firmware</a></li>
 </ul>
 </li>
@@ -451,17 +463,18 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="robot-setup">
 <h1>Robot Setup<a class="headerlink" href="#robot-setup" title="Permalink to this heading">#</a></h1>
-<p>This guide will walk through the steps to install Ubuntu Server 20.04 LTS, ROS Noetic, and all dependencies on a Raspberry Pi 4 B. This Pi is then embedded within the Robotis TurtleBot3 Burger along with a USB Camera. The robotics system, TurtleBot3, is utilized in the United States Air Force Academy’s Electrical and Computer Engineering department to teach undergraduate students robotics. You can follow the below steps or a Raspberry Pi image can be provided by emailing <span class="xref myst">Steven Beyer</span>. This guide is adapted from the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/#overview">TurtleBot3 e-Manual</a>.</p>
+<p>This guide will walk through the steps to install Ubuntu Server 22.04 LTS, ROS2 Humble, and all dependencies on a Raspberry Pi 4B. This Pi is then embedded within the Robotis TurtleBot3 Burger along with a USB camera. The robotics system, TurtleBot3, is utilized in the United States Air Force Academy’s Electrical and Computer Engineering department to teach undergraduate students robotics.</p>
+<p>This guide is adapted from the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/#overview">TurtleBot3 e-Manual</a>.</p>
 <hr class="docutils" />
-<section id="hardware">
-<h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading">#</a></h2>
+<section id="turtlebot3">
+<h2>TurtleBot3<a class="headerlink" href="#turtlebot3" title="Permalink to this heading">#</a></h2>
 <p>Below is a list of recommended hardware and links. Other off-the-shelf components can replace the ones below.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.robotis.us/turtlebot-3/">TurtleBot3</a></p></li>
 <li><p><a class="reference external" href="https://www.adesso.com/product/cybertrack-h4-1080p-hd-usb-webcam-with-built-in-microphone/">USB Camera</a> (Any USB Cam will work, this is the one we use)</p></li>
 <li><p>128 GB High Speed MicroSD card</p></li>
 <li><p>Monitor, mouse, and keyboard</p></li>
-<li><p>If using an older version of the TurtleBot3 with a Jetson Nano or Raspberry Pi 3 B+ you will need ot purchase a <a class="reference external" href="https://www.canakit.com/raspberry-pi-4-8gb.html">Raspberry Pi 4 Model B</a> (preferably with 8 GB of RAM))</p></li>
+<li><p>If using an older version of the TurtleBot3 with a Jetson Nano or Raspberry Pi 3B+ you will need ot purchase a <a class="reference external" href="https://www.canakit.com/raspberry-pi-4-8gb.html">Raspberry Pi 4 Model B</a> (preferably with 8 GB of RAM))</p></li>
 </ul>
 <section id="hardware-assembly">
 <h3>Hardware Assembly<a class="headerlink" href="#hardware-assembly" title="Permalink to this heading">#</a></h3>
@@ -471,43 +484,51 @@ document.write(`
 <h3>Raspberry Pi<a class="headerlink" href="#raspberry-pi" title="Permalink to this heading">#</a></h3>
 <p>A Raspberry Pi 4 B with 8 GB of RAM is used throughout this curriculum. Ensure heat sinks are propertly installed on the Pi such as these from <a class="reference external" href="https://www.canakit.com/raspberry-pi-4-heat-sinks.html">CanaKit</a>.</p>
 <p>Also, a small fan can be installed to help with cooling. We used this 3D printed bracket to mount the fan.</p>
-<p><img alt="logo" src="../_images/fan.jpg" /></p>
+<a class="reference internal image-reference" href="../_images/fan.jpg"><img alt="../_images/fan.jpg" class="align-center" src="../_images/fan.jpg" style="width: 520px;" /></a>
 </section>
 <section id="camera">
 <h3>Camera<a class="headerlink" href="#camera" title="Permalink to this heading">#</a></h3>
-<p>After installing the Raspberry pi level of the TurtleBot3 you need to install the USB Camera Mount prior to finishing the robot build. The mount used in this course can be found in the <span class="xref myst">curriculum material</span> and is installed on two of the front standoffs on the TurtleBot3.
-<img alt="logo" src="../_images/camera_mount.jpg" /></p>
+<p>After installing the Raspberry pi level of the TurtleBot3 you need to install the USB Camera Mount prior to finishing the robot build. The mount used in this course can be found in the <a class="reference download internal" download="" href="../_downloads/3a3cd348ff4a2bc81ddea473f4ae906f/burger_usbcam_mount.stl"><span class="xref download myst">curriculum material</span></a> and is installed on two of the front standoffs on the TurtleBot3.</p>
+<a class="reference internal image-reference" href="../_images/camera_mount.jpg"><img alt="../_images/camera_mount.jpg" class="align-center" src="../_images/camera_mount.jpg" style="width: 380px;" /></a>
 </section>
 </section>
-<section id="software">
-<h2>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
+<section id="ubuntu-installation">
+<h2>Ubuntu Installation<a class="headerlink" href="#ubuntu-installation" title="Permalink to this heading">#</a></h2>
 <section id="download-ubuntu-and-flash-microsd-card">
 <h3>Download Ubuntu and flash MicroSD card<a class="headerlink" href="#download-ubuntu-and-flash-microsd-card" title="Permalink to this heading">#</a></h3>
-<p>There are multiple ways to download and install Ubuntu 20 to a MicroSD card, but the Raspberry Pi Imager is one of the easiest. Instructions for installing the imager on your operating system can be found on the <a class="reference external" href="https://www.raspberrypi.com/software/">Raspberry Pi OS software page</a>.</p>
-<p>Once installed, start the imager and select the “CHOOSE OS” button.
-<img alt="logo" src="../_images/installer1.png" /></p>
-<p>Scroll down the menu and select “Other general purpose OS”.
-<img alt="logo" src="../_images/installer2.png" /></p>
-<p>Next, select “Ubuntu”.
-<img alt="logo" src="../_images/installer3.png" /></p>
-<p>Lastly, scroll and select the latest 64-bit version of “Ubuntu Server 20.04 LTS”.
-<img alt="logo" src="../_images/installer4.png" /></p>
+<p>There are multiple ways to download and install Ubuntu 22.04 to a MicroSD card, but the Raspberry Pi Imager is one of the easiest. Instructions for installing the imager on your operating system can be found on the <a class="reference external" href="https://www.raspberrypi.com/software/">Raspberry Pi OS software page</a>.</p>
+<p>Once installed, start the imager and select the “CHOOSE OS” button.</p>
+<a class="reference internal image-reference" href="../_images/installer1.png"><img alt="../_images/installer1.png" class="align-center" src="../_images/installer1.png" style="width: 540px;" /></a>
+<br>
+Scroll down the menu and select "Other general purpose OS".
+<br>
+<a class="reference internal image-reference" href="../_images/installer2.png"><img alt="../_images/installer2.png" class="align-center" src="../_images/installer2.png" style="width: 540px;" /></a>
+<br>
+<p>Next, select “Ubuntu”.</p>
+<a class="reference internal image-reference" href="../_images/installer3.png"><img alt="../_images/installer3.png" class="align-center" src="../_images/installer3.png" style="width: 540px;" /></a>
+<br>
+Lastly, scroll and select the latest 64-bit version of "Ubuntu Server 22.04 LTS".
+<br>
+<a class="reference internal image-reference" href="../_images/installer4.png"><img alt="../_images/installer4.png" class="align-center" src="../_images/installer4.png" style="width: 540px;" /></a>
+<br>
 <p>Now that you have the correct image selected, you need to choose the correct storage device that corresponds to the MicroSD card. Select “CHOOSE STORAGE”.</p>
-<blockquote>
-<div><p>⚠️ <strong>Warning:</strong> This process will overwrite the drive, so ensure you select the correct device! You can select “CHOOSE STORAGE” before inserting the MicroSD card, then insert it, and the card will be the new drive that pops up.</p>
-</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This process will overwrite the drive, so ensure you select the correct device! You can select “CHOOSE STORAGE” before inserting the MicroSD card, then insert it, and the card will be the new drive that pops up.</p>
+</div>
 <p>Once you are sure the correct drive is selected, click “WRITE”.</p>
 <p>Once complete you should have an Ubuntu SD card! Ensure your Raspberry Pi is powered off, connected to a monitor, keyboard, and mouse, and insert the SD card.</p>
 </section>
-<section id="ubuntu-setup">
-<h3>Ubuntu Setup<a class="headerlink" href="#ubuntu-setup" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="configuring-ubuntu">
+<h2>Configuring Ubuntu<a class="headerlink" href="#configuring-ubuntu" title="Permalink to this heading">#</a></h2>
 <section id="login-and-changing-password">
-<h4>Login and changing password<a class="headerlink" href="#login-and-changing-password" title="Permalink to this heading">#</a></h4>
+<h3>Login and changing password<a class="headerlink" href="#login-and-changing-password" title="Permalink to this heading">#</a></h3>
 <p>Once Ubuntu boots up you will be prompted to enter the login and password. It may take a few minutes on first boot to configure the default username and password, so if login fails, try again after a few minutes. The default username is <strong>ubuntu</strong> and password is <strong>ubuntu</strong>.</p>
 <p>On first login, you will be prompted to change the password. Enter the current password, <strong>ubuntu</strong>, and then enter a new password twice.</p>
 </section>
 <section id="changing-username-optional">
-<h4>Changing username (optional)<a class="headerlink" href="#changing-username-optional" title="Permalink to this heading">#</a></h4>
+<h3>Changing username (optional)<a class="headerlink" href="#changing-username-optional" title="Permalink to this heading">#</a></h3>
 <p>I like to change the username to “pi” so I remember that this machine is a Raspberry Pi. This is optional and you can change the username to anything you like.</p>
 <p>First, add a <em>temp</em> user:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>adduser<span class="w"> </span>temp
@@ -524,53 +545,115 @@ document.write(`
 </div>
 <p>Login to <em>temp</em> user account.</p>
 <p>Change the <em>ubuntu</em> username to the new username:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-l<span class="w"> </span>newUsername<span class="w"> </span>ubuntu
-sudo<span class="w"> </span>usermod<span class="w"> </span>-d<span class="w"> </span>/home/newHomeDir<span class="w"> </span>-m<span class="w"> </span>newUsername
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo usermod -l newUsername ubuntu</span>
+<span class="go">sudo usermod -d /home/newHomeDir -m newUsername</span>
 </pre></div>
 </div>
 <p>For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-l<span class="w"> </span>pi<span class="w"> </span>ubuntu
-sudo<span class="w"> </span>suermod<span class="w"> </span>-d<span class="w"> </span>/home/pi<span class="w"> </span>-m<span class="w"> </span>pi
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-l<span class="w"> </span>pi<span class="w"> </span>ubuntu
+sudo<span class="w"> </span>usermod<span class="w"> </span>-d<span class="w"> </span>/home/pi<span class="w"> </span>-m<span class="w"> </span>pi
 </pre></div>
 </div>
 <p>Log out of <em>temp</em> user and log in with new username and password (the password is still the same as the password you set for the <em>ubuntu</em> user).</p>
 <p>Delete the <em>temp</em> user:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>deluser<span class="w"> </span>temp
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>deluser<span class="w"> </span>temp
 sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/home/temp
 </pre></div>
 </div>
 <p>Now at the terminal prompt you should see <code class="docutils literal notranslate"><span class="pre">pi&#64;ubuntu:</span></code> and if you type <code class="docutils literal notranslate"><span class="pre">pwd</span></code> you should see <code class="docutils literal notranslate"><span class="pre">/home/pi</span></code> (with <code class="docutils literal notranslate"><span class="pre">pi</span></code> replaced with the username you chose).</p>
 </section>
 <section id="change-hostname">
-<h4>Change hostname<a class="headerlink" href="#change-hostname" title="Permalink to this heading">#</a></h4>
+<h3>Change hostname<a class="headerlink" href="#change-hostname" title="Permalink to this heading">#</a></h3>
 <p>If you have multiple robots on your network it is good to give each a unique hostname. We number each robot from 0-n and each robot has a corresponding hostname (e.g., robot0).</p>
 <p>Change the hostname with the command line editor of your choice.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/hostname
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>robot0
 </pre></div>
 </div>
 <p>Replace <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> with the hostname of choice, such as robot0. Save and exit.</p>
 <p>The new hostname will not take effect until reboot. Don’t reboot yet, though! We have a couple more things to accomplish before reboot.</p>
 </section>
 <section id="set-up-wi-fi">
-<h4>Set up Wi-Fi<a class="headerlink" href="#set-up-wi-fi" title="Permalink to this heading">#</a></h4>
+<h3>Set up Wi-Fi<a class="headerlink" href="#set-up-wi-fi" title="Permalink to this heading">#</a></h3>
 <p>Until a desktop GUI is installed we have to work with the command line to set up the Wi-Fi. This is the most reliable method I have found and we will delete these changes once a GUI is installed.</p>
-<p>First, determine the name of your Wi-Fi network adapter by typing <code class="docutils literal notranslate"><span class="pre">ip</span> <span class="pre">link</span></code> (for the Raspberry Pi version of Ubuntu Server 20.04 LTS it is typically <code class="docutils literal notranslate"><span class="pre">wlan0</span></code>).</p>
-<p><img alt="logo" src="../_images/wifi1.png" /></p>
+<p>First, determine the name of your Wi-Fi network adapter by typing <code class="docutils literal notranslate"><span class="pre">ip</span> <span class="pre">link</span></code> (for the Raspberry Pi version of Ubuntu Server 20.04 LTS it is typically <strong><code class="docutils literal notranslate"><span class="pre">wlan0</span></code></strong>).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@ubuntu:~$<span class="w"> </span>ip<span class="w"> </span>link
+<span class="m">1</span>:<span class="w"> </span>lo:<span class="w"> </span>&lt;LOOPBACK,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">65536</span><span class="w"> </span>qdisc<span class="w"> </span>noqueue<span class="w"> </span>state<span class="w"> </span>UNKNOWN<span class="w"> </span>mode<span class="w"> </span>DEFAULT<span class="w"> </span>group<span class="w"> </span>default<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
+<span class="w">    </span>link/loopback<span class="w"> </span><span class="m">00</span>:00:00:00:00:00<span class="w"> </span>brd<span class="w"> </span><span class="m">00</span>:00:00:00:00:00
+<span class="m">2</span>:<span class="w"> </span>eth0:<span class="w"> </span>&lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span>qdisc<span class="w"> </span>mq<span class="w"> </span>state<span class="w"> </span>DOWN<span class="w"> </span>mode<span class="w"> </span>DEFAULT<span class="w"> </span>group<span class="w"> </span>default<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
+<span class="w">    </span>link/ether<span class="w"> </span>e4:5f:01:15:5b:30<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
+<span class="m">3</span>:<span class="w"> </span>wlan0:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span>qdisc<span class="w"> </span>fq_codel<span class="w"> </span>state<span class="w"> </span>UP<span class="w"> </span>mode<span class="w"> </span>DORMANT<span class="w"> </span>group<span class="w"> </span>default<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
+<span class="w">    </span>link/ether<span class="w"> </span>e4:5f:01:15:5b:31<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
+</pre></div>
+</div>
 <p>Open the <code class="docutils literal notranslate"><span class="pre">/etc/netplan/50-cloud-init.yaml</span></code> file in your favorite browser:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/netplan/50-cloud-init.yaml
 </pre></div>
 </div>
-<p>Edit the file so it looks like the below (use spaces and not tabs) replacing <strong>wlan0</strong> with your wireless network interface and using your SSID and password:
-<img alt="logo" src="../_images/wifi2.png" /></p>
+<p>Edit the file so it looks like the below (use spaces and not tabs) replacing <strong>wlan0</strong> with your wireless network interface and using your SSID and password:</p>
 <p>Save and exit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file is generated from information provided by the datasource.  Changes</span>
+<span class="c1"># to it will not persist across an instance reboot.  To disable cloud-init&#39;s  </span>
+<span class="c1"># network configuration capabilities, write a file</span>
+<span class="c1"># /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:    </span>
+<span class="c1"># network: {config: disabled}</span>
+<span class="n">network</span><span class="p">:</span>
+    <span class="n">ethernets</span><span class="p">:</span>
+        <span class="n">eth0</span><span class="p">:</span>
+            <span class="n">dhcp4</span><span class="p">:</span> <span class="n">true</span>
+            <span class="n">optional</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">version</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">wifis</span><span class="p">:</span>
+        <span class="n">wlan0</span><span class="p">:</span>
+             <span class="n">optional</span><span class="p">:</span> <span class="n">true</span>
+             <span class="n">access</span><span class="o">-</span><span class="n">points</span><span class="p">:</span>
+                 <span class="s2">&quot;YOUR-SSID&quot;</span><span class="p">:</span>
+                     <span class="n">password</span><span class="p">:</span> <span class="s2">&quot;YOUR-PASSWORD&quot;</span>
+             <span class="n">dhcp4</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Apply your changes using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>netplan<span class="w"> </span>apply
+</pre></div>
+</div>
+<p>Alternatively, you can reboot your system and the changes will be automatically applied once the system boots.</p>
 <p><strong>Optional:</strong> It may be beneficial to setup a static IP address. To do this you need to determine your subnet and gateway.</p>
-<p>Determine subnet and gateway addresses:
-<img alt="logo" src="../_images/subnet.png" /></p>
-<p>Set static IP within subnet range:
-<img alt="logo" src="../_images/staticIP.png" /></p>
+<p>Determine subnet and gateway addresses:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ubuntu@ubuntu:~$ ip route
+default via 192.168.0.1 dev wlan0 proto static 
+192.168.0.1/24 dev wlan0 proto kernel scope link src 192.168.0.201
+</pre></div>
+</div>
+<p>Set static IP within subnet range:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file is generated from information provided by the datasource.  Changes</span>
+<span class="c1"># to it will not persist across an instance reboot.  To disable cloud-init&#39;s  </span>
+<span class="c1"># network configuration capabilities, write a file</span>
+<span class="c1"># /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:    </span>
+<span class="c1"># network: {config: disabled}</span>
+<span class="n">network</span><span class="p">:</span>
+    <span class="n">ethernets</span><span class="p">:</span>
+        <span class="n">eth0</span><span class="p">:</span>
+            <span class="n">dhcp4</span><span class="p">:</span> <span class="n">true</span>
+            <span class="n">optional</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">version</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">wifis</span><span class="p">:</span>
+        <span class="n">wlan0</span><span class="p">:</span>
+             <span class="n">dhcp4</span><span class="p">:</span> <span class="n">no</span>
+             <span class="n">access</span><span class="o">-</span><span class="n">points</span><span class="p">:</span>
+                 <span class="s2">&quot;robotics_5GHz&quot;</span><span class="p">:</span>
+                     <span class="n">password</span><span class="p">:</span> <span class="s2">&quot;YOUR-PASSWORD&quot;</span>
+             <span class="n">addresses</span><span class="p">:</span>
+                 <span class="o">-</span> <span class="mf">192.168.4.208</span><span class="o">/</span><span class="mi">24</span>
+             <span class="n">routes</span><span class="p">:</span>
+                 <span class="o">-</span> <span class="n">to</span><span class="p">:</span> <span class="n">default</span>
+                   <span class="n">via</span><span class="p">:</span> <span class="mf">192.168.4.1</span>
+             <span class="n">nameservers</span><span class="p">:</span>
+                 <span class="n">addresses</span><span class="p">:</span> <span class="p">[</span><span class="mf">192.168.4.1</span><span class="p">,</span> <span class="mf">8.8.8.8</span><span class="p">,</span> <span class="mf">1.1.1.1</span><span class="p">]</span>
+             <span class="n">optional</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
 </section>
 <section id="disable-automatic-updates">
-<h4>Disable Automatic Updates<a class="headerlink" href="#disable-automatic-updates" title="Permalink to this heading">#</a></h4>
+<h3>Disable Automatic Updates<a class="headerlink" href="#disable-automatic-updates" title="Permalink to this heading">#</a></h3>
 <p>Ubuntu will attempt to apply system updates in the background. This has caused issues in the past with ROS dependencies and keys. Disabling automatic updates allows you to control when Ubuntu installs updates. While this is not a good habit for general computer security, it is fine for this application of an embedded robotics system. Ensure you periodically update and upgrade your system.</p>
 <p>Open the auto updater configuration file using sudoedit:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudoedit<span class="w"> </span>/etc/apt/apt.conf.d/20auto-upgrades
@@ -590,43 +673,64 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>
 </div>
 </section>
 <section id="enable-ssh-and-generate-new-keys">
-<h4>Enable SSH and generate new keys<a class="headerlink" href="#enable-ssh-and-generate-new-keys" title="Permalink to this heading">#</a></h4>
+<h3>Enable SSH and generate new keys<a class="headerlink" href="#enable-ssh-and-generate-new-keys" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ssh-keygen<span class="w"> </span>-A
 sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ssh
 </pre></div>
 </div>
-</section>
 <section id="add-swap-space-optional">
 <h4>Add Swap Space (optional)<a class="headerlink" href="#add-swap-space-optional" title="Permalink to this heading">#</a></h4>
 <p>The Raspberry Pi 4 B used in our course has 8 GB of RAM. Swap Space might not be necessary, but with a larger SD card it is beneficial.</p>
-<p>You can check that there is no active swap using the free utility:
-<img alt="logo" src="../_images/swap1.png" /></p>
+<p>You can check that there is no active swap using the free utility:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@ubuntu:~$<span class="w"> </span>free<span class="w"> </span>-h
+<span class="w">               </span>total<span class="w">        </span>used<span class="w">        </span>free<span class="w">      </span>shared<span class="w">  </span>buff/cache<span class="w">   </span>available
+Mem:<span class="w">           </span><span class="m">7</span>.6Gi<span class="w">       </span>201Mi<span class="w">       </span><span class="m">7</span>.1Gi<span class="w">       </span><span class="m">3</span>.0Mi<span class="w">       </span>328Mi<span class="w">       </span><span class="m">7</span>.3Gi
+Swap:<span class="w">             </span>0B<span class="w">          </span>0B<span class="w">          </span>0B
+</pre></div>
+</div>
 <p>The <strong>fallocate</strong> program can be used to create a swap:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>fallocate<span class="w"> </span>-l<span class="w"> </span>2G<span class="w"> </span>/swapfile
 </pre></div>
 </div>
-<p>If it was created correctly, you should see the below:
-![logo[(Figures/swap2.png)</p>
+<p>If it was created correctly, you should see the below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@ubuntu:~$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>/swapfile
+-rw-------<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">2</span>.0G<span class="w"> </span>Aug<span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">17</span>:30<span class="w"> </span>/swapfile
+</pre></div>
+</div>
 <p>Make the file only accessible to root by typing:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/swapfile
 </pre></div>
 </div>
-<p>Verify the permissions by typing the following:
-<img alt="logo" src="../_images/swap3.png" /></p>
-<p>Now only root user has read and write flags enabled.</p>
-<p>You can set the file as swap space by typing the following:
-<img alt="logo" src="../_images/swap4.png" /></p>
+<p>Verify the permissions by typing the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@ubuntu:~$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>/swapfile<span class="w"> </span>
+-rw-------<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">2</span>.0G<span class="w"> </span>Aug<span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">17</span>:28<span class="w"> </span>/swapfile
+Now<span class="w"> </span>only<span class="w"> </span>root<span class="w"> </span>user<span class="w"> </span>has<span class="w"> </span><span class="nb">read</span><span class="w"> </span>and<span class="w"> </span>write<span class="w"> </span>flags<span class="w"> </span>enabled.
+</pre></div>
+</div>
+<p>You can set the file as swap space by typing the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@ubuntu:~$<span class="w"> </span>sudo<span class="w"> </span>mkswap<span class="w"> </span>/swapfile
+Setting<span class="w"> </span>up<span class="w"> </span>swapspace<span class="w"> </span>version<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="nv">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>GiB<span class="w"> </span><span class="o">(</span><span class="m">2147479552</span><span class="w"> </span>bytes<span class="o">)</span>
+no<span class="w"> </span>label,<span class="w"> </span><span class="nv">UUID</span><span class="o">=</span>b5bc4abf-2bce-419e-870d-4d44a7a05778
+</pre></div>
+</div>
 <p>Then turn on the swap file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>swapon<span class="w"> </span>/swapfile
 </pre></div>
 </div>
-<p>To verify that this worked you can type the following:
-<img alt="logo" src="../_images/swap5.png" /></p>
-<p>This swap will only last until reboot, so to make it permanent at it to the <code class="docutils literal notranslate"><span class="pre">fstab</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;/swapfile none swap sw 0 0&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/fstab
+<p>To verify that this worked you can type the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@ubuntu:~$<span class="w"> </span>sudo<span class="w"> </span>swapon<span class="w"> </span>--show
+NAME<span class="w">      </span>TYPE<span class="w"> </span>SIZE<span class="w"> </span>USED<span class="w"> </span>PRIO
+/swapfile<span class="w"> </span>file<span class="w">   </span>2G<span class="w">   </span>0B<span class="w">   </span>-2
 </pre></div>
 </div>
-<p>Now it is time to reboot by typing <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">reboot</span></code>!</p>
+<p>This swap will only last until reboot, so to make it permanent at it to the <code class="docutils literal notranslate"><span class="pre">fstab</span></code> file:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;/swapfile none swap sw 0 0&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/fstab
+</pre></div>
+</div>
+<p>Now it is time to reboot by typing</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>reboot
+</pre></div>
+</div>
 </section>
 <section id="verify-changes">
 <h4>Verify changes<a class="headerlink" href="#verify-changes" title="Permalink to this heading">#</a></h4>
@@ -641,7 +745,12 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </pre></div>
 </div>
 <p>Lastly, ensure your swap space is still active by typing the following and observing the output:</p>
-<p><img alt="logo" src="../_images/swap6.png" /></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@robot99:~$<span class="w"> </span>free<span class="w"> </span>-h
+<span class="w">               </span>total<span class="w">        </span>used<span class="w">        </span>free<span class="w">      </span>shared<span class="w">  </span>buff/cache<span class="w">   </span>available
+Mem:<span class="w">           </span><span class="m">7</span>.6Gi<span class="w">       </span>224Mi<span class="w">       </span><span class="m">6</span>.5Gi<span class="w">       </span><span class="m">3</span>.0Mi<span class="w">       </span>903Mi<span class="w">       </span><span class="m">7</span>.3Gi
+Swap:<span class="w">          </span><span class="m">2</span>.0Gi<span class="w">          </span>0B<span class="w">       </span><span class="m">2</span>.0Gi
+</pre></div>
+</div>
 </section>
 <section id="update-and-upgrade">
 <h4>Update and Upgrade<a class="headerlink" href="#update-and-upgrade" title="Permalink to this heading">#</a></h4>
@@ -650,21 +759,35 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </pre></div>
 </div>
 </section>
+</section>
 <section id="install-ubuntu-desktop-optional">
-<h4>Install Ubuntu Desktop (optional)<a class="headerlink" href="#install-ubuntu-desktop-optional" title="Permalink to this heading">#</a></h4>
-<p>A desktop GUI is not necessary for a remote machine like the USAFABot and will take up about 1.4 GB of RAM to run. I include directions for installing the Ubuntu GNOME 3 desktop environment for completeness and flexibility. The following will install the environment while confirming the installation:</p>
+<h3>Install Ubuntu Desktop (optional)<a class="headerlink" href="#install-ubuntu-desktop-optional" title="Permalink to this heading">#</a></h3>
+<p>A desktop GUI is <strong>not</strong> necessary for a remote machine like TurtleBot3 and will take up about 1.4 GB of RAM to run. If GUI is neccessary, the following will install the environment while confirming the installation:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>ubuntu-desktop
 </pre></div>
 </div>
-</section>
-<section id="network-settings">
-<h4>Network Settings<a class="headerlink" href="#network-settings" title="Permalink to this heading">#</a></h4>
 <p>If you do install the Ubuntu Desktop and want to use the GUI to setup the Wi-Fi network then you need to remove the settings included in the <code class="docutils literal notranslate"><span class="pre">/etc/netplan/50-cloud-init.yaml</span></code> file. It should look like the original file when complete:</p>
-<p><img alt="logo" src="../_images/wifi4.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file is generated from information provided by the datasource.  Changes</span>
+<span class="c1"># to it will not persist across an instance reboot.  To disable cloud-init&#39;s  </span>
+<span class="c1"># network configuration capabilities, write a file</span>
+<span class="c1"># /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:    </span>
+<span class="c1"># network: {config: disabled}</span>
+<span class="n">network</span><span class="p">:</span>
+    <span class="n">ethernets</span><span class="p">:</span>
+        <span class="n">eth0</span><span class="p">:</span>
+            <span class="n">dhcp4</span><span class="p">:</span> <span class="n">true</span>
+            <span class="n">optional</span><span class="p">:</span> <span class="n">true</span>
+    <span class="n">version</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">wifis</span><span class="p">:</span>
+        <span class="n">wlan0</span><span class="p">:</span>
+             <span class="n">dhcp4</span><span class="p">:</span> <span class="n">true</span>
+             <span class="n">optional</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
 <p>You can now use the GUI interface in the top right of the screen to set up a Wi-Fi connection.</p>
 </section>
 <section id="setup-github-ssh-keys">
-<h4>Setup GitHub SSH Keys<a class="headerlink" href="#setup-github-ssh-keys" title="Permalink to this heading">#</a></h4>
+<h3>Setup GitHub SSH Keys<a class="headerlink" href="#setup-github-ssh-keys" title="Permalink to this heading">#</a></h3>
 <p>The following assumes you already have a GitHub account.</p>
 <p>Create SSH keys to use with your GitHub account by typing the following using the same email as you GitHub login:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
@@ -685,95 +808,95 @@ ssh-add<span class="w"> </span>~/.ssh/id_ed25519
 <p>Copy the contents of the file (maximize the window and ensure you copy the entire contents up to the GitHub email).</p>
 <p>Open a web browser and sign in to your GitHub account.</p>
 <p>In the upper-right corner of any page, click your profile photo, then click <strong>Settings</strong>:</p>
-<p><img alt="logo" src="../_images/ssh1.png" /></p>
+<br>
+<a class="reference internal image-reference" href="../_images/ssh1.png"><img alt="../_images/ssh1.png" class="align-center" src="../_images/ssh1.png" style="width: 240px;" /></a>
+<br>
 <p>In the user settings sidebar, click <strong>SSH and GPG keys</strong>:</p>
-<p><img alt="logo" src="../_images/ssh2.png" /></p>
-<p>Click <strong>New SSH key</strong>:</p>
-<p><img alt="logo" src="../_images/ssh3.png" /></p>
-<p>In the “Title” field, add a descriptive label for the new key, such as “robot0”.</p>
-<p>Paste your key into the “Key” field (contents of the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file).</p>
+<br>
+<a class="reference internal image-reference" href="../_images/ssh2.png"><img alt="../_images/ssh2.png" class="align-center" src="../_images/ssh2.png" style="width: 240px;" /></a>
+<br>
+<p>Click <strong>New SSH key</strong>:
+<br></p>
+<a class="reference internal image-reference" href="../_images/ssh3.png"><img alt="../_images/ssh3.png" class="align-center" src="../_images/ssh3.png" style="width: 640px;" /></a>
+<br>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Title</span></code> field, add a descriptive label for the new key, such as “robot0”.</p>
+<p>Paste your key into the <code class="docutils literal notranslate"><span class="pre">Key</span></code> field (contents of the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file).</p>
 <p>Click <strong>Add SSH key</strong>.</p>
-</section>
 <section id="update-alternatives">
 <h4>Update Alternatives<a class="headerlink" href="#update-alternatives" title="Permalink to this heading">#</a></h4>
-<p>Python3 is installed in Ubuntu20 by default. Some ROS packages utilize the “python” command instead of “python3” so we need to create a new executable, “/usr/bin/python” that will call the Python3 (basically use the command “python” to call Python3):</p>
+<p>Python3 is installed in Ubuntu 22.04 by default. Some ROS packages utilize the “python” command instead of “python3” so we need to create a new executable, “/usr/bin/python” that will call the Python3 (basically use the command “python” to call Python3):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python3<span class="w"> </span><span class="m">10</span>
 </pre></div>
 </div>
 </section>
 </section>
-<section id="ros-noetic">
-<h3>ROS Noetic<a class="headerlink" href="#ros-noetic" title="Permalink to this heading">#</a></h3>
-<p>At this point, the Ubuntu environment is setup. Now we will setup the ROS requirements for the TurtleBot3. All of these instructions are adapted from the <a class="reference external" href="http://wiki.ros.org/noetic/Installation/Ubuntu">ROS wiki</a>. ROS Noetic is the latest version of ROS 1 that supports Ubuntu Focal.</p>
+</section>
+<section id="ros2-humble">
+<h2>ROS2 Humble<a class="headerlink" href="#ros2-humble" title="Permalink to this heading">#</a></h2>
+<p>At this point, the Ubuntu environment is setup. Now we will setup the ROS requirements for the TurtleBot3. All of these instructions are adapted from the <a class="reference external" href="https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html">ROS2 Documentation</a> and <a class="reference external" href="https://roboticsbackend.com/install-ros2-on-raspberry-pi/">The Robotics Back-End</a>
+. ROS 2 Humble is the latest version of ROS 2 that supports Ubuntu 22.04.</p>
 <section id="installation">
-<h4>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h4>
-<p>Accept software from <a class="reference external" href="http://packages.ros.org">packages.ros.org</a>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;</span>
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h3>
+<p>Make sure you have a locale which supports UTF-8.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>locale<span class="w">  </span><span class="c1"># check for UTF-8</span>
+
+sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>locales
+sudo<span class="w"> </span>locale-gen<span class="w"> </span>en_US<span class="w"> </span>en_US.UTF-8
+sudo<span class="w"> </span>update-locale<span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8<span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+<span class="nb">export</span><span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+
+locale<span class="w">  </span><span class="c1"># verify settings</span>
+</pre></div>
+</div>
+<p>First ensure that the Ubuntu Universe repository is enabled.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>software-properties-common
+sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>universe
 </pre></div>
 </div>
 <p>Set up keys:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl<span class="w"> </span><span class="c1"># if you haven&#39;t already installed curl</span>
-curl<span class="w"> </span>-s<span class="w"> </span>https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl<span class="w"> </span>-y
+sudo<span class="w"> </span>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/ros/rosdistro/master/ros.key<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/ros-archive-keyring.gpg
 </pre></div>
 </div>
-<p>Install ROS Noetic:</p>
+<p>Then add the repository to your sources list.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu </span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$UBUNTU_CODENAME</span><span class="k">)</span><span class="s2"> main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/ros2.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+</pre></div>
+</div>
+<p>Install ROS 2 Humble:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>ros-noetic-ros-base
+sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-ros-base
 </pre></div>
 </div>
-<p>The base version provides the Bare Bones of ROS to include minimum packaging, build, and communications libraries. No GUI tools are installed. As the Raspberry Pi is embedded into the USAFABot it is ideal to keep overhead as low as possible. Many of the GUI tools will be ran on the main machine.</p>
-<p>Install ROS dependencies for building packages:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-rosdep<span class="w"> </span>python3-rosinstall<span class="w"> </span>python3-rosinstall-generator<span class="w"> </span>python3-wstool<span class="w"> </span>python3-pip<span class="w"> </span>build-essential
+<p>The base version provides the Bare Bones of ROS 2 to include minimum packaging, build, and communications libraries. No GUI tools are installed. As the Raspberry Pi is embedded into TurtleBot it is ideal to keep overhead as low as possible. Many of the GUI tools will be ran on the main machine.</p>
+<p>Install colcon (build tool)</p>
+<p>ROS2 uses colcon as a build tool (and ament as the build system). When you only install the ROS2 core packages, colcon is not here, so install it manually.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-colcon-common-extensions
 </pre></div>
 </div>
-<p>Initialize rosdep</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>rosdep<span class="w"> </span>init
-rosdep<span class="w"> </span>update
-</pre></div>
-</div>
-<p>Source the ROS setup file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/noetic/setup.bash
-</pre></div>
-</div>
-<p>Create your ROS workspace:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/robot_ws/src
-<span class="nb">cd</span><span class="w"> </span>~/robot_ws/
-catkin_make
-</pre></div>
-</div>
-<p>Setup ROS environment variables and setup scripts within the <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file. Open the <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file with your favorite command line editor and add the following to the bottom:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/noetic/setup.#<span class="w"> </span>replace<span class="w"> </span>with<span class="w"> </span>editor<span class="w"> </span>of<span class="w"> </span>choice<span class="w"> </span>used<span class="w"> </span>with<span class="w"> </span>rosed<span class="w"> </span>commandbash
-<span class="nb">source</span><span class="w"> </span>~/robot_ws/devel/setup.bash
-<span class="nb">export</span><span class="w"> </span><span class="nv">ROS_PACKAGE_PATH</span><span class="o">=</span>~/robot_ws/src:/opt/ros/noetic/share
-<span class="nb">export</span><span class="w"> </span><span class="nv">ROS_HOSTNAME</span><span class="o">=</span><span class="sb">`</span>hostname<span class="sb">`</span><span class="w"> </span><span class="c1"># note these are backticks, not apostrophes</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://MASTER_IP:11311<span class="w"> </span><span class="c1"># replace &quot;MASTER_IP&quot; with IP address/hostname of your master</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">EDITOR</span><span class="o">=</span><span class="s1">&#39;nano -w&#39;</span><span class="w"> </span><span class="c1"># replace with editor of choice used with rosed command</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">TURTLEBOT3_MODEL</span><span class="o">=</span>burger
-<span class="nb">export</span><span class="w"> </span><span class="nv">LDS_MODEL</span><span class="o">=</span>LDS-01<span class="w"> </span><span class="c1"># replace with LDS-02 if using new LIDAR</span>
+<p>Setup ROS environment variables and setup scripts within the <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file. If you don’t want to have to source the setup file every time you open a new shell, then add the command to your shell startup script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/ros/humble/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </pre></div>
 </div>
 <p>Any time you make changes to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file you must source it:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </pre></div>
 </div>
-</section>
-<section id="dependencies">
-<h4>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">#</a></h4>
-<p>There are a number of ROS packages required to operate the TurtleBot3.</p>
-<section id="ros-dependencies">
-<h5>ROS Dependencies<a class="headerlink" href="#ros-dependencies" title="Permalink to this heading">#</a></h5>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ros-noetic-laser-proc<span class="w"> </span>ros-noetic-hls-lfcd-lds-driver<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>ros-noetic-rgbd-launch<span class="w"> </span>ros-noetic-rosserial-arduino<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>ros-noetic-rosserial-python<span class="w"> </span>ros-noetic-rosserial-client<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>ros-noetic-rosserial-msgs<span class="w"> </span>ros-noetic-amcl<span class="w"> </span>ros-noetic-map-server<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>ros-noetic-move-base<span class="w"> </span>ros-noetic-urdf<span class="w"> </span>ros-noetic-xacro<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>ros-noetic-compressed-image-transport<span class="w"> </span>ros-noetic-rqt*<span class="w"> </span>ros-noetic-rviz<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>ros-noetic-gmapping<span class="w"> </span>ros-noetic-navigation<span class="w"> </span>ros-noetic-interactive-markers
+<p>Sourcing ROS 2 setup files will set several environment variables necessary for operating ROS 2. If you ever have problems finding or using your ROS 2 packages, make sure that your environment is properly set up using the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>printenv<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>ROS
+</pre></div>
+</div>
+<p>Check that variables like ROS_DISTRO and ROS_VERSION are set.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">ROS_VERSION</span><span class="o">=</span><span class="m">2</span>
+<span class="nv">ROS_PYTHON_VERSION</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">ROS_DISTRO</span><span class="o">=</span>humble
 </pre></div>
 </div>
 </section>
-<section id="turtlebot3-dependencies">
-<h5>TurtleBot3 Dependencies<a class="headerlink" href="#turtlebot3-dependencies" title="Permalink to this heading">#</a></h5>
+</section>
+<section id="id1">
+<h2>TurtleBot3<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>ToDo: need to update this section for ROS2</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libudev-dev<span class="w"> </span>ros-noetic-turtlebot3-msgs
 <span class="nb">cd</span><span class="w"> </span>~/robot_ws/src
 git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>develop<span class="w"> </span>https://github.com/ROBOTIS-GIT/ld08_driver.git
@@ -781,9 +904,8 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ROBOT
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 </pre></div>
 </div>
-</section>
 <section id="ece387-curriculum">
-<h5><a class="reference external" href="https://github.com/AF-ROBOTICS/ece387_curriculum">ECE387 Curriculum</a><a class="headerlink" href="#ece387-curriculum" title="Permalink to this heading">#</a></h5>
+<h3><a class="reference external" href="https://github.com/AF-ROBOTICS/ece387_curriculum">ECE387 Curriculum</a><a class="headerlink" href="#ece387-curriculum" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:AF-ROBOTICS/ece387_curriculum.git
 </pre></div>
 </div>
@@ -807,8 +929,8 @@ pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </
 <blockquote>
 <div><p>📝️ <strong>Note:</strong> the “dlib” package will take quite a while to install.</p>
 </div></blockquote>
-</section>
-</section>
+<!-- #endregion -->
+<!-- #region -->
 </section>
 <section id="updating-opencr-firmware">
 <h3><a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup">Updating OpenCR firmware</a><a class="headerlink" href="#updating-opencr-firmware" title="Permalink to this heading">#</a></h3>
@@ -838,6 +960,9 @@ tar<span class="w"> </span>-xvf<span class="w"> </span>opencr_update.tar.bz2<spa
 <p>A successful firmware upload for TurtleBot3 Burger will look like:
 <img alt="lobo" src="../_images/firmware.png" /></p>
 <p>If not successful, attempt the debug methods in the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup">OpenCR Setup</a> guide.</p>
+<!-- #endregion -->
+<p>Created by Steve Beyer, 2022
+Updated by Stan Baek, 2023</p>
 </section>
 </section>
 </section>
@@ -873,6 +998,24 @@ tar<span class="w"> </span>-xvf<span class="w"> </span>opencr_update.tar.bz2<spa
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../Module00.0_IntroductionGIT/IntroGit.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 0: Setting Up GIT Repositories</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Module00.2_MasterSetup/MasterSetup.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Master Setup</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -891,40 +1034,41 @@ tar<span class="w"> </span>-xvf<span class="w"> </span>opencr_update.tar.bz2<spa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware">Hardware</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turtlebot3">TurtleBot3</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-assembly">Hardware Assembly</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raspberry-pi">Raspberry Pi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera">Camera</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-installation">Ubuntu Installation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-ubuntu-and-flash-microsd-card">Download Ubuntu and flash MicroSD card</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu-setup">Ubuntu Setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#login-and-changing-password">Login and changing password</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-username-optional">Changing username (optional)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#change-hostname">Change hostname</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-wi-fi">Set up Wi-Fi</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-automatic-updates">Disable Automatic Updates</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-ssh-and-generate-new-keys">Enable SSH and generate new keys</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-ubuntu">Configuring Ubuntu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#login-and-changing-password">Login and changing password</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-username-optional">Changing username (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-hostname">Change hostname</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-wi-fi">Set up Wi-Fi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-automatic-updates">Disable Automatic Updates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-ssh-and-generate-new-keys">Enable SSH and generate new keys</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-swap-space-optional">Add Swap Space (optional)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-changes">Verify changes</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-and-upgrade">Update and Upgrade</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-desktop-optional">Install Ubuntu Desktop (optional)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#network-settings">Network Settings</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-github-ssh-keys">Setup GitHub SSH Keys</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-desktop-optional">Install Ubuntu Desktop (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-github-ssh-keys">Setup GitHub SSH Keys</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-alternatives">Update Alternatives</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ros-noetic">ROS Noetic</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies">Dependencies</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ros-dependencies">ROS Dependencies</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#turtlebot3-dependencies">TurtleBot3 Dependencies</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ece387-curriculum">ECE387 Curriculum</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros2-humble">ROS2 Humble</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">TurtleBot3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ece387-curriculum">ECE387 Curriculum</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-opencr-firmware">Updating OpenCR firmware</a></li>
 </ul>
 </li>
