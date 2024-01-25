@@ -449,7 +449,7 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>You may remember when we set up our <em>.bashrc</em> file we set the system variable <strong>EDITOR</strong> to <code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">-w</span></code>. This enables the <code class="docutils literal notranslate"><span class="pre">rosed</span></code> command to utilize the nano editor.</p>
 </div>
-<p>We will learn more about launch files in a few modules, but just understand that a launch file is used to launch one or more ROS nodes. This paticular launch file only launches one node, <strong>serial_node.py</strong>. This node will connect to the OpenCR controller on the Turtlebot3 using the port and baud rate parameters. This connection will enable us to send <em>Twist</em> messages over the <strong>/cmd_vel</strong> topic to drive the Turtlebot3 using the keyboard.</p>
+<p>We will learn more about launch files in a few modules, but just understand that a launch file is used to launch one or more ROS nodes. This paticular launch file only launches one node, <strong>serial_node.py</strong>. This node will connect to the OpenCR controller on the Turtlebot3 using the port and baud rate parameters. This connection will enable us to send <em>Twist</em> messaghpges over the <strong>/cmd_vel</strong> topic to drive the Turtlebot3 using the keyboard.</p>
 </li>
 <li><p>Close the editor by hitting <code class="docutils literal notranslate"><span class="pre">ctrl+x</span></code>.</p></li>
 <li><p>It is always a good idea to check that the Turtlebot3 is communicating with the Master. To do this, we can list the active topics the Turtlebot3 sees. Run the following within your secure shell:</p>

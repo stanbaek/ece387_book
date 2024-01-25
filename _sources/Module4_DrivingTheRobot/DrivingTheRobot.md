@@ -19,7 +19,7 @@ This In-Class Exercise will introduce you to utilizing pre-built ROS packages to
     You may remember when we set up our *.bashrc* file we set the system variable **EDITOR** to `nano -w`. This enables the `rosed` command to utilize the nano editor.
    ```
    
-    We will learn more about launch files in a few modules, but just understand that a launch file is used to launch one or more ROS nodes. This paticular launch file only launches one node, **serial_node.py**. This node will connect to the OpenCR controller on the Turtlebot3 using the port and baud rate parameters. This connection will enable us to send *Twist* messages over the **/cmd_vel** topic to drive the Turtlebot3 using the keyboard.
+    We will learn more about launch files in a few modules, but just understand that a launch file is used to launch one or more ROS nodes. This paticular launch file only launches one node, **serial_node.py**. This node will connect to the OpenCR controller on the Turtlebot3 using the port and baud rate parameters. This connection will enable us to send *Twist* messaghpges over the **/cmd_vel** topic to drive the Turtlebot3 using the keyboard.
 
 1. Close the editor by hitting `ctrl+x`.
 
