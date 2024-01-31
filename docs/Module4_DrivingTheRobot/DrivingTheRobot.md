@@ -70,11 +70,10 @@ dfec@master:∼$ roscd ece387_curriculum/Module04_DrivingTheRobot
 dfec@master:∼$ jupyter−lab
 ```
 
-2. Open the Module04 Jupyter Notebook, "Module04_DrivingTheRobot.ipynb" and follow the instructions
-within the notebook.
+2. Open [ICE4: Driving the Robot](ICE4_DrivingTheRobot.md) and follow the instructions.
 
 ## Assignments.
-- Complete Jupyter Notebooks if not accomplished during class.
+- Complete ICE4 if not accomplished during class.
 - Push screen captures into your repo/master/module04 on github
 
 ## Next time.
