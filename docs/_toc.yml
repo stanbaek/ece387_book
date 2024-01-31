@@ -29,7 +29,8 @@ parts:
   - caption: Module 4
     chapters:
     - file: Module4_DrivingTheRobot/DrivingTheRobot.md
-    
+    - file: Module4_DrivingTheRobot/ICE4_DrivingTheRobot.md
+  
   - caption: Module 5
     chapters:
     - file: Module5_CustomMessages/CustomMessages.md    
