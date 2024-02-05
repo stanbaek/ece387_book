@@ -31,7 +31,7 @@ Essentially the code you are going to create will develop the following graph. T
 ```
 
 ### Mouse Node:
-The Mouse node will be created by the `mouse_client_OO.py` code. The framework for this code is provided [here](mouse_client_OO.py). Look for the TODO sections to see where you need to edit the code. The Mouse node will primarily detect mouse position and events and publish a custom `MouseController` message that you will create in a lab1 package within the master folder of your repo.
+The Mouse node will be created by the `mouse_client_OO.py` code. The framework for this code is provided <a href="mouse_client_OO.py" download>here</a>. Look for the TODO sections to see where you need to edit the code. The Mouse node will primarily detect mouse position and events and publish a custom `MouseController` message that you will create in a lab1 package within the master folder of your repo.
 
 ### Controller Node:
 The controller node is created by the `turtlebot_controller.py` code. I have also provided the framework for this code [here](turtlebot_controller.py). The controller node will subscribe to the `/mouse_info` topic and publish a Twist message to the `/cmd_vel` topic
