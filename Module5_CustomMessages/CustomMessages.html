@@ -412,7 +412,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-this-document">A note on this document</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros-msgs">ROS msgs</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#msg">msg</a></li>
@@ -452,10 +451,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="custom-messages">
 <h1>Custom Messages<a class="headerlink" href="#custom-messages" title="Permalink to this heading">#</a></h1>
-<section id="a-note-on-this-document">
-<h2>A note on this document<a class="headerlink" href="#a-note-on-this-document" title="Permalink to this heading">#</a></h2>
-<p>Now that you have a better understanding of the Linux operating system and Python programming language the Jupyter Notebooks will be used primarily to guide you through the In-Class Exercises and Laboratories. You will execute the majority of your commands and code within the Linux terminal.</p>
-</section>
 <section id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this heading">#</a></h2>
 <p>This In-Class Exercise will provide you more insight into ROS messages and how information is passed between two nodes. A node can publish specific messages over a topic and other nodes are able to subscribe to that topic to receive the message. The format of these messages must be pre-defined and each node needs to know the format of the message. ROS provides a number of pre-built messages, but also allows for developers to create custom messages. In this lesson you will learn the method for and practice creating custom messages. In the corresponding lab you will develop a custom message to drive the robot. The custom message will eventually be used to enable a controller to drive the robot based on multiple data sources (e.g., IMU, LIDAR, keyboard).</p>
@@ -588,7 +583,7 @@ touch<span class="w"> </span>ice5_publisher.py
 </pre></div>
 </div>
 </li>
-<li><p>Copy the below code to the ice5_publisher.py file and fill in the required lines (look for the TODO tag). You can edit via the terminal using nano, but it is often easier to use a GUI editor. Browse to the publisher in the file browser and double-click. This will open the file in thonny (if it is open in any other editor, stop, raise your hand, and get help from an instructor)</p></li>
+<li><p>Copy the below code to the <code class="docutils literal notranslate"><span class="pre">ice5_publisher.py</span></code> file and fill in the required lines (look for the TODO tag). You can edit via the terminal using nano, but it is often easier to use a GUI editor. Browse to the publisher in the file browser and double-click. This will open the file in thonny (if it is open in any other editor, stop, raise your hand, and get help from an instructor)</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 <span class="kn">import</span> <span class="nn">rospy</span>
@@ -643,7 +638,7 @@ touch<span class="w"> </span>ice5_publisher.py
 </pre></div>
 </div>
 </li>
-<li><p>Copy the below code to the ice5_subscriber.py file and fill in the required lines (look for the TODO tag).</p></li>
+<li><p>Copy the below code to the <code class="docutils literal notranslate"><span class="pre">ice5_subscriber.py</span></code> file and fill in the required lines (look for the TODO tag).</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 <span class="kn">import</span> <span class="nn">rospy</span>
@@ -902,7 +897,6 @@ catkin_make
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-this-document">A note on this document</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros-msgs">ROS msgs</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#msg">msg</a></li>
