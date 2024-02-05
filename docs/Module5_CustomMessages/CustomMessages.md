@@ -152,8 +152,8 @@ class Talker:
             
             
     def shutdownhook(self):
-    	print("Shutting down publisher.")
-    	self.ctrl_c = True
+        print("Shutting down publisher.")
+        self.ctrl_c = True
     	
 if __name__ == '__main__':
     rospy.init_node('talker')
@@ -325,7 +325,7 @@ There are a number of settings that have to be set within the `package.xml` and 
 1. Observe information about each node:
 
     ```bash
-    pi@master: rosnode info /talker
+    rosnode info /talker
     ```
     
 1. Observe how information is being passed:
