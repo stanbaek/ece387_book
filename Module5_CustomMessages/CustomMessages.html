@@ -614,8 +614,8 @@ touch<span class="w"> </span>ice5_publisher.py
             
             
     <span class="k">def</span> <span class="nf">shutdownhook</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shutting down publisher.&quot;</span><span class="p">)</span>
-    	<span class="bp">self</span><span class="o">.</span><span class="n">ctrl_c</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shutting down publisher.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctrl_c</span> <span class="o">=</span> <span class="kc">True</span>
     	
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s1">&#39;talker&#39;</span><span class="p">)</span>
@@ -785,7 +785,7 @@ catkin_make
 </div>
 </li>
 <li><p>Observe information about each node:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@master:<span class="w"> </span>rosnode<span class="w"> </span>info<span class="w"> </span>/talker
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosnode<span class="w"> </span>info<span class="w"> </span>/talker
 </pre></div>
 </div>
 </li>
