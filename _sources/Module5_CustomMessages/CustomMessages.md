@@ -1,5 +1,8 @@
 # Custom Messages
 
+## A note on this document
+Now that you have a better understanding of the Linux operating system and Python programming language the Jupyter Notebooks will be used primarily to guide you through the In-Class Exercises and Laboratories. You will execute the majority of your commands and code within the Linux terminal.
+
 ## Purpose
 This In-Class Exercise will provide you more insight into ROS messages and how information is passed between two nodes. A node can publish specific messages over a topic and other nodes are able to subscribe to that topic to receive the message. The format of these messages must be pre-defined and each node needs to know the format of the message. ROS provides a number of pre-built messages, but also allows for developers to create custom messages. In this lesson you will learn the method for and practice creating custom messages. In the corresponding lab you will develop a custom message to drive the robot. The custom message will eventually be used to enable a controller to drive the robot based on multiple data sources (e.g., IMU, LIDAR, keyboard).
 
@@ -90,7 +93,7 @@ In this exercise you will create a custom message that describes a person. This 
 1. In a new terminal on the **Master**, create an **ice5** package which depends on the *std_msgs* package and *rospy* package, compile and source the ws:
  
     ```bash
-    cd ~/master_ws/src/ece387_master_spring2023-USERNAME/
+    cd ~/master_ws/src/ece387_master_spring2024-USERNAME/master
     catkin_create_pkg ice5 std_msgs rospy
     cd ~/master_ws
     catkin_make
@@ -120,7 +123,7 @@ In this exercise you will create a custom message that describes a person. This 
     touch ice5_publisher.py
     ```
     
-1. Copy the below code to the `ice5_publisher.py` file and fill in the required lines (look for the TODO tag). You can edit via the terminal using nano, but it is often easier to use a GUI editor. Browse to the publisher in the file browser and double-click. This will open the file in thonny (if it is open in any other editor, stop, raise your hand, and get help from an instructor)
+1. Copy the below code to the ice5_publisher.py file and fill in the required lines (look for the TODO tag). You can edit via the terminal using nano, but it is often easier to use a GUI editor. Browse to the publisher in the file browser and double-click. This will open the file in thonny (if it is open in any other editor, stop, raise your hand, and get help from an instructor)
 
 ```python
 #!/usr/bin/env python3
@@ -174,7 +177,7 @@ if __name__ == '__main__':
     touch ice5_subscriber.py
     ```
 
-1. Copy the below code to the `ice5_subscriber.py` file and fill in the required lines (look for the TODO tag).
+1. Copy the below code to the ice5_subscriber.py file and fill in the required lines (look for the TODO tag).
 
 ```python
 #!/usr/bin/env python3

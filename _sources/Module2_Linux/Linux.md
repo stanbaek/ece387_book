@@ -291,7 +291,7 @@ Later in this course you will drive your TurtleBot around unplugged from a monit
 
 `cd ece387_robot_sp23-USERNAME/robot/`
 
-`catkin_create_pkg module02 
+`catkin_create_pkg module02`
 
 1. Change directories to your new folder.
 
