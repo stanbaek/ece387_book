@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>ICE4: Driving the Robot &#8212; Introduction to Robotic Systems</title>
+    <title>Driving the Robot &#8212; Introduction to Robotic Systems</title>
   
   
   
@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Custom Messages" href="../Module5_CustomMessages/CustomMessages.html" />
+    <link rel="next" title="ICE4: Driving the Robot" href="ICE4_DrivingTheRobot.html" />
     <link rel="prev" title="ICE3 - Client and Server" href="../Module3_Python3/ICE3_ClientServer.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -164,6 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../syllabus.html">📌 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../schedule.html">📆 Course Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python.html">🐍 Python Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">🙋 FAQ</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 1</span></p>
 <ul class="nav bd-sidenav">
@@ -183,7 +184,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 4</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE4: Driving the Robot</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Driving the Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICE4_DrivingTheRobot.html">ICE4: Driving the Robot</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 5</span></p>
 <ul class="nav bd-sidenav">
@@ -401,7 +403,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ICE4: Driving the Robot</h1>
+    <h1>Driving the Robot</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,13 +413,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-used-to-drive-the-robot">Code used to drive the robot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driving-the-robot">Driving the robot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros">ROS</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoint">Checkpoint</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup">Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-objectives">Lesson Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gain-additional-familiarity-with-simulation-environment">Gain Additional Familiarity with Simulation Environment.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gain-familiarity-with-turtlebot3-robotics-platform">Gain Familiarity with Turtlebot3 Robotics Platform.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignments">Assignments.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-time">Next time.</a></li>
 </ul>
             </nav>
         </div>
@@ -429,102 +430,101 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ice4-driving-the-robot">
-<h1>ICE4: Driving the Robot<a class="headerlink" href="#ice4-driving-the-robot" title="Permalink to this heading">#</a></h1>
-<section id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this heading">#</a></h2>
-<p>This In-Class Exercise will introduce you to utilizing pre-built ROS packages to accomplish a task. It will also provide you experience interacting with someone else’s source code (.py files) to learn how that component works. You will use ROS to run two nodes, <strong>turtlebot3_core</strong> and <strong>teleop_twist_keyboard</strong>, to drive the Turtlebot3 with a keyboard. You will continue to practice using ROS tools to observe how these components communicate.</p>
-</section>
-<section id="code-used-to-drive-the-robot">
-<h2>Code used to drive the robot<a class="headerlink" href="#code-used-to-drive-the-robot" title="Permalink to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>On the Master, open a terminal and run <strong>roscore</strong>.</p></li>
-<li><p>Open a new terminal on the Master and create a secure shell into the Turtlebot3 using the SSH command you learned during Module 2. This will allow you to run commands as if you were on the Turtlebot3.</p></li>
-<li><p>Using the secure shell, open the source code for the <strong>turtlebot3_core</strong> launch using the nano command line editor tool through the rosed command:</p>
-<p><code class="docutils literal notranslate"><span class="pre">rosed</span> <span class="pre">turtlebot3_bringup</span> <span class="pre">turtlebot3_core.launch</span></code></p>
-<blockquote>
-<div><p>⌨️ <strong>Syntax:</strong>  <code class="docutils literal notranslate"><span class="pre">rosed</span> <span class="pre">&lt;package&gt;</span> <span class="pre">&lt;filename&gt;</span></code></p>
-</div></blockquote>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You may remember when we set up our <em>.bashrc</em> file we set the system variable <strong>EDITOR</strong> to <code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">-w</span></code>. This enables the <code class="docutils literal notranslate"><span class="pre">rosed</span></code> command to utilize the nano editor.</p>
-</div>
-<p>We will learn more about launch files in a few modules, but just understand that a launch file is used to launch one or more ROS nodes. This paticular launch file only launches one node, <strong>serial_node.py</strong>. This node will connect to the OpenCR controller on the Turtlebot3 using the port and baud rate parameters. This connection will enable us to send <em>Twist</em> messaghpges over the <strong>/cmd_vel</strong> topic to drive the Turtlebot3 using the keyboard.</p>
-</li>
-<li><p>Close the editor by hitting <code class="docutils literal notranslate"><span class="pre">ctrl+x</span></code>.</p></li>
-<li><p>It is always a good idea to check that the Turtlebot3 is communicating with the Master. To do this, we can list the active topics the Turtlebot3 sees. Run the following within your secure shell:</p>
-<p><code class="docutils literal notranslate"><span class="pre">rostopic</span> <span class="pre">list</span></code></p>
-<p>If all is well, then there should be two topics provided by <strong>roscore</strong> running on the Master: <strong>/rosout</strong> and <strong>/rosout_agg</strong>. We will typically ignore these topics.</p>
-</li>
-<li><p>Run the <strong>turtlebot3_core.launch</strong> file using the <code class="docutils literal notranslate"><span class="pre">roslaunch</span></code> command:</p>
-<p><code class="docutils literal notranslate"><span class="pre">roslaunch</span> <span class="pre">turtlebot3_bringup</span> <span class="pre">turtlebot3_core.launch</span></code></p>
-<blockquote>
-<div><p>⌨️ <strong>Syntax:</strong> <code class="docutils literal notranslate"><span class="pre">roslaunch</span> <span class="pre">&lt;package&gt;</span> <span class="pre">&lt;launchfile&gt;</span></code></p>
-</div></blockquote>
-<p>Your Turtlebot3 is now ready to drive and should be listening for <em>Twist</em> messages to be sent over the <strong>/cmd_vel</strong> topic.</p>
-</li>
-</ol>
-</section>
-<section id="driving-the-robot">
-<h2>Driving the robot<a class="headerlink" href="#driving-the-robot" title="Permalink to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>Open a new terminal on the Master and observe the nodes currently running:</p>
-<p><code class="docutils literal notranslate"><span class="pre">rosrun</span> <span class="pre">rqt_graph</span> <span class="pre">rqt_graph</span></code></p>
-<p>You should only see one node running right now, <strong>turtlebot3_core</strong>, with no connections.</p>
-</li>
-<li><p>Open a new terminal tab and list the active topics. There should be one active topic other than the ones created by <strong>roscore</strong>: <strong>/cmd_vel</strong>.</p></li>
-<li><p>We used the <strong>/cmd_vel</strong> topic when driving the simulated Turtlebot3, but let’s refresh our memory about the topic:</p>
-<p><code class="docutils literal notranslate"><span class="pre">rostopic</span> <span class="pre">info</span> <span class="pre">cmd_vel</span></code></p>
-<p>As you can see the <strong>/cmd_vel</strong> topic is currently subscribed to by the <strong>turtlebot3_core</strong> with no publishers (just as we would expect after seeing the rqt_graph). We also note that topic utilizes the <em>Twist</em> message type. The following will show information about the fields within the <em>Twist</em> message sent over the <strong>/cmd_vel</strong> topic:</p>
-<p><code class="docutils literal notranslate"><span class="pre">rostopic</span> <span class="pre">type</span> <span class="pre">cmd_vel</span> <span class="pre">|</span> <span class="pre">rosmsg</span> <span class="pre">show</span></code></p>
-</li>
-<li><p>You can find information about pre-built packages by googling the package name along with the ROS distribution. Open up your favorite browser and google “teleop twist keyboard noetic”. The first result should be from the ROS wiki page.</p></li>
-<li><p>Ensure the ROS package <strong>teleop_twist_keyboard</strong> is installed on your Master:</p>
-<p><code class="docutils literal notranslate"><span class="pre">rospack</span> <span class="pre">find</span> <span class="pre">teleop_twist_keyboard</span></code></p>
-<p>If installed, the command should return the absolute path to the package, similar to <code class="docutils literal notranslate"><span class="pre">/opt/ros/noetic/share/teleop_twist_keyboard</span></code></p>
-<p>If the command instead returns an error, then you need to install the package using apt:</p>
-<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-noetic-teleop-twist-keyboard</span></code></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>All packages built for Noetic can be downloaded in the above manner (ros-noetic-desired-pkg with underscores in the package name replaced by dashes). Some packages were only built for previous ROS distribution and will have to be built from source (we will demonstrate this at a future time).</p>
-</div>
-</li>
-<li><p>Run the <strong>teleop_twist_keyboard</strong> node on the Master:</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Don’t forget your tab completion! You can start typing a package name or node and then hit tab for it to complete the command for you!</p>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">rosrun</span> <span class="pre">teleop_twist_keyboard</span> <span class="pre">teleop_twist_keyboard.py</span></code></p>
-</li>
-<li><p>Before we get too excited and drive the Turtlebot3 off a cliff, observe how the nodes communicate using the <strong>rqt_graph</strong> tool in a new terminal (if you still have the previous rqt_graph running, you can hit the refresh button in the top left corner).</p></li>
-<li><p>Select the terminal that has the <strong>teleop_twist_keyboard</strong> node running and observe the instructions for sending <em>Twist</em> messages. These are the same as when driving the simulated Turtlebot3.</p></li>
-<li><p>The Turtlebot3 operates best with a linear velocity between 0.2 m/s and 0.5 m/s. It turns best with an angular velocity between 0.5 rad/s and 1.5 rad/s. Drive the Turtlebot3 using these parameters.</p></li>
-</ol>
-</section>
-<section id="ros">
-<h2>ROS<a class="headerlink" href="#ros" title="Permalink to this heading">#</a></h2>
-<p>In labs throughout this course we will request information about the topics, nodes, and messages within your system. Accomplish the following in a new terminal on your Master (you can ignore all nodes/topics that result from <strong>roscore</strong>).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="driving-the-robot">
+<h1>Driving the Robot<a class="headerlink" href="#driving-the-robot" title="Permalink to this heading">#</a></h1>
+<section id="lesson-objectives">
+<h2>Lesson Objectives:<a class="headerlink" href="#lesson-objectives" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>List all running nodes.</p></li>
-<li><p>Determine what topics the nodes subscribe and publish to (repeat for each node).</p></li>
-<li><p>Display running nodes and communication between them.</p></li>
-<li><p>List the active topics.</p></li>
-<li><p>Determine the type of messages sent over the topics (repeat for each topic).</p></li>
-<li><p>Determine the fields of the messages.</p></li>
-<li><p>Observe the information sent over a topic (repeat for each topic).</p></li>
+<li><p>Gain additional familiarity with simulation environment</p></li>
+<li><p>Gain familiarity with Turtlebot 3 robotics platform</p></li>
+<li><p>Practice with ROS diagnostic tools</p></li>
 </ol>
 </section>
-<section id="checkpoint">
-<h2>Checkpoint<a class="headerlink" href="#checkpoint" title="Permalink to this heading">#</a></h2>
-<p>Once complete, push screenshots showing the output of each of the above to your student repo on github in a /master/module04 folder.</p>
+<section id="agenda">
+<h2>Agenda:<a class="headerlink" href="#agenda" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Use Linux terminals to launch and control Turtlebot 3 in simulation environment.</p></li>
+<li><p>Use Linux terminals to launch and control actual Turtlebot 3.</p></li>
+</ol>
 </section>
-<section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
-<p>In this exercise you examined and used pre-built packages and source code to drive the Turtlebot3 and understand how the system worked. You then were able to analyze the topics, nodes, and messages within the ROS system to better understand the flow of information and control. The <strong>pro-tips</strong> presented throughout this exercise will make you a better user of Linux and ROS.</p>
+<section id="gain-additional-familiarity-with-simulation-environment">
+<h2>Gain Additional Familiarity with Simulation Environment.<a class="headerlink" href="#gain-additional-familiarity-with-simulation-environment" title="Permalink to this heading">#</a></h2>
+<p>At this point we are nearly 20% complete with the course, and we have the foundational knowledge required
+about the ecosystem we will be working in. In short we will be using the Linux operating system to host
+ROS. We will use ROS to execute python code to control and interact with the various subsystems on our
+robotics platform.</p>
+<p>Before we move on to controlling our actual robot, we want to stress the importance and capabilities of our simulation environment. There will be times, where it may be inconvenient to work with the actual robot. Additionally, with all hardware systems, there can occasionally be inconsistent behaviors. For both of these  reasons (and many others), having an effective simulator may be very useful.
+There are two tools that we will find very useful for simulation (RViz and Gazebo).</p>
+<ul class="simple">
+<li><p>RViz - (short for “ROS visualization”) is a 3D visualization software tool for robots, sensors, and
+algorithms. It enables you to see the robot’s perception of its world (real or simulated).</p></li>
+<li><p>Gazebo - Gazebo is a 3D robot simulator. Its objective is to simulate a robot, giving you a close
+substitute to how your robot would behave in a real-world physical environment. It can compute the
+impact of forces (such as gravity).</p></li>
+</ul>
+<p>The difference between the two can be summed up in the following excerpt from Morgan Quigley (one of
+the original developers of ROS) in his book Programming Robots with ROS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RViz</span> <span class="n">shows</span> <span class="n">you</span> <span class="n">what</span> <span class="n">the</span> <span class="n">robot</span> <span class="n">thinks</span> <span class="ow">is</span> <span class="n">happening</span><span class="p">,</span> <span class="k">while</span> <span class="n">Gazebo</span> <span class="n">shows</span> <span class="n">you</span> <span class="n">what</span> <span class="ow">is</span> <span class="n">really</span> <span class="n">happening</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>For future research or development efforts, you may need to build your own simulation environment. However,
+for this course, the developers of the Turtlebot3, Robotis, have already done this for us.</p>
+<ul class="simple">
+<li><p>In a free terminal window, bring up roscore</p></li>
+<li><p>In a second free terminal window, we are going to use the roslaunch command to bring up the Gazebo
+environment within a maze. Tip: There are numerous virtual environments, but this will work for
+now</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dfec@master:∼$<span class="w"> </span>roslaunch<span class="w"> </span>turtlebot3_gazebo<span class="w"> </span>turtlebot3_world.launch
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In a third terminal window, we are now going to bring up the RViz environment.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dfec@master:∼$<span class="w"> </span>roslaunch<span class="w"> </span>turtlebot3_gazebo<span class="w"> </span>turtlebot3_gazebo_rviz.launch
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In a fourth terminal window, we are going to bring up a valuable tool that will allow us to control the
+robot via the keyboard. This tool is called teleop_twist.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dfec@master:∼$<span class="w"> </span>rosrun<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard.py
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>I strongly recommend that you commit the above sequence of commands to memory, or at a minimum
+have them in a place that you can quickly recall them. There is nothing until Module 9 that absolutely
+requires the real robot, as everything else can be simulated.</p>
+</div>
 </section>
-<section id="cleanup">
-<h2>Cleanup<a class="headerlink" href="#cleanup" title="Permalink to this heading">#</a></h2>
-<p>In each terminal window, close the node by typing <code class="docutils literal notranslate"><span class="pre">ctrl+c</span></code>. Exit any SSH connections.</p>
+<section id="gain-familiarity-with-turtlebot3-robotics-platform">
+<h2>Gain Familiarity with Turtlebot3 Robotics Platform.<a class="headerlink" href="#gain-familiarity-with-turtlebot3-robotics-platform" title="Permalink to this heading">#</a></h2>
+<p>The Module04 Jupyter Notebook will guide you through the process of connecting to and activating your
+robot for the first time.</p>
+<ol class="arabic simple">
+<li><p>On the master, open the Jupyter Notebook server (if it is not already open):</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dfec@master:∼$<span class="w"> </span>roscd<span class="w"> </span>ece387_curriculum/Module04_DrivingTheRobot
+dfec@master:∼$<span class="w"> </span>jupyter−lab
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Open <a class="reference internal" href="ICE4_DrivingTheRobot.html"><span class="doc std std-doc">ICE4: Driving the Robot</span></a> and follow the instructions.</p></li>
+</ol>
+</section>
+<section id="assignments">
+<h2>Assignments.<a class="headerlink" href="#assignments" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Complete ICE4 if not accomplished during class.</p></li>
+<li><p>Push screen captures into your repo/master/module04 on github</p></li>
+</ul>
+</section>
+<section id="next-time">
+<h2>Next time.<a class="headerlink" href="#next-time" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Lesson 10: Module 5 - Custom Messages</p></li>
+</ul>
 </section>
 </section>
 
@@ -569,11 +569,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../Module5_CustomMessages/CustomMessages.html"
+       href="ICE4_DrivingTheRobot.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Custom Messages</p>
+        <p class="prev-next-title">ICE4: Driving the Robot</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -595,13 +595,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-used-to-drive-the-robot">Code used to drive the robot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driving-the-robot">Driving the robot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros">ROS</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoint">Checkpoint</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup">Cleanup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-objectives">Lesson Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gain-additional-familiarity-with-simulation-environment">Gain Additional Familiarity with Simulation Environment.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gain-familiarity-with-turtlebot3-robotics-platform">Gain Familiarity with Turtlebot3 Robotics Platform.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignments">Assignments.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-time">Next time.</a></li>
 </ul>
   </nav></div>
 
