@@ -93,7 +93,7 @@ In this exercise you will create a custom message that describes a person. This 
 1. In a new terminal on the **Master**, create an **ice5** package which depends on the *std_msgs* package and *rospy* package, compile and source the ws:
  
     ```bash
-    cd ~/master_ws/src/ece387_master_spring2023-USERNAME/
+    cd ~/master_ws/src/ece387_master_spring2024-USERNAME/master
     catkin_create_pkg ice5 std_msgs rospy
     cd ~/master_ws
     catkin_make
@@ -155,8 +155,8 @@ class Talker:
             
             
     def shutdownhook(self):
-    	print("Shutting down publisher.")
-    	self.ctrl_c = True
+        print("Shutting down publisher.")
+        self.ctrl_c = True
     	
 if __name__ == '__main__':
     rospy.init_node('talker')
@@ -328,7 +328,7 @@ There are a number of settings that have to be set within the `package.xml` and 
 1. Observe information about each node:
 
     ```bash
-    pi@master: rosnode info /talker
+    rosnode info /talker
     ```
     
 1. Observe how information is being passed:
