@@ -9,6 +9,7 @@ parts:
     - file: syllabus.md
     - file: schedule.md
     - file: python.md
+    - file: faq.md
 
   - caption: Module 1
     chapters:
