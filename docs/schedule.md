@@ -1,12 +1,17 @@
 # 📆 Course Schedule
 
-```{note}This schedule is subject to change as appropriate.```**Last Updated: 17 May 2022**
+```{note} 
+This schedule is subject to change as appropriate.
+```
+
+**Last Updated: 21 Dec 2023**
+
 | Lesson |                           Topic              | Due (Before Class)|
 |:------:|----------------------------------------------|:-----------------:|
 | 1      | Course Intro, Master & Robot, Git            |                   |
 | 2      | Module 1: ROS                                |                   |
 | 3      | Quiz 1 & ICE 1                               |                   |
-| 4      | Module 1: Linux for Robotics                 |                   |
+| 4      | Module 2: Linux for Robotics                 |                   |
 | 5      | Quiz 2 & ICE 2                               |                   |
 | 6      | Module 3: Python 3 for Robotics              |                   |
 | 7      | Quiz 3 & ICE3                                |                   |
@@ -32,8 +37,8 @@
 | 27     | Lab 5                                        |                   |
 | 28     | Lab 5                                        |                   |
 | 29     | Final Project - Requirements                 | Lab 5             |
-| 30     | Final Project                                |                   |
-| 31     | Final Project                                |                   |
+| 30     | Final Project - Design Briefs                | Briefings         |
+| 31     | Final Project - Implementation               |                   |
 | 32     | Final Project                                |                   |
 | 33     | Final Project                                |                   |
 | 34     | Final Project                                |                   |
@@ -42,4 +47,4 @@
 | 37     | Final Project                                |                   |
 | 38     | Final Project                                |                   |
 | 39     | Final Project                                |                   |
-| 40     | Final Project - Demo                         | Final Report      |
+| 40     | Final Project - Demo                         | Demo              |
