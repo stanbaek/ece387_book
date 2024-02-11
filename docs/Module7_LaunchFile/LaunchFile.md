@@ -76,45 +76,37 @@ rosed turtlebot3_bringup turtlebot3_core.launch
 
 At this time, the *turtlebot3_core.launch* file includes everything you need to run the robot's core functionality (driving and reading data from the IMU). Let's talk about each line of the file:
 
-Most launch files will start with this line of code to setup formatting. This particular launch file did not include it, but it is good to use in launch files built during labs.
+The XML declaration <?xml version="1.0"?> is typically included at the beginning of an XML file to indicate the version of XML being used (in this case, version 1.0). However, when writing ROS (Robot Operating System) launch files in XML format, you generally do not need to include this declaration.
 
-```xml
-<?xml version="`.0?>
-```
-
-This line is the XML prolog, which is optional, but enables editors to include proper formatting for an XML file since the extension of a launch file is *.launch* instead of *.xml*.
+ROS launch files typically have a specific structure and do not require the XML version declaration. Instead, a ROS launch file typically starts with the <launch> tag. For example:
 
 ```xml
 <launch>
-    ...
+    <!-- Your ROS launch file content goes here -->
 </launch>
 ```
 
-Every launch file opens and closes with the *launch* root element.
+In ROS launch files, the <launch> tag serves as the root element for defining various nodes, parameters, and other configurations. Therefore, every launch file opens and closes with the *launch* root element.
 
 ```xml
-<node pkg="rosserial_python" type="serial_node.py" name="turtlebot3_core" output="screen">
-    <param name="port" value="/dev/ttyACM0"/>
-    <param name="baud" value="115200"/>
-    <param name="tf_prefix" value="$(arg multi_robot_name)"/>
-</node>
-
+<launch>
+    <node pkg="rosserial_python" type="serial_node.py" name="turtlebot3_core" output="screen">
+        <param name="port" value="/dev/ttyACM0"/>
+        <param name="baud" value="115200"/>
+        <param name="tf_prefix" value="$(arg multi_robot_name)"/>
+    </node>
+</launch>
 ```
 
 The above establishes the node to create a serial connection to the Turtlebot3. We can see a few parameters were set, `port` and `baud`, to help in establishing the connection.
 
-
 Close the editor: `ctrl+x`
 
-
-```python
-
-```
 
 ## roslaunch on the Master
 Navigate to your **lab2** package on the **Master** and create a launch directory:
 
-```
+```bash
 roscd lab2
 mkdir launch
 cd launch
@@ -130,7 +122,6 @@ Now we are going to edit the launch file to bring up all of the nodes (both on t
 Add the following to the **lab2.launch** file
 
 ```xml
-<?xml version="1.0"?>
 <launch>
   <!-- Bring up all local nodes first -->
     
