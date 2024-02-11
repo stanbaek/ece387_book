@@ -443,7 +443,9 @@ document.write(`
 <li><p>On the Master, open a terminal and run <strong>roscore</strong>.</p></li>
 <li><p>Open a new terminal on the Master and create a secure shell into the Turtlebot3 using the SSH command you learned during Module 2. This will allow you to run commands as if you were on the Turtlebot3.</p></li>
 <li><p>Using the secure shell, open the source code for the <strong>turtlebot3_core</strong> launch using the nano command line editor tool through the rosed command:</p>
-<p><code class="docutils literal notranslate"><span class="pre">rosed</span> <span class="pre">turtlebot3_bringup</span> <span class="pre">turtlebot3_core.launch</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rosed<span class="w"> </span>turtlebot3_bringup<span class="w"> </span>turtlebot3_core.launch
+</pre></div>
+</div>
 <blockquote>
 <div><p>⌨️ <strong>Syntax:</strong>  <code class="docutils literal notranslate"><span class="pre">rosed</span> <span class="pre">&lt;package&gt;</span> <span class="pre">&lt;filename&gt;</span></code></p>
 </div></blockquote>
@@ -451,15 +453,19 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>You may remember when we set up our <em>.bashrc</em> file we set the system variable <strong>EDITOR</strong> to <code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">-w</span></code>. This enables the <code class="docutils literal notranslate"><span class="pre">rosed</span></code> command to utilize the nano editor.</p>
 </div>
-<p>We will learn more about launch files in a few modules, but just understand that a launch file is used to launch one or more ROS nodes. This paticular launch file only launches one node, <strong>serial_node.py</strong>. This node will connect to the OpenCR controller on the Turtlebot3 using the port and baud rate parameters. This connection will enable us to send <em>Twist</em> messaghpges over the <strong>/cmd_vel</strong> topic to drive the Turtlebot3 using the keyboard.</p>
+<p>We will learn more about launch files in a few modules, but just understand that a launch file is used to launch one or more ROS nodes. This particular launch file only launches one node, <strong>serial_node.py</strong>. This node will connect to the OpenCR controller on the Turtlebot3 using the port and baud rate parameters. This connection will enable us to send <em>Twist</em> messages over the <strong>/cmd_vel</strong> topic to drive the Turtlebot3 using the keyboard.</p>
 </li>
 <li><p>Close the editor by hitting <code class="docutils literal notranslate"><span class="pre">ctrl+x</span></code>.</p></li>
 <li><p>It is always a good idea to check that the Turtlebot3 is communicating with the Master. To do this, we can list the active topics the Turtlebot3 sees. Run the following within your secure shell:</p>
-<p><code class="docutils literal notranslate"><span class="pre">rostopic</span> <span class="pre">list</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rostopic<span class="w"> </span>list<span class="sb">`</span>
+</pre></div>
+</div>
 <p>If all is well, then there should be two topics provided by <strong>roscore</strong> running on the Master: <strong>/rosout</strong> and <strong>/rosout_agg</strong>. We will typically ignore these topics.</p>
 </li>
 <li><p>Run the <strong>turtlebot3_core.launch</strong> file using the <code class="docutils literal notranslate"><span class="pre">roslaunch</span></code> command:</p>
-<p><code class="docutils literal notranslate"><span class="pre">roslaunch</span> <span class="pre">turtlebot3_bringup</span> <span class="pre">turtlebot3_core.launch</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>roslaunch<span class="w"> </span>turtlebot3_bringup<span class="w"> </span>turtlebot3_core.launch<span class="sb">`</span>
+</pre></div>
+</div>
 <blockquote>
 <div><p>⌨️ <strong>Syntax:</strong> <code class="docutils literal notranslate"><span class="pre">roslaunch</span> <span class="pre">&lt;package&gt;</span> <span class="pre">&lt;launchfile&gt;</span></code></p>
 </div></blockquote>

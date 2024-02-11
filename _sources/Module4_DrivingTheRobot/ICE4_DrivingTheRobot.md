@@ -11,7 +11,9 @@ This In-Class Exercise will introduce you to utilizing pre-built ROS packages to
 
 1. Using the secure shell, open the source code for the **turtlebot3_core** launch using the nano command line editor tool through the rosed command:
 
-    `rosed turtlebot3_bringup turtlebot3_core.launch`
+    ```bash
+    $ rosed turtlebot3_bringup turtlebot3_core.launch
+    ```
 
     > ⌨️ **Syntax:**  `rosed <package> <filename>`
 
@@ -19,20 +21,24 @@ This In-Class Exercise will introduce you to utilizing pre-built ROS packages to
     You may remember when we set up our *.bashrc* file we set the system variable **EDITOR** to `nano -w`. This enables the `rosed` command to utilize the nano editor.
    ```
    
-    We will learn more about launch files in a few modules, but just understand that a launch file is used to launch one or more ROS nodes. This paticular launch file only launches one node, **serial_node.py**. This node will connect to the OpenCR controller on the Turtlebot3 using the port and baud rate parameters. This connection will enable us to send *Twist* messaghpges over the **/cmd_vel** topic to drive the Turtlebot3 using the keyboard.
+    We will learn more about launch files in a few modules, but just understand that a launch file is used to launch one or more ROS nodes. This particular launch file only launches one node, **serial_node.py**. This node will connect to the OpenCR controller on the Turtlebot3 using the port and baud rate parameters. This connection will enable us to send *Twist* messages over the **/cmd_vel** topic to drive the Turtlebot3 using the keyboard.
 
 1. Close the editor by hitting `ctrl+x`.
 
 1. It is always a good idea to check that the Turtlebot3 is communicating with the Master. To do this, we can list the active topics the Turtlebot3 sees. Run the following within your secure shell:
 
-    `rostopic list`
-
+    ```bash
+    $ rostopic list`
+    ```
+    
     If all is well, then there should be two topics provided by **roscore** running on the Master: **/rosout** and **/rosout_agg**. We will typically ignore these topics.
 
 1. Run the **turtlebot3_core.launch** file using the `roslaunch` command:
 
-    `roslaunch turtlebot3_bringup turtlebot3_core.launch`
-    
+    ```bash
+    $ roslaunch turtlebot3_bringup turtlebot3_core.launch`
+    ```
+
     > ⌨️ **Syntax:** `roslaunch <package> <launchfile>`
     
     Your Turtlebot3 is now ready to drive and should be listening for *Twist* messages to be sent over the **/cmd_vel** topic.
