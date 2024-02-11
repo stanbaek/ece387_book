@@ -14,7 +14,7 @@ In the `/master_ws/src/ece387_master_sp2X-USERNAME/master` folder, create a **la
 
 1. Import the squaternion library and Imu message used in ICE6.
 
-1. Add the following Class variables within the class above the `__init__()` function:
+1. Add the following Class variables within the class **above** the `__init__()` function:
 
     1. `K_HDG = 0.1 # rotation controller constant`
     1. `HDG_TOL = 10 # heading tolerance +/- degrees`

@@ -499,37 +499,33 @@ document.write(`
 </pre></div>
 </div>
 <p>At this time, the <em>turtlebot3_core.launch</em> file includes everything you need to run the robot’s core functionality (driving and reading data from the IMU). Let’s talk about each line of the file:</p>
-<p>Most launch files will start with this line of code to setup formatting. This particular launch file did not include it, but it is good to use in launch files built during labs.</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;`.0?&gt;</span>
-</pre></div>
-</div>
-<p>This line is the XML prolog, which is optional, but enables editors to include proper formatting for an XML file since the extension of a launch file is <em>.launch</em> instead of <em>.xml</em>.</p>
+<p>The XML declaration <?xml version="1.0"?> is typically included at the beginning of an XML file to indicate the version of XML being used (in this case, version 1.0). However, when writing ROS (Robot Operating System) launch files in XML format, you generally do not need to include this declaration.</p>
+<p>ROS launch files typically have a specific structure and do not require the XML version declaration. Instead, a ROS launch file typically starts with the <launch> tag. For example:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;launch&gt;</span>
-<span class="w">    </span>...
+<span class="w">    </span><span class="cm">&lt;!-- Your ROS launch file content goes here --&gt;</span>
 <span class="nt">&lt;/launch&gt;</span>
 </pre></div>
 </div>
-<p>Every launch file opens and closes with the <em>launch</em> root element.</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">pkg=</span><span class="s">&quot;rosserial_python&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;serial_node.py&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;turtlebot3_core&quot;</span><span class="w"> </span><span class="na">output=</span><span class="s">&quot;screen&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;port&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;/dev/ttyACM0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;baud&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;115200&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tf_prefix&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;$(arg multi_robot_name)&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/node&gt;</span>
+<p>In ROS launch files, the <launch> tag serves as the root element for defining various nodes, parameters, and other configurations. Therefore, every launch file opens and closes with the <em>launch</em> root element.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;launch&gt;</span>
+<span class="w">    </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">pkg=</span><span class="s">&quot;rosserial_python&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;serial_node.py&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;turtlebot3_core&quot;</span><span class="w"> </span><span class="na">output=</span><span class="s">&quot;screen&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;port&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;/dev/ttyACM0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;baud&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;115200&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tf_prefix&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;$(arg multi_robot_name)&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/node&gt;</span>
+<span class="nt">&lt;/launch&gt;</span>
 </pre></div>
 </div>
 <p>The above establishes the node to create a serial connection to the Turtlebot3. We can see a few parameters were set, <code class="docutils literal notranslate"><span class="pre">port</span></code> and <code class="docutils literal notranslate"><span class="pre">baud</span></code>, to help in establishing the connection.</p>
 <p>Close the editor: <code class="docutils literal notranslate"><span class="pre">ctrl+x</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </section>
 <section id="roslaunch-on-the-master">
 <h2>roslaunch on the Master<a class="headerlink" href="#roslaunch-on-the-master" title="Permalink to this heading">#</a></h2>
 <p>Navigate to your <strong>lab2</strong> package on the <strong>Master</strong> and create a launch directory:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roscd</span> <span class="n">lab2</span>
-<span class="n">mkdir</span> <span class="n">launch</span>
-<span class="n">cd</span> <span class="n">launch</span>
-<span class="n">touch</span> <span class="n">lab2</span><span class="o">.</span><span class="n">launch</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roscd<span class="w"> </span>lab2
+mkdir<span class="w"> </span>launch
+<span class="nb">cd</span><span class="w"> </span>launch
+touch<span class="w"> </span>lab2.launch
 </pre></div>
 </div>
 <p>Open the launch file to edit (I recommend using <strong>sublime</strong>).</p>
@@ -538,8 +534,7 @@ document.write(`
 <div><p>📝️ <strong>Note:</strong> <em>roslaunch</em> will look to see if <em>roscore</em> is started. If it is not, it will automatically run <em>roscore</em>.</p>
 </div></blockquote>
 <p>Add the following to the <strong>lab2.launch</strong> file</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class="nt">&lt;launch&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;launch&gt;</span>
 <span class="w">  </span><span class="cm">&lt;!-- Bring up all local nodes first --&gt;</span>
 <span class="w">    </span>
 <span class="w">  </span><span class="cm">&lt;!-- model to visualize the Turtlebot3 in RVIZ --&gt;</span>
