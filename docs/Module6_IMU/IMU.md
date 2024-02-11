@@ -73,7 +73,7 @@ You can keep the node running for the next portion of the lesson.
     touch imu_sub.py
     ```
     
-1. Copy and complete the below code using the GUI editor tool, **Sublime**. Browse to the subscriber you just created and double-click. This will open the file in **Sublime** (if it is open in any other editor, stop, raise your hand, and get help from an instructor)
+1. Copy and complete the below code using a GUI editor tool, such as **Sublime** or **VS Code**. Browse to the subscriber you just created and double-click. This will open the file in **Sublime** or **VS Code** (if it is open in any other editor, stop, raise your hand, and get help from an instructor)
 > 💡️ **Tip:** Look for the **"TODO"** tag which indicates where you should insert your own code.
 
 ```python
