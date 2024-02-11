@@ -10,7 +10,7 @@ In the `/master_ws/src/ece387_master_sp2X-USERNAME/master` folder, create a **la
 ### controller.py
 1. Copy the turtlebot_controller.py file from lab1 into the lab2 package.
 
-1. Open the turtlebot_controller.py file from lab2 using the **Sublime** editor.
+1. Open the turtlebot_controller.py file from lab2 using an editor.
 
 1. Import the squaternion library and Imu message used in ICE6.
 
