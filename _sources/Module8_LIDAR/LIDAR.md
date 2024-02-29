@@ -77,7 +77,10 @@ roslaunch turtlebot3_bringup turtlebot3_model.launch
 
 This should open an RVIZ window where we can visualize ROS components of our system. In the "Displays" menu on the left you should see two submenus of interest: "LaserScan" and "RobotModel". These allow us to depict the Turtlebot3 and LIDAR data.
 
-You should see red dots fill the **rviz** map where obstacles exist. 
+You should see red dots fill the **rviz** map where obstacles exist as shown below.
+
+![logo](Figures/lidarscan_example.png)
+
 
 Investigate what data the **hls_laser_publisher** is sending. Type the following and observe the command output:
 

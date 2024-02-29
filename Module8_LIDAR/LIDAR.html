@@ -501,7 +501,8 @@ rosparam<span class="w"> </span><span class="nb">set</span><span class="w"> </sp
 </pre></div>
 </div>
 <p>This should open an RVIZ window where we can visualize ROS components of our system. In the “Displays” menu on the left you should see two submenus of interest: “LaserScan” and “RobotModel”. These allow us to depict the Turtlebot3 and LIDAR data.</p>
-<p>You should see red dots fill the <strong>rviz</strong> map where obstacles exist.</p>
+<p>You should see red dots fill the <strong>rviz</strong> map where obstacles exist as shown below.</p>
+<p><img alt="logo" src="../_images/lidarscan_example.png" /></p>
 <p>Investigate what data the <strong>hls_laser_publisher</strong> is sending. Type the following and observe the command output:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic<span class="w"> </span>list
 rostopic<span class="w"> </span>info<span class="w"> </span>/scan
