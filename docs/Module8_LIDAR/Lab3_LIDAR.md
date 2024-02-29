@@ -5,7 +5,7 @@ This lab will integrate the Turtlebot3 LIDAR with the existing controller to dri
 
 ## Master
 ### Setup:
-In the `/master_ws/src/ece387_master_spring202X-USERNAME/` folder, create a **lab3** package which depends on **rospy**, **std_msgs**, **geometry_msgs**, and **turtlebot3_bringup**.
+In the `/master_ws/src/ece387_master_spring202X-USERNAME/` folder, create a **lab3** package which depends on **rospy**, **std_msgs**, **sensor_msgs**, **geometry_msgs**, and **turtlebot3_bringup**.
 
 Make and source your workspace.
 
