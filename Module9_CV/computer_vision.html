@@ -723,14 +723,14 @@ Instead of using each individual gradient direction of each individual pixel of 
 <p>Download the example demo into the <code class="docutils literal notranslate"><span class="pre">my_scripts</span></code> folder.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/master_ws/src
 mkdir<span class="w"> </span>my_scripts
-<span class="nb">cd</span><span class="w"> </span>my<span class="w"> </span>scripts
+<span class="nb">cd</span><span class="w"> </span>my_scripts
 git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ECE495/HOG_Demo.git
 <span class="nb">cd</span><span class="w"> </span>HOG_Demo
 </pre></div>
 </div>
 <p>Take a look at what is contained within the repo.  Essentially you have both a training data folder and a test folder.  We will now use a tool called <strong>imglab</strong> to annotate the images for building our detector.</p>
 <p>Browse to the <a class="reference external" href="https://solothought.com/imglab/#">imglab tool</a> and select <strong>“UMM, MAYBE NEXT TIME!”</strong>.</p>
-<p>In the bottom left of the site, select the load button and browse to the training folder:</p>
+<p>In the bottom left of the site, click on the <code class="docutils literal notranslate"><span class="pre">load</span></code> button, select the <code class="docutils literal notranslate"><span class="pre">training</span></code> folder, and click the <code class="docutils literal notranslate"><span class="pre">upload</span></code> button.</p>
 <p><img alt="logo" src="../_images/load.png" /></p>
 <p>Select the first stop sign and the <strong>“Rectangle”</strong> tool.</p>
 <p><img alt="logo" src="../_images/rectangle.png" /></p>
@@ -743,7 +743,7 @@ git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ECE495/HO
 <p>Once all stop signs are complete hit <code class="docutils literal notranslate"><span class="pre">ctrl+e</span></code> to save the annotations (bounding box information) as a <strong>“Dlib XML”</strong> file within the <code class="docutils literal notranslate"><span class="pre">training</span></code> folder using a descriptive name such as <code class="docutils literal notranslate"><span class="pre">stop_annotations.xml</span></code>.</p>
 <p><img alt="logo" src="../_images/xml.png" /></p>
 <p>We now need to create the code to build the detector based on our annotated training data.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/master_ws/src/ece387_curriculum/my_scripts/HOG_Demo
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/master_ws/src/my_scripts/HOG_Demo
 touch<span class="w"> </span>trainDetector.py
 </pre></div>
 </div>
@@ -781,7 +781,7 @@ touch<span class="w"> </span>trainDetector.py
 </pre></div>
 </div>
 <p>Once you have the code entered, you can run it with the following command.  Remember, you need to provide two command line arguments:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roscd<span class="w"> </span>ece387_curriculum/my_scripts/HOG_Demo
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/master_ws/src/my_scripts/HOG_Demo
 python3<span class="w"> </span>trainDetector.py<span class="w"> </span>--xml<span class="w"> </span>training/stop_annotations.xml<span class="w"> </span>--detector<span class="w"> </span>training/stop_detector.svm
 </pre></div>
 </div>
@@ -792,7 +792,7 @@ python3<span class="w"> </span>trainDetector.py<span class="w"> </span>--xml<spa
 <p>Now it is time to build our code to test the detector.  The following code will make use of the imutils library as well.</p>
 <p>You may get a few errors pop up during execution based on your choice for bounding boxes.  Make sure you address those errors before continuing.  If everything executed correctly, you should ultimately see a picture of the HOG feature you designed.</p>
 <p>Now it is time to build our code to test the detector.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roscd<span class="w"> </span>ece387_curriculum/my_scripts/HOG_Demo
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/master_ws/src/my_scripts/HOG_Demo
 touch<span class="w"> </span>testDetector.py
 </pre></div>
 </div>
@@ -829,7 +829,7 @@ touch<span class="w"> </span>testDetector.py
 </pre></div>
 </div>
 <p>Run the test detector:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roscd<span class="w"> </span>ece387_curriculum/my_scripts/HOG_Demo
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/master_ws/src/my_scripts/HOG_Demo
 python3<span class="w"> </span>testDetector.py<span class="w"> </span>--detector<span class="w"> </span>training/stop_detector.svm<span class="w"> </span>--testing<span class="w"> </span><span class="nb">test</span>
 </pre></div>
 </div>

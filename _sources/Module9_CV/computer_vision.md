@@ -341,7 +341,7 @@ Download the example demo into the `my_scripts` folder.
 ```bash
 cd ~/master_ws/src
 mkdir my_scripts
-cd my scripts
+cd my_scripts
 git clone git@github.com:ECE495/HOG_Demo.git
 cd HOG_Demo
 ```
@@ -350,7 +350,7 @@ Take a look at what is contained within the repo.  Essentially you have both a t
 
 Browse to the [imglab tool](https://solothought.com/imglab/#) and select **"UMM, MAYBE NEXT TIME!"**.
 
-In the bottom left of the site, select the load button and browse to the training folder:
+In the bottom left of the site, click on the `load` button, select the `training` folder, and click the `upload` button.
 
 ![logo](Figures/load.png)
 
@@ -373,7 +373,7 @@ Once all stop signs are complete hit `ctrl+e` to save the annotations (bounding 
 We now need to create the code to build the detector based on our annotated training data.
 
 ```bash
-cd ~/master_ws/src/ece387_curriculum/my_scripts/HOG_Demo
+cd ~/master_ws/src/my_scripts/HOG_Demo
 touch trainDetector.py
 ```
 
@@ -415,7 +415,7 @@ dlib.hit_enter_to_continue()
 Once you have the code entered, you can run it with the following command.  Remember, you need to provide two command line arguments:
 
 ```bash
-roscd ece387_curriculum/my_scripts/HOG_Demo
+cd ~/master_ws/src/my_scripts/HOG_Demo
 python3 trainDetector.py --xml training/stop_annotations.xml --detector training/stop_detector.svm
 ```
 
@@ -429,7 +429,7 @@ You may get a few errors pop up during execution based on your choice for boundi
 Now it is time to build our code to test the detector.
 
 ```bash
-roscd ece387_curriculum/my_scripts/HOG_Demo
+cd ~/master_ws/src/my_scripts/HOG_Demo
 touch testDetector.py
 ```
 
@@ -470,7 +470,7 @@ for testingPath in paths.list_images(args["testing"]):
 Run the test detector:
 
 ```bash
-roscd ece387_curriculum/my_scripts/HOG_Demo
+cd ~/master_ws/src/my_scripts/HOG_Demo
 python3 testDetector.py --detector training/stop_detector.svm --testing test
 ```
 
