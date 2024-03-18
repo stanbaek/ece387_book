@@ -341,7 +341,7 @@ Download the example demo into the `my_scripts` folder.
 ```bash
 cd ~/master_ws/src
 mkdir my_scripts
-cd my scripts
+cd my_scripts
 git clone git@github.com:ECE495/HOG_Demo.git
 cd HOG_Demo
 ```
@@ -350,7 +350,7 @@ Take a look at what is contained within the repo.  Essentially you have both a t
 
 Browse to the [imglab tool](https://solothought.com/imglab/#) and select **"UMM, MAYBE NEXT TIME!"**.
 
-In the bottom left of the site, select the load button and browse to the training folder:
+In the bottom left of the site, click on the `load` button, select the `training` folder, and click the `upload` button.
 
 ![logo](Figures/load.png)
 
