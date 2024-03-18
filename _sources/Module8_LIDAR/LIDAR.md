@@ -144,8 +144,8 @@ class LIDAR:
 	    	ranges = []
 	    	
 	    	# determine how many scans were taken during rotation
-	        count = int(scan.scan_time / scan.time_increment)
-	        
+	        count = len(scan.ranges)
+
 	        for i in range(count):
 	            # using min angle and incr data determine curr angle, 
 	            # convert to degrees, convert to 360 scale
