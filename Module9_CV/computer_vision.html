@@ -720,14 +720,16 @@ Instead of using each individual gradient direction of each individual pixel of 
 <p>Now that we have an understanding of the HOG features, lets use tools embedded within OpenCV and Dlib to build our first detector for a stop sign.  But first we need to download a pre-created repository of test and training data.  Remember, we won’t use our training data to test the effectiveness of the algorithm.  Of course the algorithm will work effectively on the training data.  Our hope is that we can create a large enough sampling of test data that we can have a highly effective detector that is robust against new images.</p>
 <section id="building-a-detector-using-hog-features">
 <span id="cv-hog"></span><h3>Building a detector using HOG features<a class="headerlink" href="#building-a-detector-using-hog-features" title="Permalink to this heading">#</a></h3>
-<p>Download the example demo into the <code class="docutils literal notranslate"><span class="pre">my_scripts</span></code> folder you created earlier in the semester. It should be located under <code class="docutils literal notranslate"><span class="pre">~/master_ws/src/ece387_curriculum/</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roscd<span class="w"> </span>ece387_curriculum/my_scripts
+<p>Download the example demo into the <code class="docutils literal notranslate"><span class="pre">my_scripts</span></code> folder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/master_ws/src
+mkdir<span class="w"> </span>my_scripts
+<span class="nb">cd</span><span class="w"> </span>my<span class="w"> </span>scripts
 git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ECE495/HOG_Demo.git
 <span class="nb">cd</span><span class="w"> </span>HOG_Demo
 </pre></div>
 </div>
 <p>Take a look at what is contained within the repo.  Essentially you have both a training data folder and a test folder.  We will now use a tool called <strong>imglab</strong> to annotate the images for building our detector.</p>
-<p>Browse to the <a class="reference external" href="https://imglab.in/">imglab tool</a> and select <strong>“UMM, MAYBE NEXT TIME!”</strong>.</p>
+<p>Browse to the <a class="reference external" href="https://solothought.com/imglab/#">imglab tool</a> and select <strong>“UMM, MAYBE NEXT TIME!”</strong>.</p>
 <p>In the bottom left of the site, select the load button and browse to the training folder:</p>
 <p><img alt="logo" src="../_images/load.png" /></p>
 <p>Select the first stop sign and the <strong>“Rectangle”</strong> tool.</p>

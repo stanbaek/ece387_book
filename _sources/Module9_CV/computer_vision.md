@@ -336,17 +336,19 @@ Now that we have an understanding of the HOG features, lets use tools embedded w
 
 (CV:HOG)=
 ### Building a detector using HOG features
-Download the example demo into the `my_scripts` folder you created earlier in the semester. It should be located under `~/master_ws/src/ece387_curriculum/`.
+Download the example demo into the `my_scripts` folder.
 
 ```bash
-roscd ece387_curriculum/my_scripts
+cd ~/master_ws/src
+mkdir my_scripts
+cd my scripts
 git clone git@github.com:ECE495/HOG_Demo.git
 cd HOG_Demo
 ```
 
 Take a look at what is contained within the repo.  Essentially you have both a training data folder and a test folder.  We will now use a tool called **imglab** to annotate the images for building our detector.
 
-Browse to the [imglab tool](https://imglab.in/) and select **"UMM, MAYBE NEXT TIME!"**.
+Browse to the [imglab tool](https://solothought.com/imglab/#) and select **"UMM, MAYBE NEXT TIME!"**.
 
 In the bottom left of the site, select the load button and browse to the training folder:
 
