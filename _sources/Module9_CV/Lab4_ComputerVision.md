@@ -5,16 +5,15 @@
 This lab will integrate a USB Camera with the Robot. You will use a Python script to take pictures of the stop sign and build a stop sign detector then test it using a live video feed. You will then use the detector and known size of the stop sign to estimate how far the stop sign is from the camera. Lastly, you will create a node to identify and determine how far an April Tag is from the robot.
 
 ## Setup packages
-Open a terminal on the **Master** and create a lab4 package:
+Open a terminal on the **Robot** and create a lab4 package:
 
 ```bash
-cd ~/master_ws/src/ece387_master_spring202X-USERNAME/
+cd ~/master_ws/src/ece387_robot_spring202X-USERNAME/
 catkin_create_pkg lab4 rospy sensor_msgs std_msgs cv_bridge apriltag_ros
 ```
 
 Make and source your workspace.
 
-If you have not already done so, repeat on the **Robot**
 
 ## Create a ROS node to save images
 Browse to your lab4 source folder on the **Master** and create a node called **image_capture.py**.
