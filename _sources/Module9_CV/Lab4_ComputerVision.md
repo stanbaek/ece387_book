@@ -24,6 +24,7 @@ import rospy, cv2, argparse
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
+
 class SavingImage(object):
 	def __init__(self, img_dest):
 		self.img_dest = img_dest
@@ -31,7 +32,7 @@ class SavingImage(object):
 		self.count = 0
         
         # subscribe to the topic created by the usb_cam node
-		self.image_sub = rospy.Subscriber("/usb_cam/image_raw",Image,self.camera_callback)
+		self.image_sub = rospy.Subscriber("/usb_cam/image_raw", Image, self.camera_callback)
         
         # CV bridge converts between ROS Image messages and OpenCV images
 		self.bridge_object = CvBridge()
@@ -41,7 +42,7 @@ class SavingImage(object):
 		
 		rospy.on_shutdown(self.shutdownhook)
 
-	def camera_callback(self,img):
+	def camera_callback(self, img):
 		if not self.ctrl_c:
 			try:
                 # convert ROS image to OpenCV image
@@ -55,7 +56,7 @@ class SavingImage(object):
 		
 	def callback_save(self, event):
         # when user is ready to take picture press button
-		_ = input("Press enter to save the next image.")
+		_ = input("Press enter to save the image.")
 		dest = self.img_dest + "img" + str(self.count) + ".jpg"
 		self.count += 1
 		print(dest)
@@ -85,9 +86,9 @@ Save, exit, and make executable.
 
 ## Train your stop detector
 
-Create a new folder in your **lab4** package called **training_images**.
-
-Run the `image_capture.py` node on the **Master** using the following command:
+- Create a new folder in your **lab4** package called **training_images**.
+- Run `lab4.launch` on the **Master**.
+- Run the `image_capture.py` node on the **Master** using the following command:
 
 ```bash
 rosrun lab4 image_capture.py -o /home/dfec/master_ws/src/ece387_master_spring202X-NAME/lab4/training_images/

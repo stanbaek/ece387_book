@@ -467,6 +467,7 @@ catkin_create_pkg<span class="w"> </span>lab4<span class="w"> </span>rospy<span 
 <span class="kn">from</span> <span class="nn">sensor_msgs.msg</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="kn">from</span> <span class="nn">cv_bridge</span> <span class="kn">import</span> <span class="n">CvBridge</span><span class="p">,</span> <span class="n">CvBridgeError</span>
 
+
 <span class="k">class</span> <span class="nc">SavingImage</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img_dest</span><span class="p">):</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">img_dest</span> <span class="o">=</span> <span class="n">img_dest</span>
@@ -474,7 +475,7 @@ catkin_create_pkg<span class="w"> </span>lab4<span class="w"> </span>rospy<span 
 		<span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
         
         <span class="c1"># subscribe to the topic created by the usb_cam node</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">image_sub</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Subscriber</span><span class="p">(</span><span class="s2">&quot;/usb_cam/image_raw&quot;</span><span class="p">,</span><span class="n">Image</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">camera_callback</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">image_sub</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Subscriber</span><span class="p">(</span><span class="s2">&quot;/usb_cam/image_raw&quot;</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera_callback</span><span class="p">)</span>
         
         <span class="c1"># CV bridge converts between ROS Image messages and OpenCV images</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">bridge_object</span> <span class="o">=</span> <span class="n">CvBridge</span><span class="p">()</span>
@@ -484,7 +485,7 @@ catkin_create_pkg<span class="w"> </span>lab4<span class="w"> </span>rospy<span 
 		
 		<span class="n">rospy</span><span class="o">.</span><span class="n">on_shutdown</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shutdownhook</span><span class="p">)</span>
 
-	<span class="k">def</span> <span class="nf">camera_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">img</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">camera_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
 		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctrl_c</span><span class="p">:</span>
 			<span class="k">try</span><span class="p">:</span>
                 <span class="c1"># convert ROS image to OpenCV image</span>
@@ -498,7 +499,7 @@ catkin_create_pkg<span class="w"> </span>lab4<span class="w"> </span>rospy<span 
 		
 	<span class="k">def</span> <span class="nf">callback_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="c1"># when user is ready to take picture press button</span>
-		<span class="n">_</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Press enter to save the next image.&quot;</span><span class="p">)</span>
+		<span class="n">_</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Press enter to save the image.&quot;</span><span class="p">)</span>
 		<span class="n">dest</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">img_dest</span> <span class="o">+</span> <span class="s2">&quot;img&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.jpg&quot;</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 		<span class="nb">print</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
@@ -528,8 +529,11 @@ catkin_create_pkg<span class="w"> </span>lab4<span class="w"> </span>rospy<span 
 </section>
 <section id="train-your-stop-detector">
 <h2>Train your stop detector<a class="headerlink" href="#train-your-stop-detector" title="Permalink to this heading">#</a></h2>
-<p>Create a new folder in your <strong>lab4</strong> package called <strong>training_images</strong>.</p>
-<p>Run the <code class="docutils literal notranslate"><span class="pre">image_capture.py</span></code> node on the <strong>Master</strong> using the following command:</p>
+<ul class="simple">
+<li><p>Create a new folder in your <strong>lab4</strong> package called <strong>training_images</strong>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">lab4.launch</span></code> on the <strong>Master</strong>.</p></li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">image_capture.py</span></code> node on the <strong>Master</strong> using the following command:</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun<span class="w"> </span>lab4<span class="w"> </span>image_capture.py<span class="w"> </span>-o<span class="w"> </span>/home/dfec/master_ws/src/ece387_master_spring202X-NAME/lab4/training_images/
 </pre></div>
 </div>
