@@ -180,7 +180,7 @@ Edit the `lab4.launch` file so it will run the stop detector node with the `dete
 
 ```xml
 <node machine="robotX" name="stop_detector" pkg="lab4" type="stop_detector.py" output="screen">
-    <param name="detector" value="/home/pi/robot_ws/src/ece387_robot_spring202X-Name/robot/lab4/training_images/sl_detector.svm"/>
+    <param name="detector" value="/home/pi/robot_ws/src/ece387_robot_spring202X-Name/robot/lab4/training_images/stop_detector.svm"/>
 </node>
 ```
 
