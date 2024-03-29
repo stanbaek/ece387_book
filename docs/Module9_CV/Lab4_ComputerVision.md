@@ -26,60 +26,60 @@ from cv_bridge import CvBridge, CvBridgeError
 
 
 class SavingImage(object):
-	def __init__(self, img_dest):
-		self.img_dest = img_dest
-		self.ctrl_c = False
-		self.count = 0
+    def __init__(self, img_dest):
+        self.img_dest = img_dest
+        self.ctrl_c = False
+        self.count = 0
         
         # subscribe to the topic created by the usb_cam node
-		self.image_sub = rospy.Subscriber("/usb_cam/image_raw", Image, self.camera_callback)
+        self.image_sub = rospy.Subscriber("/usb_cam/image_raw", Image, self.camera_callback)
         
         # CV bridge converts between ROS Image messages and OpenCV images
-		self.bridge_object = CvBridge()
+        self.bridge_object = CvBridge()
         
         # callback to save images when user presses button
-		rospy.Timer(rospy.Duration(.1), self.callback_save)
-		
-		rospy.on_shutdown(self.shutdownhook)
+        rospy.Timer(rospy.Duration(.1), self.callback_save)
+        
+        rospy.on_shutdown(self.shutdownhook)
 
-	def camera_callback(self, img):
-		if not self.ctrl_c:
-			try:
+    def camera_callback(self, img):
+        if not self.ctrl_c:
+            try:
                 # convert ROS image to OpenCV image
-				self.cv_image = self.bridge_object.imgmsg_to_cv2(img, desired_encoding="bgr8")
-			except CvBridgeError as e:
-				print(e)
-			
+                self.cv_image = self.bridge_object.imgmsg_to_cv2(img, desired_encoding="bgr8")
+            except CvBridgeError as e:
+                print(e)
+            
             # show the image (waitKey(1) allows for automatic refressh creating video)
-			cv2.imshow('image', self.cv_image)
-			cv2.waitKey(1)
-		
-	def callback_save(self, event):
+            cv2.imshow('image', self.cv_image)
+            cv2.waitKey(1)
+        
+    def callback_save(self, event):
         # when user is ready to take picture press button
-		_ = input("Press enter to save the image.")
-		dest = self.img_dest + "img" + str(self.count) + ".jpg"
-		self.count += 1
-		print(dest)
-		try:
+        _ = input("Press enter to save the image.")
+        dest = self.img_dest + "img" + str(self.count) + ".jpg"
+        self.count += 1
+        print(dest)
+        try:
             # write to file
-			cv2.imwrite(dest, self.cv_image)
-		except:
-			print("Not valid image name. Try restarting with valid path.")
-			
-	def shutdownhook(self):
-		print("Shutting down")
-		cv2.destroyAllWindows()
+            cv2.imwrite(dest, self.cv_image)
+        except:
+            print("Not valid image name. Try restarting with valid path.")
+            
+    def shutdownhook(self):
+        print("Shutting down")
+        cv2.destroyAllWindows()
 
 if __name__ == '__main__':
-	rospy.init_node('image_saver', anonymous=True)
-	ap = argparse.ArgumentParser()
-	ap.add_argument("-o", "--output", required=True, help="path to output img")
-	args = vars(ap.parse_args())
-	saving_image_object = SavingImage(args["output"])
-	try:
-		rospy.spin()
-	except KeyboardInterrupt:
-		pass
+    rospy.init_node('image_saver', anonymous=True)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-o", "--output", required=True, help="path to output img")
+    args = vars(ap.parse_args())
+    saving_image_object = SavingImage(args["output"])
+    try:
+        rospy.spin()
+    except KeyboardInterrupt:
+        pass
 ```
 
 Save, exit, and make executable.
@@ -87,8 +87,11 @@ Save, exit, and make executable.
 ## Train your stop detector
 
 - Create a new folder in your **lab4** package called **training_images**.
-- Run `lab4.launch` on the **Master**.
 - Run the `image_capture.py` node on the **Master** using the following command:
+
+```{note}
+You must have the `lab4.launch` file running.
+```
 
 ```bash
 rosrun lab4 image_capture.py -o /home/dfec/master_ws/src/ece387_master_spring202X-NAME/lab4/training_images/
@@ -154,7 +157,9 @@ Demonstrate the stop detector on the **Master** detecting a stop sign from the *
 rosrun lab4 stop_detector.py _detector:=/home/dfec/master_ws/src/ece387_master_spring202X-NAME/lab4/training_images/stop_detector.svm
 ```
 
->📝️ **Note:** You must have the `lab4.launch` file running.
+```{note}
+You must have the `lab4.launch` file running.
+```
 
 ## Move detector to robot
 Copy the detector and node to the robot:
