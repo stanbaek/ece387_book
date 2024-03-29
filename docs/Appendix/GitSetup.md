@@ -1,5 +1,5 @@
 
-# Module 0: Setting Up GIT Repositories
+# Setting Up Git Repositories
 
 
 
