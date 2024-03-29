@@ -87,8 +87,11 @@ Save, exit, and make executable.
 ## Train your stop detector
 
 - Create a new folder in your **lab4** package called **training_images**.
-- Run `lab4.launch` on the **Master**.
 - Run the `image_capture.py` node on the **Master** using the following command:
+
+```{note}
+You must have the `lab4.launch` file running.
+```
 
 ```bash
 rosrun lab4 image_capture.py -o /home/dfec/master_ws/src/ece387_master_spring202X-NAME/lab4/training_images/
