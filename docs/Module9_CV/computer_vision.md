@@ -574,11 +574,12 @@ In order to get a good calibration you will need to move the checkerboard around
     - X bar - left/right in field of view
     - Y bar - top/bottom in field of view
     - Size bar - toward/away and tilt from the 
+
 - checkerboard filling the whole field of view
 - checkerboard tilted to the left, right, top and bottom (Skew)
 
 
-As you move the checkerboard around you will see three bars on the calibration sidebar increase in length. 
+As you move the checkerboard around you will see four bars on the calibration sidebar increase in length. 
 
 When the CALIBRATE button lights, you have enough data for calibration and can click CALIBRATE to see the results. Calibration can take a couple minutes. The windows might be greyed out but just wait, it is working.
 

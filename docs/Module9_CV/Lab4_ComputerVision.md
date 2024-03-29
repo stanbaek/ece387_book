@@ -5,16 +5,15 @@
 This lab will integrate a USB Camera with the Robot. You will use a Python script to take pictures of the stop sign and build a stop sign detector then test it using a live video feed. You will then use the detector and known size of the stop sign to estimate how far the stop sign is from the camera. Lastly, you will create a node to identify and determine how far an April Tag is from the robot.
 
 ## Setup packages
-Open a terminal on the **Master** and create a lab4 package:
+Open a terminal on the **Robot** and create a lab4 package:
 
 ```bash
-cd ~/master_ws/src/ece387_master_spring202X-USERNAME/
+cd ~/master_ws/src/ece387_robot_spring202X-USERNAME/
 catkin_create_pkg lab4 rospy sensor_msgs std_msgs cv_bridge apriltag_ros
 ```
 
 Make and source your workspace.
 
-If you have not already done so, repeat on the **Robot**
 
 ## Create a ROS node to save images
 Browse to your lab4 source folder on the **Master** and create a node called **image_capture.py**.
@@ -25,6 +24,7 @@ import rospy, cv2, argparse
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
+
 class SavingImage(object):
 	def __init__(self, img_dest):
 		self.img_dest = img_dest
@@ -32,7 +32,7 @@ class SavingImage(object):
 		self.count = 0
         
         # subscribe to the topic created by the usb_cam node
-		self.image_sub = rospy.Subscriber("/usb_cam/image_raw",Image,self.camera_callback)
+		self.image_sub = rospy.Subscriber("/usb_cam/image_raw", Image, self.camera_callback)
         
         # CV bridge converts between ROS Image messages and OpenCV images
 		self.bridge_object = CvBridge()
@@ -42,7 +42,7 @@ class SavingImage(object):
 		
 		rospy.on_shutdown(self.shutdownhook)
 
-	def camera_callback(self,img):
+	def camera_callback(self, img):
 		if not self.ctrl_c:
 			try:
                 # convert ROS image to OpenCV image
@@ -56,7 +56,7 @@ class SavingImage(object):
 		
 	def callback_save(self, event):
         # when user is ready to take picture press button
-		_ = input("Press enter to save the next image.")
+		_ = input("Press enter to save the image.")
 		dest = self.img_dest + "img" + str(self.count) + ".jpg"
 		self.count += 1
 		print(dest)
@@ -86,9 +86,9 @@ Save, exit, and make executable.
 
 ## Train your stop detector
 
-Create a new folder in your **lab4** package called **training_images**.
-
-Run the `image_capture.py` node on the **Master** using the following command:
+- Create a new folder in your **lab4** package called **training_images**.
+- Run `lab4.launch` on the **Master**.
+- Run the `image_capture.py` node on the **Master** using the following command:
 
 ```bash
 rosrun lab4 image_capture.py -o /home/dfec/master_ws/src/ece387_master_spring202X-NAME/lab4/training_images/
