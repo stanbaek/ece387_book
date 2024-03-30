@@ -409,6 +409,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general">General</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usr-bin-env-python3-r-no-such-file-or-directory"><em>/usr/bin/env: ‘python3\r’: No such file or directory</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-cannot-launch-node-of-type"><em>ERROR: cannot launch node of type</em></a></li>
 </ul>
 </li>
 </ul>
@@ -436,6 +437,24 @@ document.write(`
 <li><p>VS Code: At the bottom right of the screen in VS Code there is a little button that says <code class="docutils literal notranslate"><span class="pre">LF</span></code> or <code class="docutils literal notranslate"><span class="pre">CRLF</span></code>: Click that button and change it to your preference.</p></li>
 </ul>
 <br>
+</section>
+<section id="error-cannot-launch-node-of-type">
+<h3><em>ERROR: cannot launch node of type</em><a class="headerlink" href="#error-cannot-launch-node-of-type" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">robot98</span><span class="o">-</span><span class="mi">0</span><span class="p">]:</span> <span class="n">ERROR</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">launch</span> <span class="n">node</span> <span class="n">of</span> <span class="nb">type</span> <span class="p">[</span><span class="n">lab4</span><span class="o">/</span><span class="n">stop_detector</span><span class="o">.</span><span class="n">py</span><span class="p">]:</span> <span class="n">lab4</span>
+<span class="n">ROS</span> <span class="n">path</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">ros</span><span class="o">/</span><span class="n">noetic</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">ros</span>
+<span class="n">ROS</span> <span class="n">path</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">ros</span><span class="o">/</span><span class="n">noetic</span><span class="o">/</span><span class="n">share</span>
+</pre></div>
+</div>
+<p>Ensure you have the <code class="docutils literal notranslate"><span class="pre">env-loader</span></code> field in the <code class="docutils literal notranslate"><span class="pre">machine</span></code> block of the lauch file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&lt;</span><span class="n">machine</span>
+      <span class="n">name</span><span class="o">=</span><span class="s2">&quot;robot0&quot;</span>
+      <span class="n">address</span><span class="o">=</span><span class="s2">&quot;robot0&quot;</span>
+      <span class="n">env</span><span class="o">-</span><span class="n">loader</span><span class="o">=</span><span class="s2">&quot;/home/pi/robot_ws/devel/remote_env_loader.sh&quot;</span>
+      <span class="n">default</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
+      <span class="n">user</span><span class="o">=</span><span class="s2">&quot;pi&quot;</span>
+    <span class="o">/&gt;</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -509,6 +528,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general">General</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usr-bin-env-python3-r-no-such-file-or-directory"><em>/usr/bin/env: ‘python3\r’: No such file or directory</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-cannot-launch-node-of-type"><em>ERROR: cannot launch node of type</em></a></li>
 </ul>
 </li>
 </ul>

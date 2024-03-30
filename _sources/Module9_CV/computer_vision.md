@@ -511,10 +511,11 @@ Edit the `lab4.launch` file to call the **usb_cam_node** on the robot which will
 <launch>
     
     <machine
-        name="robot0"
-        address="robot0"
-        default="true"
-        user="pi"
+      name="robot0"
+      address="robot0"
+      env-loader="/home/pi/robot_ws/devel/remote_env_loader.sh"
+      default="true"
+      user="pi"
     />
 
     <!-- usb camera -->
