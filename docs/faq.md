@@ -19,11 +19,22 @@ The problem are your line ending characters. Your file was created or edited on 
 
 
 
+### _ERROR: cannot launch node of type_
 
+```
+[robot98-0]: ERROR: cannot launch node of type [lab4/stop_detector.py]: lab4
+ROS path [0]=/opt/ros/noetic/share/ros
+ROS path [1]=/opt/ros/noetic/share
+```
 
-
-
-
-
-
+Ensure you have the `env-loader` field in the `machine` block of the lauch file.
+```
+    <machine
+      name="robot0"
+      address="robot0"
+      env-loader="/home/pi/robot_ws/devel/remote_env_loader.sh"
+      default="true"
+      user="pi"
+    />
+```
 
