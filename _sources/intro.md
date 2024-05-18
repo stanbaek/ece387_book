@@ -1,5 +1,7 @@
 # ECE 387 Introduction to Robotic Systems
 
+# This site is no longer maintained. Please go to https://stanbaek.github.io/ece387/intro.html for the latest version of ECE 387.
+
 ## 👨‍🏫 Instructors
 - ![neff](https://img.shields.io/badge/Col%20Brian%20Neff-6xxx-yellow)
 - [![baek](https://img.shields.io/badge/Dr.%20Stan%20Baek-2E38-red)](https://stanbaek.github.io)
